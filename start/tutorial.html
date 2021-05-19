@@ -4,17 +4,17 @@
 <head>
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <title>
-    Tutorial –
-    Ema
-  </title>
+  
+    <base href='/' />
+  
+  <title>Tutorial – Ema</title>
   
     <meta property='og:description' content='Ema static site generator (Jamstack) in Haskell with live server and reload.
 ' />
     <meta property='og:site_name' content='Ema' />
   
-  <!-- TODO: Re-use Tailwind/windicss from emanote/ema? -->
-  <link href='https://unpkg.com/tailwindcss@2.1.2/dist/tailwind.min.css' rel='stylesheet' type='text/css' />
+  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>twind.setup({})
+twindObserve.observe(document.documentElement)</script>
   
     <link href='/favicon.svg' rel='icon' />
   
@@ -82,7 +82,7 @@
       </svg>
       
   
-    <a class='hover:underline' href='/start'>
+    <a class='hover:underline' href='start'>
       Getting Started
     </a>
     
@@ -111,7 +111,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'></path></svg> 
       
   
-    <a class='font-bold text-pink-600 hover:text-black' href='/start/tutorial'>
+    <a class='font-bold text-pink-600 hover:text-black' href='start/tutorial'>
       Tutorial
     </a>
     
@@ -149,7 +149,7 @@
       </svg>
       
   
-    <a class='hover:underline' href='/guide'>
+    <a class='hover:underline' href='guide'>
       Guide
     </a>
     
@@ -178,7 +178,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/model'>
+    <a class='hover:underline' href='guide/model'>
       Defining your model
     </a>
     
@@ -210,7 +210,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/routes'>
+    <a class='hover:underline' href='guide/routes'>
       Working with routes
     </a>
     
@@ -242,7 +242,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/class'>
+    <a class='hover:underline' href='guide/class'>
       Defining Ema instance
     </a>
     
@@ -274,7 +274,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/render'>
+    <a class='hover:underline' href='guide/render'>
       Rendering HTML
     </a>
     
@@ -309,7 +309,7 @@
       </svg>
       
   
-    <a class='hover:underline' href='/guide/helpers'>
+    <a class='hover:underline' href='guide/helpers'>
       Helpers
     </a>
     
@@ -338,7 +338,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/helpers/tailwind'>
+    <a class='hover:underline' href='guide/helpers/tailwind'>
       Using Tailwind CSS
     </a>
     
@@ -370,7 +370,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/helpers/filesystem'>
+    <a class='hover:underline' href='guide/helpers/filesystem'>
       Working with files
     </a>
     
@@ -402,7 +402,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/helpers/markdown'>
+    <a class='hover:underline' href='guide/helpers/markdown'>
       Using Markdown
     </a>
     
@@ -443,7 +443,7 @@
       </svg>
       
   
-    <a class='hover:underline' href='/concepts'>
+    <a class='hover:underline' href='concepts'>
       Concepts
     </a>
     
@@ -472,7 +472,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/hot-reload'>
+    <a class='hover:underline' href='concepts/hot-reload'>
       Hot Reload
     </a>
     
@@ -504,7 +504,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/lvar'>
+    <a class='hover:underline' href='concepts/lvar'>
       LVar
     </a>
     
@@ -536,7 +536,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/slug'>
+    <a class='hover:underline' href='concepts/slug'>
       Slug
     </a>
     
@@ -568,7 +568,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/cli'>
+    <a class='hover:underline' href='concepts/cli'>
       CLI
     </a>
     
@@ -600,7 +600,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/logging'>
+    <a class='hover:underline' href='concepts/logging'>
       Logging
     </a>
     
@@ -622,7 +622,7 @@
       </div>
       <!-- Main body column -->
       <div class='col-span-12 md:col-span-9'>
-        <p class='my-3'>Make sure that you have have followed <a href='/start' title class='text-pink-600 font-bold hover:bg-pink-50'>the previous section</a> in order to have the <a href='https://github.com/srid/ema-template' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>template repo</a> checked out and running locally. Here, <strong>our goal</strong> is to replace the source code of the template repo and write a basic site from scratch.</p><ol class='ml-4 space-y-1 list-decimal list-inside'><li>Follow the template repo’s <a href='https://github.com/srid/ema-template#getting-started' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>README</a> and have it open in Visual Studio Code while running the dev server. Your website should be viewable at <a href='http://localhost:9001/' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>http://localhost:9001/</a></li><li>Open <code>src/Main.hs</code></li><li>Delete everything in it, and replace it with the following</li></ol><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>module Main where
+        <p class='my-3'>Make sure that you have have followed <a href='start' title class='text-pink-600 font-bold hover:bg-pink-50'>the previous section</a> in order to have the <a href='https://github.com/srid/ema-template' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>template repo</a> checked out and running locally. Here, <strong>our goal</strong> is to replace the source code of the template repo and write a basic site from scratch.</p><ol class='ml-4 space-y-1 list-decimal list-inside'><li>Follow the template repo’s <a href='https://github.com/srid/ema-template#getting-started' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>README</a> and have it open in Visual Studio Code while running the dev server. Your website should be viewable at <a href='http://localhost:9001/' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>http://localhost:9001/</a></li><li>Open <code>src/Main.hs</code></li><li>Delete everything in it, and replace it with the following</li></ol><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>module Main where
 
 import qualified Ema
 
@@ -630,10 +630,10 @@ main :: IO ()
 main = do
   let speaker :: Text = "Ema"
   Ema.runEmaPure $ \_ -&gt;
-    encodeUtf8 $ "&lt;b&gt;Hello&lt;/b&gt;, from " &lt;&gt; speaker</code></pre></div><p class='my-3'>This is the <em>minimum</em> amount of code necessary to run an Ema site. Notice that as you replace and save this file, your browser (which is at <a href='http://locahost:9001' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>http://locahost:9001</a>) will <a href='/concepts/hot-reload' title class='text-pink-600 font-bold hover:bg-pink-50'>hot reload</a> to display “Hello, Ema”. Congratulations, you just created your first website!</p><h2 id='expanding-on-hello-world' class='mt-4 mb-4 text-5xl text-gray-700'>Expanding on Hello World</h2><p class='my-3'>Okay, but that’s just <em>one</em> page. But we want to add a second page. And might as well add more content than “Hello, Ema”. Let’s do that next. The first step is define the <a href='/guide/routes' title class='text-pink-600 font-bold hover:bg-pink-50'>route</a> type that corresponds to our site’s pages. Add the following:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Route
+    encodeUtf8 $ "&lt;b&gt;Hello&lt;/b&gt;, from " &lt;&gt; speaker</code></pre></div><p class='my-3'>This is the <em>minimum</em> amount of code necessary to run an Ema site. Notice that as you replace and save this file, your browser (which is at <a href='http://locahost:9001' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>http://locahost:9001</a>) will <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:bg-pink-50'>hot reload</a> to display “Hello, Ema”. Congratulations, you just created your first website!</p><h2 id='expanding-on-hello-world' class='mt-4 mb-4 text-5xl text-gray-700'>Expanding on Hello World</h2><p class='my-3'>Okay, but that’s just <em>one</em> page. But we want to add a second page. And might as well add more content than “Hello, Ema”. Let’s do that next. The first step is define the <a href='guide/routes' title class='text-pink-600 font-bold hover:bg-pink-50'>route</a> type that corresponds to our site’s pages. Add the following:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Route
   = Index  -- Corresponds to /
   | About  -- Corresponds to /about
-  deriving (Bounded, Enum, Show)</code></pre></div><p class='my-3'>Next, let’s define a <a href='/guide/model' title class='text-pink-600 font-bold hover:bg-pink-50'>model</a>. A model will hold the state of our website used to render its HTML. Let’s put the <code>speaker</code> variable in it, as that’s all we are using:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Model = Model { speaker :: Text }</code></pre></div><p class='my-3'>We should now tell Ema how to convert our <code>Route</code> to actual URL paths. Let’s do that by making an instance of the <code>Ema</code> <a href='/guide/class' title class='text-pink-600 font-bold hover:bg-pink-50'>class</a>:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import Ema (Ema (..))
+  deriving (Bounded, Enum, Show)</code></pre></div><p class='my-3'>Next, let’s define a <a href='guide/model' title class='text-pink-600 font-bold hover:bg-pink-50'>model</a>. A model will hold the state of our website used to render its HTML. Let’s put the <code>speaker</code> variable in it, as that’s all we are using:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Model = Model { speaker :: Text }</code></pre></div><p class='my-3'>We should now tell Ema how to convert our <code>Route</code> to actual URL paths. Let’s do that by making an instance of the <code>Ema</code> <a href='guide/class' title class='text-pink-600 font-bold hover:bg-pink-50'>class</a>:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import Ema (Ema (..))
 
 instance Ema Model Route where
   encodeRoute = \case
@@ -649,7 +649,7 @@ main :: IO ()
 main = do
   Ema.runEma render $ \model -&gt; do
     LVar.set model $ Model "Ema"
-    liftIO $ threadDelay maxBound</code></pre></div><p class='my-3'>The <code>runEma</code> function is explained <a href='/guide/class' title class='text-pink-600 font-bold hover:bg-pink-50'>here</a>, but in brief: it takes a render function (see below) as well as an IO action that allows us to create and update the model <a href='/concepts/lvar' title class='text-pink-600 font-bold hover:bg-pink-50'>lvar</a>. Note that <code>threadDelay maxBound</code> here? That is because our IO action must not exit; in the dev server mode of real-world websites, you would continue to monitor the external world (such as Markdown files) and update the model, to facilitate <a href='/concepts/hot-reload' title class='text-pink-600 font-bold hover:bg-pink-50'>hot reload</a> of data used by your site.</p><p class='my-3'>On final piece of the puzzle is to write the aforementioned <code>render</code> function:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import qualified Ema.CLI
+    liftIO $ threadDelay maxBound</code></pre></div><p class='my-3'>The <code>runEma</code> function is explained <a href='guide/class' title class='text-pink-600 font-bold hover:bg-pink-50'>here</a>, but in brief: it takes a render function (see below) as well as an IO action that allows us to create and update the model <a href='concepts/lvar' title class='text-pink-600 font-bold hover:bg-pink-50'>lvar</a>. Note that <code>threadDelay maxBound</code> here? That is because our IO action must not exit; in the dev server mode of real-world websites, you would continue to monitor the external world (such as Markdown files) and update the model, to facilitate <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:bg-pink-50'>hot reload</a> of data used by your site.</p><p class='my-3'>On final piece of the puzzle is to write the aforementioned <code>render</code> function:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import qualified Ema.CLI
 import qualified Ema.Helper.Tailwind as Tailwind
 import Text.Blaze.Html5 ((!))
 import qualified Text.Blaze.Html5 as H
@@ -675,14 +675,14 @@ render _emaAction model r = RU.renderHtml $
     routeElem targetRoute w =
       H.a 
         ! A.style "text-decoration: underline" 
-        ! A.href (H.toValue $ Ema.routeUrl targetRoute) $ w</code></pre></div><p class='my-3'>If everything compiles, you should see the site update in the web browser. A couple of quick points about the <code>render</code> function:</p><ol class='ml-4 space-y-1 list-decimal list-inside'><li>It should return the raw HTML as a <code>ByteString</code>. Here, we use <a href='https://hackage.haskell.org/package/blaze-html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>blaze-html</a> as HTML DSL. You can also use your own HTML templates of course.</li><li>It uses <code>Ema.routeUrl</code> function to create a URL out of our <code>Route</code> type. This function uses the <a href='/guide/class' title class='text-pink-600 font-bold hover:bg-pink-50'><code>Ema</code> typeclass</a>, so it uses the <code>encodeRoute</code> function defined further above.</li></ol><p class='my-3'>On final note, you will note that nothing is actually <em>generated</em> so far. This is because Ema has been running in the dev server mode, which is quite useful during development. To actually generate the files, you can use the <code>gen</code> command when running the <a href='/concepts/cli' title class='text-pink-600 font-bold hover:bg-pink-50'>CLI</a>:</p><div class='py-0.5 text-sm'><pre class='sh language-sh'><code class='sh language-sh'>mkdir ./output
-nix run . -- -C ./content gen ./output</code></pre></div><h2 id='exercises' class='mt-4 mb-4 text-5xl text-gray-700'>Exercises</h2><ol class='ml-4 space-y-1 list-decimal list-inside'><li>Figure out how to use static assets (images, files) in your static sites (hint: the typeclass)</li><li>What happens if you <code>throw</code> an exception or use <code>error</code> in the <code>render</code> function?</li></ol><div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'><p class='my-3'><span class='py-2 text-xl italic font-bold'>Next</span>, checkout the <a href='/guide' title class='text-pink-600 font-bold hover:bg-pink-50'>Guide</a> series for information on specific topics.</p></div>
+        ! A.href (H.toValue $ Ema.routeUrl targetRoute) $ w</code></pre></div><p class='my-3'>If everything compiles, you should see the site update in the web browser. A couple of quick points about the <code>render</code> function:</p><ol class='ml-4 space-y-1 list-decimal list-inside'><li>It should return the raw HTML as a <code>ByteString</code>. Here, we use <a href='https://hackage.haskell.org/package/blaze-html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>blaze-html</a> as HTML DSL. You can also use your own HTML templates of course.</li><li>It uses <code>Ema.routeUrl</code> function to create a URL out of our <code>Route</code> type. This function uses the <a href='guide/class' title class='text-pink-600 font-bold hover:bg-pink-50'><code>Ema</code> typeclass</a>, so it uses the <code>encodeRoute</code> function defined further above.</li></ol><p class='my-3'>On final note, you will note that nothing is actually <em>generated</em> so far. This is because Ema has been running in the dev server mode, which is quite useful during development. To actually generate the files, you can use the <code>gen</code> command when running the <a href='concepts/cli' title class='text-pink-600 font-bold hover:bg-pink-50'>CLI</a>:</p><div class='py-0.5 text-sm'><pre class='sh language-sh'><code class='sh language-sh'>mkdir ./output
+nix run . -- -C ./content gen ./output</code></pre></div><h2 id='exercises' class='mt-4 mb-4 text-5xl text-gray-700'>Exercises</h2><ol class='ml-4 space-y-1 list-decimal list-inside'><li>Figure out how to use static assets (images, files) in your static sites (hint: the typeclass)</li><li>What happens if you <code>throw</code> an exception or use <code>error</code> in the <code>render</code> function?</li></ol><div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'><p class='my-3'><span class='py-2 text-xl italic font-bold'>Next</span>, checkout the <a href='guide' title class='text-pink-600 font-bold hover:bg-pink-50'>Guide</a> series for information on specific topics.</p></div>
         
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='/guide'>
+        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='guide'>
             Guide
           </a>
           <div class='mb-4 text-sm text-gray-500'>
@@ -704,7 +704,7 @@ nix run . -- -C ./content gen ./output</code></pre></div><h2 id='exercises' clas
         <ul class='flex text-sm text-gray-500 lg:text-base'>
           
             <li class='inline-flex items-center'>
-              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href='/'>
+              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href=''>
                 Ema
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
@@ -713,7 +713,7 @@ nix run . -- -C ./content gen ./output</code></pre></div><h2 id='exercises' clas
             </li>
           
             <li class='inline-flex items-center'>
-              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href='/start'>
+              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href='start'>
                 Getting Started
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>

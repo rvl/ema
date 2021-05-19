@@ -4,17 +4,17 @@
 <head>
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <title>
-    Defining your model –
-    Ema
-  </title>
+  
+    <base href='/' />
+  
+  <title>Defining your model – Ema</title>
   
     <meta property='og:description' content='Ema static site generator (Jamstack) in Haskell with live server and reload.
 ' />
     <meta property='og:site_name' content='Ema' />
   
-  <!-- TODO: Re-use Tailwind/windicss from emanote/ema? -->
-  <link href='https://unpkg.com/tailwindcss@2.1.2/dist/tailwind.min.css' rel='stylesheet' type='text/css' />
+  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>twind.setup({})
+twindObserve.observe(document.documentElement)</script>
   
     <link href='/favicon.svg' rel='icon' />
   
@@ -82,7 +82,7 @@
       </svg>
       
   
-    <a class='hover:underline' href='/start'>
+    <a class='hover:underline' href='start'>
       Getting Started
     </a>
     
@@ -111,7 +111,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/start/tutorial'>
+    <a class='hover:underline' href='start/tutorial'>
       Tutorial
     </a>
     
@@ -149,7 +149,7 @@
       </svg>
       
   
-    <a class='hover:underline' href='/guide'>
+    <a class='hover:underline' href='guide'>
       Guide
     </a>
     
@@ -178,7 +178,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'></path></svg> 
       
   
-    <a class='font-bold text-pink-600 hover:text-black' href='/guide/model'>
+    <a class='font-bold text-pink-600 hover:text-black' href='guide/model'>
       Defining your model
     </a>
     
@@ -210,7 +210,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/routes'>
+    <a class='hover:underline' href='guide/routes'>
       Working with routes
     </a>
     
@@ -242,7 +242,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/class'>
+    <a class='hover:underline' href='guide/class'>
       Defining Ema instance
     </a>
     
@@ -274,7 +274,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/render'>
+    <a class='hover:underline' href='guide/render'>
       Rendering HTML
     </a>
     
@@ -309,7 +309,7 @@
       </svg>
       
   
-    <a class='hover:underline' href='/guide/helpers'>
+    <a class='hover:underline' href='guide/helpers'>
       Helpers
     </a>
     
@@ -338,7 +338,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/helpers/tailwind'>
+    <a class='hover:underline' href='guide/helpers/tailwind'>
       Using Tailwind CSS
     </a>
     
@@ -370,7 +370,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/helpers/filesystem'>
+    <a class='hover:underline' href='guide/helpers/filesystem'>
       Working with files
     </a>
     
@@ -402,7 +402,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/helpers/markdown'>
+    <a class='hover:underline' href='guide/helpers/markdown'>
       Using Markdown
     </a>
     
@@ -443,7 +443,7 @@
       </svg>
       
   
-    <a class='hover:underline' href='/concepts'>
+    <a class='hover:underline' href='concepts'>
       Concepts
     </a>
     
@@ -472,7 +472,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/hot-reload'>
+    <a class='hover:underline' href='concepts/hot-reload'>
       Hot Reload
     </a>
     
@@ -504,7 +504,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/lvar'>
+    <a class='hover:underline' href='concepts/lvar'>
       LVar
     </a>
     
@@ -536,7 +536,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/slug'>
+    <a class='hover:underline' href='concepts/slug'>
       Slug
     </a>
     
@@ -568,7 +568,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/cli'>
+    <a class='hover:underline' href='concepts/cli'>
       CLI
     </a>
     
@@ -600,7 +600,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/logging'>
+    <a class='hover:underline' href='concepts/logging'>
       Logging
     </a>
     
@@ -622,16 +622,16 @@
       </div>
       <!-- Main body column -->
       <div class='col-span-12 md:col-span-9'>
-        <p class='my-3'>A “<em>model</em>” in Ema represents the state to use to generate your site. It could be as simple as a variable, or it could be a list of parsed Markdown files (as in the case of a weblog). Ema’s model is also conceptually similar to <a href='https://guide.elm-lang.org/architecture/' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Elm</a>'s model, in that - changing the model <a href='/concepts/hot-reload' title class='text-pink-600 font-bold hover:bg-pink-50'>automatically</a> changes the <a href='/guide/render' title class='text-pink-600 font-bold hover:bg-pink-50'>view</a>.</p><p class='my-3'>Here’s an example model:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>newtype BlogPosts = BlogPosts (Map Slug Text}</code></pre></div><p class='my-3'>Here <code>BlogPosts</code> is the model type. If we are generating a weblog site, then all the “data” we need is loaded into memory as a value of <code>BlogPosts</code>.</p><h2 id='modifying-the-model' class='mt-4 mb-4 text-5xl text-gray-700'>Modifying the model</h2><p class='my-3'>Ema’s dev server supports <a href='/concepts/hot-reload' title class='text-pink-600 font-bold hover:bg-pink-50'>hot reload</a>; it will observe changes to your model, in addition to code. To facilitate this you will manage your model as a <a href='/concepts/lvar' title class='text-pink-600 font-bold hover:bg-pink-50'>LVar</a>. The <code>runEma</code> function (<a href='/guide/class' title class='text-pink-600 font-bold hover:bg-pink-50'>described here</a>) takes an IO action that gets <code>LVar model</code> as an argument.</p><p class='my-3'>For example,</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>runEma render $ \model -&gt;
+        <p class='my-3'>A “<em>model</em>” in Ema represents the state to use to generate your site. It could be as simple as a variable, or it could be a list of parsed Markdown files (as in the case of a weblog). Ema’s model is also conceptually similar to <a href='https://guide.elm-lang.org/architecture/' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Elm</a>'s model, in that - changing the model <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:bg-pink-50'>automatically</a> changes the <a href='guide/render' title class='text-pink-600 font-bold hover:bg-pink-50'>view</a>.</p><p class='my-3'>Here’s an example model:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>newtype BlogPosts = BlogPosts (Map Slug Text}</code></pre></div><p class='my-3'>Here <code>BlogPosts</code> is the model type. If we are generating a weblog site, then all the “data” we need is loaded into memory as a value of <code>BlogPosts</code>.</p><h2 id='modifying-the-model' class='mt-4 mb-4 text-5xl text-gray-700'>Modifying the model</h2><p class='my-3'>Ema’s dev server supports <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:bg-pink-50'>hot reload</a>; it will observe changes to your model, in addition to code. To facilitate this you will manage your model as a <a href='concepts/lvar' title class='text-pink-600 font-bold hover:bg-pink-50'>LVar</a>. The <code>runEma</code> function (<a href='guide/class' title class='text-pink-600 font-bold hover:bg-pink-50'>described here</a>) takes an IO action that gets <code>LVar model</code> as an argument.</p><p class='my-3'>For example,</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>runEma render $ \model -&gt;
   forever $ do
     LVar.set model =&lt;&lt; liftIO getCurrentTime
-    liftIO $ threadDelay $ 1 * 1000000</code></pre></div><p class='my-3'>In this contrived example (<a href='https://github.com/srid/ema/blob/master/src/Ema/Example/Ex02_Clock.hs' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>full code here</a>), we are using <code>UTCTime</code> as the model. We set the initial value using <code>LVar.set</code>, and then continually update the current time every second. Every time the model gets updated, the web browser will <a href='/concepts/hot-reload' title class='text-pink-600 font-bold hover:bg-pink-50'>hot reload</a> to display the up to date value. For the <code>BlogPosts</code> model, you would typically use <a href='https://hackage.haskell.org/package/fsnotify' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>fsnotify</a> to monitor changes to the underlying Markdown files, but note that Ema provides <a href='/guide/helpers/filesystem' title class='text-pink-600 font-bold hover:bg-pink-50'>a helper</a> for that.</p><div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'><p class='my-3'><span class='py-2 text-xl italic font-bold'>Next</span>, we will <a href='/guide/routes' title class='text-pink-600 font-bold hover:bg-pink-50'>talk about routes</a>.</p></div>
+    liftIO $ threadDelay $ 1 * 1000000</code></pre></div><p class='my-3'>In this contrived example (<a href='https://github.com/srid/ema/blob/master/src/Ema/Example/Ex02_Clock.hs' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>full code here</a>), we are using <code>UTCTime</code> as the model. We set the initial value using <code>LVar.set</code>, and then continually update the current time every second. Every time the model gets updated, the web browser will <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:bg-pink-50'>hot reload</a> to display the up to date value. For the <code>BlogPosts</code> model, you would typically use <a href='https://hackage.haskell.org/package/fsnotify' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>fsnotify</a> to monitor changes to the underlying Markdown files, but note that Ema provides <a href='guide/helpers/filesystem' title class='text-pink-600 font-bold hover:bg-pink-50'>a helper</a> for that.</p><div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'><p class='my-3'><span class='py-2 text-xl italic font-bold'>Next</span>, we will <a href='guide/routes' title class='text-pink-600 font-bold hover:bg-pink-50'>talk about routes</a>.</p></div>
         
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='/concepts/lvar'>
+        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts/lvar'>
             LVar
           </a>
           <div class='mb-4 text-sm text-gray-500'>
@@ -641,7 +641,7 @@
           </div>
         </li>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='/guide'>
+        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='guide'>
             Guide
           </a>
           <div class='mb-4 text-sm text-gray-500'>
@@ -651,7 +651,7 @@
           </div>
         </li>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='/guide/class'>
+        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/class'>
             Defining Ema instance
           </a>
           <div class='mb-4 text-sm text-gray-500'>
@@ -661,7 +661,7 @@
           </div>
         </li>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='/guide/helpers/filesystem'>
+        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/helpers/filesystem'>
             Working with files
           </a>
           <div class='mb-4 text-sm text-gray-500'>
@@ -671,7 +671,7 @@
           </div>
         </li>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='/guide/render'>
+        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/render'>
             Rendering HTML
           </a>
           <div class='mb-4 text-sm text-gray-500'>
@@ -681,7 +681,7 @@
           </div>
         </li>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='/start/tutorial'>
+        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='start/tutorial'>
             Tutorial
           </a>
           <div class='mb-4 text-sm text-gray-500'>
@@ -703,7 +703,7 @@
         <ul class='flex text-sm text-gray-500 lg:text-base'>
           
             <li class='inline-flex items-center'>
-              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href='/'>
+              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href=''>
                 Ema
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
@@ -712,7 +712,7 @@
             </li>
           
             <li class='inline-flex items-center'>
-              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href='/guide'>
+              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href='guide'>
                 Guide
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>

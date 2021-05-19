@@ -4,17 +4,17 @@
 <head>
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <title>
-    Using Markdown –
-    Ema
-  </title>
+  
+    <base href='/' />
+  
+  <title>Using Markdown – Ema</title>
   
     <meta property='og:description' content='Ema static site generator (Jamstack) in Haskell with live server and reload.
 ' />
     <meta property='og:site_name' content='Ema' />
   
-  <!-- TODO: Re-use Tailwind/windicss from emanote/ema? -->
-  <link href='https://unpkg.com/tailwindcss@2.1.2/dist/tailwind.min.css' rel='stylesheet' type='text/css' />
+  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>twind.setup({})
+twindObserve.observe(document.documentElement)</script>
   
     <link href='/favicon.svg' rel='icon' />
   
@@ -82,7 +82,7 @@
       </svg>
       
   
-    <a class='hover:underline' href='/start'>
+    <a class='hover:underline' href='start'>
       Getting Started
     </a>
     
@@ -111,7 +111,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/start/tutorial'>
+    <a class='hover:underline' href='start/tutorial'>
       Tutorial
     </a>
     
@@ -149,7 +149,7 @@
       </svg>
       
   
-    <a class='hover:underline' href='/guide'>
+    <a class='hover:underline' href='guide'>
       Guide
     </a>
     
@@ -178,7 +178,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/model'>
+    <a class='hover:underline' href='guide/model'>
       Defining your model
     </a>
     
@@ -210,7 +210,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/routes'>
+    <a class='hover:underline' href='guide/routes'>
       Working with routes
     </a>
     
@@ -242,7 +242,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/class'>
+    <a class='hover:underline' href='guide/class'>
       Defining Ema instance
     </a>
     
@@ -274,7 +274,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/render'>
+    <a class='hover:underline' href='guide/render'>
       Rendering HTML
     </a>
     
@@ -309,7 +309,7 @@
       </svg>
       
   
-    <a class='hover:underline' href='/guide/helpers'>
+    <a class='hover:underline' href='guide/helpers'>
       Helpers
     </a>
     
@@ -338,7 +338,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/helpers/tailwind'>
+    <a class='hover:underline' href='guide/helpers/tailwind'>
       Using Tailwind CSS
     </a>
     
@@ -370,7 +370,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/helpers/filesystem'>
+    <a class='hover:underline' href='guide/helpers/filesystem'>
       Working with files
     </a>
     
@@ -402,7 +402,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'></path></svg> 
       
   
-    <a class='font-bold text-pink-600 hover:text-black' href='/guide/helpers/markdown'>
+    <a class='font-bold text-pink-600 hover:text-black' href='guide/helpers/markdown'>
       Using Markdown
     </a>
     
@@ -443,7 +443,7 @@
       </svg>
       
   
-    <a class='hover:underline' href='/concepts'>
+    <a class='hover:underline' href='concepts'>
       Concepts
     </a>
     
@@ -472,7 +472,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/hot-reload'>
+    <a class='hover:underline' href='concepts/hot-reload'>
       Hot Reload
     </a>
     
@@ -504,7 +504,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/lvar'>
+    <a class='hover:underline' href='concepts/lvar'>
       LVar
     </a>
     
@@ -536,7 +536,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/slug'>
+    <a class='hover:underline' href='concepts/slug'>
       Slug
     </a>
     
@@ -568,7 +568,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/cli'>
+    <a class='hover:underline' href='concepts/cli'>
       CLI
     </a>
     
@@ -600,7 +600,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/logging'>
+    <a class='hover:underline' href='concepts/logging'>
       Logging
     </a>
     
@@ -632,7 +632,7 @@ type Metadata = Map Text Text
 
 -- Returns `Either Text (Metadata, Pandoc)`
 Markdown.parseMarkdownWithFrontMatter @Metadata 
-    "test.md" "Hello *world*"</code></pre></div><p class='my-3'>The template repo, as well as <a href='https://github.com/srid/emanote' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Emanote</a> (used to generate this site), uses this helper to parse Markdown files into Pandoc AST. Consult <a href='https://github.com/srid/ema-template/blob/master/src/Main.hs' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>the template repo’s source code</a> for details.</p><p class='my-3'>Note that with Ema you can get <a href='/concepts/hot-reload' title class='text-pink-600 font-bold hover:bg-pink-50'>hot reload</a> support for your Markdown files using <a href='/guide/helpers/filesystem' title class='text-pink-600 font-bold hover:bg-pink-50'>filesystem notifications</a>.</p>
+    "test.md" "Hello *world*"</code></pre></div><p class='my-3'>The template repo, as well as <a href='https://github.com/srid/emanote' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Emanote</a> (used to generate this site), uses this helper to parse Markdown files into Pandoc AST. Consult <a href='https://github.com/srid/ema-template/blob/master/src/Main.hs' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>the template repo’s source code</a> for details.</p><p class='my-3'>Note that with Ema you can get <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:bg-pink-50'>hot reload</a> support for your Markdown files using <a href='guide/helpers/filesystem' title class='text-pink-600 font-bold hover:bg-pink-50'>filesystem notifications</a>.</p>
         
 
         
@@ -643,7 +643,7 @@ Markdown.parseMarkdownWithFrontMatter @Metadata
         <ul class='flex text-sm text-gray-500 lg:text-base'>
           
             <li class='inline-flex items-center'>
-              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href='/'>
+              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href=''>
                 Ema
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
@@ -652,7 +652,7 @@ Markdown.parseMarkdownWithFrontMatter @Metadata
             </li>
           
             <li class='inline-flex items-center'>
-              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href='/guide'>
+              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href='guide'>
                 Guide
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
@@ -661,7 +661,7 @@ Markdown.parseMarkdownWithFrontMatter @Metadata
             </li>
           
             <li class='inline-flex items-center'>
-              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href='/guide/helpers'>
+              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href='guide/helpers'>
                 Helpers
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>

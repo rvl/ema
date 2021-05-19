@@ -4,17 +4,17 @@
 <head>
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <title>
-    Hot Reload –
-    Ema
-  </title>
+  
+    <base href='/' />
+  
+  <title>Hot Reload – Ema</title>
   
     <meta property='og:description' content='Ema static site generator (Jamstack) in Haskell with live server and reload.
 ' />
     <meta property='og:site_name' content='Ema' />
   
-  <!-- TODO: Re-use Tailwind/windicss from emanote/ema? -->
-  <link href='https://unpkg.com/tailwindcss@2.1.2/dist/tailwind.min.css' rel='stylesheet' type='text/css' />
+  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>twind.setup({})
+twindObserve.observe(document.documentElement)</script>
   
     <link href='/favicon.svg' rel='icon' />
   
@@ -82,7 +82,7 @@
       </svg>
       
   
-    <a class='hover:underline' href='/start'>
+    <a class='hover:underline' href='start'>
       Getting Started
     </a>
     
@@ -111,7 +111,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/start/tutorial'>
+    <a class='hover:underline' href='start/tutorial'>
       Tutorial
     </a>
     
@@ -149,7 +149,7 @@
       </svg>
       
   
-    <a class='hover:underline' href='/guide'>
+    <a class='hover:underline' href='guide'>
       Guide
     </a>
     
@@ -178,7 +178,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/model'>
+    <a class='hover:underline' href='guide/model'>
       Defining your model
     </a>
     
@@ -210,7 +210,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/routes'>
+    <a class='hover:underline' href='guide/routes'>
       Working with routes
     </a>
     
@@ -242,7 +242,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/class'>
+    <a class='hover:underline' href='guide/class'>
       Defining Ema instance
     </a>
     
@@ -274,7 +274,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/render'>
+    <a class='hover:underline' href='guide/render'>
       Rendering HTML
     </a>
     
@@ -309,7 +309,7 @@
       </svg>
       
   
-    <a class='hover:underline' href='/guide/helpers'>
+    <a class='hover:underline' href='guide/helpers'>
       Helpers
     </a>
     
@@ -338,7 +338,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/helpers/tailwind'>
+    <a class='hover:underline' href='guide/helpers/tailwind'>
       Using Tailwind CSS
     </a>
     
@@ -370,7 +370,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/helpers/filesystem'>
+    <a class='hover:underline' href='guide/helpers/filesystem'>
       Working with files
     </a>
     
@@ -402,7 +402,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/guide/helpers/markdown'>
+    <a class='hover:underline' href='guide/helpers/markdown'>
       Using Markdown
     </a>
     
@@ -443,7 +443,7 @@
       </svg>
       
   
-    <a class='hover:underline' href='/concepts'>
+    <a class='hover:underline' href='concepts'>
       Concepts
     </a>
     
@@ -472,7 +472,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'></path></svg> 
       
   
-    <a class='font-bold text-pink-600 hover:text-black' href='/concepts/hot-reload'>
+    <a class='font-bold text-pink-600 hover:text-black' href='concepts/hot-reload'>
       Hot Reload
     </a>
     
@@ -504,7 +504,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/lvar'>
+    <a class='hover:underline' href='concepts/lvar'>
       LVar
     </a>
     
@@ -536,7 +536,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/slug'>
+    <a class='hover:underline' href='concepts/slug'>
       Slug
     </a>
     
@@ -568,7 +568,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/cli'>
+    <a class='hover:underline' href='concepts/cli'>
       CLI
     </a>
     
@@ -600,7 +600,7 @@
       <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
     
   
-    <a class='hover:underline' href='/concepts/logging'>
+    <a class='hover:underline' href='concepts/logging'>
       Logging
     </a>
     
@@ -622,13 +622,13 @@
       </div>
       <!-- Main body column -->
       <div class='col-span-12 md:col-span-9'>
-        <p class='my-3'><strong>Hot Reloading</strong> is a feature of Ema’s dev server wherein any changes to your Haskell source or data files (such as Markdown files or HTML templates) <em>propagate instantly</em> to the web browser without requiring any manual intervention like a full browser refresh. In practice, this is a such a delightful feature to work with. Imagine changing CSS style of an element, and see it reflect on your site in a split second.</p><h2 id='how-ema-implements-hot-reload' class='mt-4 mb-4 text-5xl text-gray-700'>How Ema implements hot reload</h2><h3 id='websocket' class='mt-4 mb-2 text-4xl text-gray-700'>Websocket</h3><p class='my-3'>The Ema dev server uses websockets to keep a bi-directional connection open between the web browser and the backend server. When you click on a link or when something changes in the backend, they are communicated via this connection. In a statically generated site, however, no such activity happens - and a link click behaves like a normal link, in that the browser makes a full HTTP request to the linked page.</p><h3 id='dom-patching' class='mt-4 mb-2 text-4xl text-gray-700'>DOM patching</h3><p class='my-3'>When switching to a new route or when receiving the new HTML, Ema uses <a href='https://github.com/patrick-steele-idem/morphdom' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>morphdom</a> to <em>patch</em> the existing DOM tree rather than replace it in its entirety. This, in addition to use of websockets, makes it possible to support <strong>instant</strong> hot reload with nary a delay.</p><h3 id='haskell-reload' class='mt-4 mb-2 text-4xl text-gray-700'>Haskell reload</h3><p class='my-3'>Finally, hot reload on <em>code</em> changes are supported via <a href='https://github.com/ndmitchell/ghcid' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>ghcid</a>. The <a href='https://github.com/srid/ema-template' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>template repo</a>'s `bin/run` script uses ghcid underneath. Any HTML DSL (like blaze-html – as used by the <a href='/guide/helpers/tailwind' title class='text-pink-600 font-bold hover:bg-pink-50'>Tailwind helper</a>) or CSS DSL automatically gets supported for hot-reload. If you choose to use a file-based HTML template language, you can enable hot-reload on template change using the <a href='/guide/helpers/filesystem' title class='text-pink-600 font-bold hover:bg-pink-50'>FileSystem helper</a>.</p><p class='my-3'>Note that if your application makes use of threads, it is important to setup cleanup handlers so that <code>ghcid</code> doesn’t leave <a href='https://stackoverflow.com/q/24999636/55246' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>ghost</a> processes behind. Helpers like <a href='https://hackage.haskell.org/package/async-2.2.3/docs/Control-Concurrent-Async.html#v:race_' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'><code>race_</code></a> will do this automatically (incidentally it is used by <code>runEma</code> for running the user IO action).</p><h3 id='data-reload' class='mt-4 mb-2 text-4xl text-gray-700'>Data reload</h3><p class='my-3'>For anything outside of the Haskell code, your code becomes responsible for monitoring and updating the model <a href='/concepts/lvar' title class='text-pink-600 font-bold hover:bg-pink-50'>LVar</a>. The <a href='/guide/helpers/filesystem' title class='text-pink-600 font-bold hover:bg-pink-50'>filesystem helper</a> already provides utilities to facilitate this for monitoring changes to files and directories.</p><h2 id='handling-errors' class='mt-4 mb-4 text-5xl text-gray-700'>Handling errors</h2><p class='my-3'>If your code throws a Haskell exception, they will be gracefully handled and displayed in the browser, allowing you to recover without breaking hot-reload flow.</p>
+        <p class='my-3'><strong>Hot Reloading</strong> is a feature of Ema’s dev server wherein any changes to your Haskell source or data files (such as Markdown files or HTML templates) <em>propagate instantly</em> to the web browser without requiring any manual intervention like a full browser refresh. In practice, this is a such a delightful feature to work with. Imagine changing CSS style of an element, and see it reflect on your site in a split second.</p><h2 id='how-ema-implements-hot-reload' class='mt-4 mb-4 text-5xl text-gray-700'>How Ema implements hot reload</h2><h3 id='websocket' class='mt-4 mb-2 text-4xl text-gray-700'>Websocket</h3><p class='my-3'>The Ema dev server uses websockets to keep a bi-directional connection open between the web browser and the backend server. When you click on a link or when something changes in the backend, they are communicated via this connection. In a statically generated site, however, no such activity happens - and a link click behaves like a normal link, in that the browser makes a full HTTP request to the linked page.</p><h3 id='dom-patching' class='mt-4 mb-2 text-4xl text-gray-700'>DOM patching</h3><p class='my-3'>When switching to a new route or when receiving the new HTML, Ema uses <a href='https://github.com/patrick-steele-idem/morphdom' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>morphdom</a> to <em>patch</em> the existing DOM tree rather than replace it in its entirety. This, in addition to use of websockets, makes it possible to support <strong>instant</strong> hot reload with nary a delay.</p><h3 id='haskell-reload' class='mt-4 mb-2 text-4xl text-gray-700'>Haskell reload</h3><p class='my-3'>Finally, hot reload on <em>code</em> changes are supported via <a href='https://github.com/ndmitchell/ghcid' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>ghcid</a>. The <a href='https://github.com/srid/ema-template' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>template repo</a>'s `bin/run` script uses ghcid underneath. Any HTML DSL (like blaze-html – as used by the <a href='guide/helpers/tailwind' title class='text-pink-600 font-bold hover:bg-pink-50'>Tailwind helper</a>) or CSS DSL automatically gets supported for hot-reload. If you choose to use a file-based HTML template language, you can enable hot-reload on template change using the <a href='guide/helpers/filesystem' title class='text-pink-600 font-bold hover:bg-pink-50'>FileSystem helper</a>.</p><p class='my-3'>Note that if your application makes use of threads, it is important to setup cleanup handlers so that <code>ghcid</code> doesn’t leave <a href='https://stackoverflow.com/q/24999636/55246' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>ghost</a> processes behind. Helpers like <a href='https://hackage.haskell.org/package/async-2.2.3/docs/Control-Concurrent-Async.html#v:race_' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'><code>race_</code></a> will do this automatically (incidentally it is used by <code>runEma</code> for running the user IO action).</p><h3 id='data-reload' class='mt-4 mb-2 text-4xl text-gray-700'>Data reload</h3><p class='my-3'>For anything outside of the Haskell code, your code becomes responsible for monitoring and updating the model <a href='concepts/lvar' title class='text-pink-600 font-bold hover:bg-pink-50'>LVar</a>. The <a href='guide/helpers/filesystem' title class='text-pink-600 font-bold hover:bg-pink-50'>filesystem helper</a> already provides utilities to facilitate this for monitoring changes to files and directories.</p><h2 id='handling-errors' class='mt-4 mb-4 text-5xl text-gray-700'>Handling errors</h2><p class='my-3'>If your code throws a Haskell exception, they will be gracefully handled and displayed in the browser, allowing you to recover without breaking hot-reload flow.</p>
         
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='/concepts'>
+        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts'>
             Concepts
           </a>
           <div class='mb-4 text-sm text-gray-500'>
@@ -638,7 +638,7 @@
           </div>
         </li>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='/concepts/lvar'>
+        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts/lvar'>
             LVar
           </a>
           <div class='mb-4 text-sm text-gray-500'>
@@ -648,7 +648,7 @@
           </div>
         </li>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='/guide/helpers/filesystem'>
+        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/helpers/filesystem'>
             Working with files
           </a>
           <div class='mb-4 text-sm text-gray-500'>
@@ -658,7 +658,7 @@
           </div>
         </li>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='/guide/helpers/markdown'>
+        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/helpers/markdown'>
             Using Markdown
           </a>
           <div class='mb-4 text-sm text-gray-500'>
@@ -668,7 +668,7 @@
           </div>
         </li>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='/guide/model'>
+        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model'>
             Defining your model
           </a>
           <div class='mb-4 text-sm text-gray-500'>
@@ -678,7 +678,7 @@
           </div>
         </li>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='/guide/render'>
+        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/render'>
             Rendering HTML
           </a>
           <div class='mb-4 text-sm text-gray-500'>
@@ -688,7 +688,7 @@
           </div>
         </li>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='/start'>
+        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='start'>
             Getting Started
           </a>
           <div class='mb-4 text-sm text-gray-500'>
@@ -698,7 +698,7 @@
           </div>
         </li>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='/start/tutorial'>
+        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='start/tutorial'>
             Tutorial
           </a>
           <div class='mb-4 text-sm text-gray-500'>
@@ -720,7 +720,7 @@
         <ul class='flex text-sm text-gray-500 lg:text-base'>
           
             <li class='inline-flex items-center'>
-              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href='/'>
+              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href=''>
                 Ema
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
@@ -729,7 +729,7 @@
             </li>
           
             <li class='inline-flex items-center'>
-              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href='/concepts'>
+              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href='concepts'>
                 Concepts
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
