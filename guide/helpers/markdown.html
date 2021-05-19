@@ -632,7 +632,7 @@ type Metadata = Map Text Text
 
 -- Returns `Either Text (Metadata, Pandoc)`
 Markdown.parseMarkdownWithFrontMatter @Metadata 
-    "test.md" "Hello *world*"</code></pre></div><p class='my-3'>This very site uses this helper to parse Markdown files into Pandoc AST. Furthermore it provides its own renderer of the Pandoc AST, to be able to customize the CSS styling of individual AST nodes. Consult <a href='https://github.com/srid/ema-docs/blob/master/src/Main.hs' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>the source code</a> for details.</p><p class='my-3'>Note that with Ema you can get <a href='/concepts/hot-reload' title class='text-pink-600 font-bold hover:bg-pink-50'>hot reload</a> support for your Markdown files using <a href='/guide/helpers/filesystem' title class='text-pink-600 font-bold hover:bg-pink-50'>filesystem notifications</a>.</p>
+    "test.md" "Hello *world*"</code></pre></div><p class='my-3'>The template repo, as well as <a href='https://github.com/srid/emanote' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Emanote</a> (used to generate this site), uses this helper to parse Markdown files into Pandoc AST. Consult <a href='https://github.com/srid/ema-template/blob/master/src/Main.hs' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>the template repo’s source code</a> for details.</p><p class='my-3'>Note that with Ema you can get <a href='/concepts/hot-reload' title class='text-pink-600 font-bold hover:bg-pink-50'>hot reload</a> support for your Markdown files using <a href='/guide/helpers/filesystem' title class='text-pink-600 font-bold hover:bg-pink-50'>filesystem notifications</a>.</p>
         
 
         
