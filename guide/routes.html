@@ -622,9 +622,9 @@
       </div>
       <!-- Main body column -->
       <div class='col-span-12 md:col-span-9'>
-        <p>Ema gives you the freedom to use any Haskell type for representing your site routes. You don’t need complicated rewrite rules. Routes are best represented using what are known as <em>sum types</em> (or ADT, short for <em>Abstract Data Type</em>). Here’s an example of a route type:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Route 
+        <p class='my-3'>Ema gives you the freedom to use any Haskell type for representing your site routes. You don’t need complicated rewrite rules. Routes are best represented using what are known as <em>sum types</em> (or ADT, short for <em>Abstract Data Type</em>). Here’s an example of a route type:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Route 
   = Index
-  | About</code></pre></div><p>This type represents two routes pointing to – the index page (<code>/</code>) and the about page (<code>/about</code>). Designing the route type is only half the job; you will also need to tell Ema how to convert it to / from the browser URL. We will explain this in the next section.</p><h2 id='advanced-example' class='mt-4 mb-4 text-5xl text-gray-700'>Advanced example</h2><p>Here’s one possible way to design the route type for a weblog site,</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Route
+  | About</code></pre></div><p class='my-3'>This type represents two routes pointing to – the index page (<code>/</code>) and the about page (<code>/about</code>). Designing the route type is only half the job; you will also need to tell Ema how to convert it to / from the browser URL. We will explain this in the next section.</p><h2 id='advanced-example' class='mt-4 mb-4 text-5xl text-gray-700'>Advanced example</h2><p class='my-3'>Here’s one possible way to design the route type for a weblog site,</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Route
   = Home 
   | Blog BlogRoute
   | Tag TagRoute
@@ -637,7 +637,7 @@ data TagRoute
   = TagListing
   | Tag Tag
 
-newtype Tag = Tag Text</code></pre></div><p>Defining <em>hierarchical routes</em> like this is useful if you want to render <em>parts</em> of your HTML as being common to only a subset of your site, such as adding a blog header to all blog pages, but not to tag pages.</p><div class='last'><p><span class='next'>Next</span>, with our model and routes in place, <a href='/guide/class' title class='text-pink-600 font-bold hover:bg-pink-50'>we will make them work with Ema</a> by defining their static site behaviour.</p></div>
+newtype Tag = Tag Text</code></pre></div><p class='my-3'>Defining <em>hierarchical routes</em> like this is useful if you want to render <em>parts</em> of your HTML as being common to only a subset of your site, such as adding a blog header to all blog pages, but not to tag pages.</p><div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'><p class='my-3'><span class='py-2 text-xl italic font-bold'>Next</span>, with our model and routes in place, <a href='/guide/class' title class='text-pink-600 font-bold hover:bg-pink-50'>we will make them work with Ema</a> by defining their static site behaviour.</p></div>
         
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
