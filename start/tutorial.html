@@ -633,7 +633,7 @@ main = do
     encodeUtf8 $ "&lt;b&gt;Hello&lt;/b&gt;, from " &lt;&gt; speaker</code></pre></div><p class='my-3'>This is the <em>minimum</em> amount of code necessary to run an Ema site. Notice that as you replace and save this file, your browser (which is at <a href='http://locahost:9001' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>http://locahost:9001</a>) will <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:bg-pink-50'>hot reload</a> to display “Hello, Ema”. Congratulations, you just created your first website!</p><h2 id='expanding-on-hello-world' class='mt-4 mb-4 text-5xl text-gray-700'>Expanding on Hello World</h2><p class='my-3'>Okay, but that’s just <em>one</em> page. But we want to add a second page. And might as well add more content than “Hello, Ema”. Let’s do that next. The first step is define the <a href='guide/routes' title class='text-pink-600 font-bold hover:bg-pink-50'>route</a> type that corresponds to our site’s pages. Add the following:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Route
   = Index  -- Corresponds to /
   | About  -- Corresponds to /about
-  deriving (Bounded, Enum, Show)</code></pre></div><p class='my-3'>Next, let’s define a <a href='guide/model' title class='text-pink-600 font-bold hover:bg-pink-50'>model</a>. A model will hold the state of our website used to render its HTML. Let’s put the <code>speaker</code> variable in it, as that’s all we are using:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Model = Model { speaker :: Text }</code></pre></div><p class='my-3'>We should now tell Ema how to convert our <code>Route</code> to actual URL paths. Let’s do that by making an instance of the <code>Ema</code> <a href='guide/class' title class='text-pink-600 font-bold hover:bg-pink-50'>class</a>:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import Ema (Ema (..))
+  deriving (Bounded, Enum, Show)</code></pre></div><p class='my-3'>Next, let’s define a <a href='guide/model' title class='text-pink-600 font-bold hover:bg-pink-50'>model</a>. A model will hold the state of our website used to render its HTML. Let’s put the <code>speaker</code> variable in it, as that’s all we are using:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Model = Model { speaker :: Text }</code></pre></div><p class='my-3'>We should now tell Ema how to convert our <code>Route</code> to actual file paths (which is used to determine the URL too). Let’s do that by making an instance of the <code>Ema</code> <a href='guide/class' title class='text-pink-600 font-bold hover:bg-pink-50'>class</a>:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import Ema (Ema (..))
 
 instance Ema Model Route where
   encodeRoute = \case
@@ -662,6 +662,7 @@ render _emaAction model r = Ema.AssetGeneratred Ema.Html . RU.renderHtml $
   H.html $ do
     H.head $ do 
       H.title "Basic site"
+      H.base ! A.href "/" -- This is important.
     H.body $ do
       H.div ! A.class_ "container" $ do
         case r of
