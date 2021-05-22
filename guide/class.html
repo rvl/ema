@@ -623,41 +623,25 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Main body column -->
       <div class='col-span-12 md:col-span-9'>
         <p class='my-3'>Once you have <a href='guide/model' title class='text-pink-600 font-bold hover:bg-pink-50'>model</a> and <a href='guide/routes' title class='text-pink-600 font-bold hover:bg-pink-50'>route</a> types in place, we must tell the Haskell compiler that they are suitable for generating static sites. We do this by creating an instance of the <code>Ema</code> typeclass.</p><p class='my-3'>Using some <code>MyModel</code> and the route <code>Route</code> shown in the <a href='guide/routes' title class='text-pink-600 font-bold hover:bg-pink-50'>previous</a> section, we can create an instance as follows:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>class Ema MyModel Route where 
-  -- Convert our route to browser URL, represented as a list of slugs
+  -- Where to generate this route?
   encodeRoute = \case
-    Index -&gt; []  -- An empty slug represents the index route: index.html
-    About -&gt; ["about"]
+    Index -&gt; "index.html"
+    About -&gt; "about.html"
 
-  -- Convert back the browser URL, represented as a list of slugs, to our route
+  -- Which route does this filepath correspond to?
   decodeRoute = \case
-    [] -&gt; Just Index
-    ["about"] -&gt; Just About
+    "index.html" -&gt; Just Index
+    "about.html" -&gt; Just About
     _ -&gt; Nothing
 
-  -- The third method is optional; and used during static site generation. 
-  -- This tells Ema which routes to generate .html files for.
+  -- The third method is optional, and used by the `gen` command (not live-server)
   -- By default, Enum & Bounded will be used to determine this list.
-  staticRoutes model =
-    [Index, About]
-
-  -- The fourth method is also optional; if you have static assets to serve, specify
-  -- them here. Paths are relative to current working directory.
-  staticAssets Proxy =
-    ["css", "images", "favicon.ico", "resume.pdf"]</code></pre></div><p class='my-3'>The <code>Ema</code> typeclass has four methods, with the last two of them being optional with default implementations:</p><ol class='ml-4 space-y-1 list-decimal list-inside'><li>Define <code>encodeRoute</code> that converts our route type to a browser URL <a href='concepts/slug' title class='text-pink-600 font-bold hover:bg-pink-50'>slug</a> path representing relative URLs like <code>/foo/bar</code></li><li>Define <code>decodeRoute</code> that does the <em>reverse</em> converstion (the conversion must be isomorphic)</li><li><em>Optionally</em>, define <code>staticRoutes</code> indicating the routes to statically generate</li><li><em>Optionally</em>, define the list of static assets to copy over as-is during static generation</li></ol><h2 id='runema' class='mt-4 mb-4 text-5xl text-gray-700'><code>runEma</code></h2><p class='my-3'>The <code>Ema</code> constraint is used by the <code>runEma</code> function that acts as the main entry point to your static site generator. It takes two arguments:</p><ol class='ml-4 space-y-1 list-decimal list-inside'><li><code>render</code> function that renders your HTML (we’ll go over this in <a href='guide/render' title class='text-pink-600 font-bold hover:bg-pink-50'>the next</a> section)</li><li>an IO action that takes <a href='guide/model' title class='text-pink-600 font-bold hover:bg-pink-50'><code>LVar model</code></a> as an argument.</li></ol><p class='my-3'>This IO action is expected to be a long-running one, wherein you have full control over setting the value of the model over time.</p><div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'><p class='my-3'><span class='py-2 text-xl italic font-bold'>Next</span>, with our model and routes in place constrained by <code>Ema</code> type class, <a href='guide/render' title class='text-pink-600 font-bold hover:bg-pink-50'>we will define the HTML for our site</a> using Ema.</p></div>
+  allRoutes model =
+    [Index, About]</code></pre></div><p class='my-3'>The <code>Ema</code> typeclass has three methods, one of them being optional:</p><ol class='ml-4 space-y-1 list-decimal list-inside'><li>Define <code>encodeRoute</code> that converts our route type to a filepath</li><li>Define <code>decodeRoute</code> that does the <em>reverse</em> converstion (the conversion must be isomorphic)</li><li><em>Optionally</em>, define <code>allRoutes</code> indicating the routes to statically generate</li></ol><h2 id='runema' class='mt-4 mb-4 text-5xl text-gray-700'><code>runEma</code></h2><p class='my-3'>The <code>Ema</code> constraint is used by the <code>runEma</code> function that acts as the main entry point to your static site generator. It takes two arguments:</p><ol class='ml-4 space-y-1 list-decimal list-inside'><li><code>render</code> function that renders your route (usually to HTML); we’ll go over this in <a href='guide/render' title class='text-pink-600 font-bold hover:bg-pink-50'>the next</a> section.</li><li>an IO action that takes <a href='guide/model' title class='text-pink-600 font-bold hover:bg-pink-50'><code>LVar model</code></a> as an argument.</li></ol><p class='my-3'>This IO action is expected to be a long-running one, wherein you have full control over setting the value of the model over time.</p><div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'><p class='my-3'><span class='py-2 text-xl italic font-bold'>Next</span>, with our model and routes in place constrained by <code>Ema</code> type class, <a href='guide/render' title class='text-pink-600 font-bold hover:bg-pink-50'>we will define the HTML for our site</a> using Ema.</p></div>
         
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
-      
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts/slug'>
-            Slug
-          </a>
-          <div class='mb-4 text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-                    -->
-            <div><p>Slugs are integral to Ema’s routing system. When defining <a href='guide/routes.md' title class='text-black-600 font-bold hover:bg-gray-50'>route</a> encoders and decoders (via <a href='guide/class.md' title class='text-black-600 font-bold hover:bg-gray-50'>Ema class instance</a>) you are effectively writing functions that convert back and forth between your route type and <code>[Slug]</code>. These functions are ultimately used to determine the <em>filename</em> of the statically generated HTML (i.e., <code>./foo/bar.html</code>) as well as the linking URL in the rendered HTML (i.e., <code>/foo/bar</code>).</p></div>
-          </div>
-        </li>
       
         <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='guide'>
             Guide
@@ -685,7 +669,7 @@ twindObserve.observe(document.documentElement)</script>
           <div class='mb-4 text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><p>Once you have <a href='guide/model.md' title class='text-black-600 font-bold hover:bg-gray-50'>model</a> and <a href='guide/routes.md' title class='text-black-600 font-bold hover:bg-gray-50'>routes</a> in place and <a href='guide/class.md' title class='text-black-600 font-bold hover:bg-gray-50'>constrained</a>, the last piece of the puzzle is to write a function that takes both as arguments and returns the HTML string (lazy bytestring, to be exact). This function can be as simple as the following:</p></div>
+            <div><p>Once you have <a href='guide/model.md' title class='text-black-600 font-bold hover:bg-gray-50'>model</a> and <a href='guide/routes.md' title class='text-black-600 font-bold hover:bg-gray-50'>routes</a> in place and <a href='guide/class.md' title class='text-black-600 font-bold hover:bg-gray-50'>constrained</a>, the last piece of the puzzle is to write a function that takes both as arguments and returns file content (lazy bytestring, to be exact) to generate. This function can be as simple as the following:</p></div>
           </div>
         </li>
       

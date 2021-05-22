@@ -643,16 +643,6 @@ newtype Tag = Tag Text</code></pre></div><p class='my-3'>Defining <em>hierarchic
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts/slug'>
-            Slug
-          </a>
-          <div class='mb-4 text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-                    -->
-            <div><p>Slugs are integral to Ema’s routing system. When defining <a href='guide/routes.md' title class='text-black-600 font-bold hover:bg-gray-50'>route</a> encoders and decoders (via <a href='guide/class.md' title class='text-black-600 font-bold hover:bg-gray-50'>Ema class instance</a>) you are effectively writing functions that convert back and forth between your route type and <code>[Slug]</code>. These functions are ultimately used to determine the <em>filename</em> of the statically generated HTML (i.e., <code>./foo/bar.html</code>) as well as the linking URL in the rendered HTML (i.e., <code>/foo/bar</code>).</p></div>
-          </div>
-        </li>
-      
         <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='guide'>
             Guide
           </a>
@@ -689,7 +679,7 @@ newtype Tag = Tag Text</code></pre></div><p class='my-3'>Defining <em>hierarchic
           <div class='mb-4 text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><p>Once you have <a href='guide/model.md' title class='text-black-600 font-bold hover:bg-gray-50'>model</a> and <a href='guide/routes.md' title class='text-black-600 font-bold hover:bg-gray-50'>routes</a> in place and <a href='guide/class.md' title class='text-black-600 font-bold hover:bg-gray-50'>constrained</a>, the last piece of the puzzle is to write a function that takes both as arguments and returns the HTML string (lazy bytestring, to be exact). This function can be as simple as the following:</p></div>
+            <div><p>Once you have <a href='guide/model.md' title class='text-black-600 font-bold hover:bg-gray-50'>model</a> and <a href='guide/routes.md' title class='text-black-600 font-bold hover:bg-gray-50'>routes</a> in place and <a href='guide/class.md' title class='text-black-600 font-bold hover:bg-gray-50'>constrained</a>, the last piece of the puzzle is to write a function that takes both as arguments and returns file content (lazy bytestring, to be exact) to generate. This function can be as simple as the following:</p></div>
           </div>
         </li>
       

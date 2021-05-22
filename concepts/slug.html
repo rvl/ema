@@ -622,37 +622,10 @@ twindObserve.observe(document.documentElement)</script>
       </div>
       <!-- Main body column -->
       <div class='col-span-12 md:col-span-9'>
-        <p class='my-3'>A slug is a component of a URL or file path. In an <em>URL</em> like <code>/foo/bar</code>, there are two <em>slugs</em>: “foo” and “bar”. URLs (as well as filepaths) can therefore be represented as lists of slugs (<code>[Slug]</code>).</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import Ema (Slug)
+        <div class='bg-gray-100 px-4 py-1 rounded italic'><p class='my-3'>Note that the initial version of Ema used Slug in its routing system, but not anymore in the latest version. The Slug type is still left in the library for using as a <a href='guide/helpers' title='WikiLinkNormal' class='text-pink-600 font-bold hover:bg-pink-50'>helper</a>.</p></div><p class='my-3'>A slug is a component of a URL or file path. In an <em>URL</em> like <code>/foo/bar</code>, there are two <em>slugs</em>: “foo” and “bar”. URLs (as well as filepaths) can therefore be represented as lists of slugs (<code>[Slug]</code>).</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import Ema (Slug)
 
-type URL = [Slug]</code></pre></div><p class='my-3'>Slugs are integral to Ema’s routing system. When defining <a href='guide/routes' title class='text-pink-600 font-bold hover:bg-pink-50'>route</a> encoders and decoders (via <a href='guide/class' title class='text-pink-600 font-bold hover:bg-pink-50'>Ema class instance</a>) you are effectively writing functions that convert back and forth between your route type and <code>[Slug]</code>. These functions are ultimately used to determine the <em>filename</em> of the statically generated HTML (i.e., <code>./foo/bar.html</code>) as well as the linking URL in the rendered HTML (i.e., <code>/foo/bar</code>).</p><p class='my-3'>Slugs are also automatically <a href='https://www.unicode.org/faq/normalization.html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>unicode normalized</a> to NFC to ensure that route links work reliably regardless of the underlying representation of any non-ascii link text.</p>
+type URL = [Slug]</code></pre></div><p class='my-3'>Slugs are automatically <a href='https://www.unicode.org/faq/normalization.html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>unicode normalized</a> to NFC to ensure that route links work reliably regardless of the underlying representation of any non-ascii link text.</p><p class='my-3'>The functions <code>decodeSlug</code> and <code>encodeSlug</code> allow you to convert between URLs and slugs.</p>
         
-  <div class='p-4 mt-8 bg-gray-100 rounded'>
-    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
-    <ul class='space-y-1'>
-      
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts'>
-            Concepts
-          </a>
-          <div class='mb-4 text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-                    -->
-            <div><a href='concepts/slug.md' title class='text-black-600 font-bold hover:bg-gray-50'>Slug</a></div>
-          </div>
-        </li>
-      
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/class'>
-            Defining Ema instance
-          </a>
-          <div class='mb-4 text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-                    -->
-            <div>Define <code>encodeRoute</code> that converts our route type to a browser URL <a href='concepts/slug.md' title class='text-black-600 font-bold hover:bg-gray-50'>slug</a> path representing relative URLs like <code>/foo/bar</code></div>
-          </div>
-        </li>
-      
-    </ul>
-  </div>
-
 
         
   <div class='w-full p-4 mt-4 text-gray-600 bg-gray-100'>
