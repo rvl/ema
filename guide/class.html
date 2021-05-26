@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
 
 
 <head>
@@ -629,7 +628,7 @@ twindObserve.observe(document.documentElement)</script>
     About -&gt; "about.html"
 
   -- Which route does this filepath correspond to?
-  decodeRoute = \case
+  decodeRoute _model = \case
     "index.html" -&gt; Just Index
     "about.html" -&gt; Just About
     _ -&gt; Nothing
@@ -642,16 +641,6 @@ twindObserve.observe(document.documentElement)</script>
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
-      
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='guide'>
-            Guide
-          </a>
-          <div class='mb-4 text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-                    -->
-            <div><a href='guide/class.md' title class='text-black-600 font-bold hover:bg-gray-50'>Defining Ema instance</a> – <span class='item-intro'>Constrain your <code>model</code> and <code>route</code> to work with static sites</span></div>
-          </div>
-        </li>
       
         <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model'>
             Defining your model

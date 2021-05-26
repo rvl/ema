@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
 
 
 <head>
@@ -639,7 +638,7 @@ instance Ema Model Route where
   encodeRoute = \case
     Index -&gt; "index.html"  -- To /
     About -&gt; "about.html"  -- To /about
-  decodeRoute = \case
+  decodeRoute _model = \case
     "index.html" -&gt; Just Index  -- From /
     "about.html" -&gt; Just About  -- From /about
     _ -&gt; Nothing                -- Everything else, are bad routes</code></pre></div><p class='my-3'>Now, we write the <code class='py-0.5 bg-gray-100 text-sm'>main</code> entry point:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import Control.Concurrent (threadDelay)
@@ -658,7 +657,7 @@ import qualified Text.Blaze.Html5.Attributes as A
 import qualified Text.Blaze.Html.Renderer.Utf8 as RU
 
 render :: Ema.CLI.Action -&gt; Model -&gt; Route -&gt; Ema.Asset LByteString
-render _emaAction model r = Ema.AssetGeneratred Ema.Html . RU.renderHtml $
+render _emaAction model r = Ema.AssetGenerated Ema.Html . RU.renderHtml $
   H.html $ do
     H.head $ do 
       H.title "Basic site"
@@ -678,7 +677,7 @@ render _emaAction model r = Ema.AssetGeneratred Ema.Html . RU.renderHtml $
       H.a 
         ! A.style "text-decoration: underline" 
         ! A.href (H.toValue $ Ema.routeUrl targetRoute) $ w</code></pre></div><p class='my-3'>If everything compiles, you should see the site update in the web browser. A couple of quick points about the <code class='py-0.5 bg-gray-100 text-sm'>render</code> function:</p><ol class='ml-4 space-y-1 list-decimal list-inside'><li>It should return the raw HTML as a <code class='py-0.5 bg-gray-100 text-sm'>ByteString</code>. Here, we use <a href='https://hackage.haskell.org/package/blaze-html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>blaze-html</a> as HTML DSL. You can also use your own HTML templates of course.</li><li>It uses <code class='py-0.5 bg-gray-100 text-sm'>Ema.routeUrl</code> function to create a URL out of our <code class='py-0.5 bg-gray-100 text-sm'>Route</code> type. This function uses the <a href='guide/class' title class='text-pink-600 font-bold hover:bg-pink-50'><code class='py-0.5 bg-gray-100 text-sm'>Ema</code> typeclass</a>, so it uses the <code class='py-0.5 bg-gray-100 text-sm'>encodeRoute</code> function defined further above.</li></ol><p class='my-3'>On final note, you will note that nothing is actually <em>generated</em> so far. This is because Ema has been running in the dev server mode, which is quite useful during development. To actually generate the files, you can use the <code class='py-0.5 bg-gray-100 text-sm'>gen</code> command when running the <a href='concepts/cli' title class='text-pink-600 font-bold hover:bg-pink-50'>CLI</a>:</p><div class='py-0.5 text-sm'><pre class='sh language-sh'><code class='sh language-sh'>mkdir ./output
-nix run . -- -C ./content gen ./output</code></pre></div><h2 id='exercises' class='mt-4 mb-4 text-5xl text-gray-700'>Exercises</h2><ol class='ml-4 space-y-1 list-decimal list-inside'><li>Figure out how to use static assets (images, files) in your static sites (hint: the typeclass)</li><li>What happens if you <code class='py-0.5 bg-gray-100 text-sm'>throw</code> an exception or use <code class='py-0.5 bg-gray-100 text-sm'>error</code> in the <code class='py-0.5 bg-gray-100 text-sm'>render</code> function?</li></ol><div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'><p class='my-3'><span class='py-2 text-xl italic font-bold'>Next</span>, checkout the <a href='guide' title class='text-pink-600 font-bold hover:bg-pink-50'>Guide</a> series for information on specific topics.</p></div>
+nix run . -- -C ./content gen $(pwd)/output</code></pre></div><h2 id='exercises' class='mt-4 mb-4 text-5xl text-gray-700'>Exercises</h2><ol class='ml-4 space-y-1 list-decimal list-inside'><li>Figure out how to use static assets (images, files) in your static sites (hint: the typeclass)</li><li>What happens if you <code class='py-0.5 bg-gray-100 text-sm'>throw</code> an exception or use <code class='py-0.5 bg-gray-100 text-sm'>error</code> in the <code class='py-0.5 bg-gray-100 text-sm'>render</code> function?</li></ol><div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'><p class='my-3'><span class='py-2 text-xl italic font-bold'>Next</span>, checkout the <a href='guide' title class='text-pink-600 font-bold hover:bg-pink-50'>Guide</a> series for information on specific topics.</p></div>
         
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
@@ -691,6 +690,16 @@ nix run . -- -C ./content gen ./output</code></pre></div><h2 id='exercises' clas
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
             <div><p>After having familiarized yourself with Ema by following the <a href='start/tutorial.md' title class='text-black-600 font-bold hover:bg-gray-50'>earlier section</a>, you are now ready to dive deep into learning how to achieve specific things.</p></div>
+          </div>
+        </li>
+      
+        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='start'>
+            Getting Started
+          </a>
+          <div class='mb-4 text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+                    -->
+            <div><p><span class='next'>Next</span>, <a href='start/tutorial.md' title class='text-black-600 font-bold hover:bg-gray-50'>in the tutorial</a> let’s try using this template repo to create a basic website.</p></div>
           </div>
         </li>
       
