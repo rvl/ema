@@ -1,67 +1,74 @@
-
+<html lang='en'>
 
 <head>
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
-  
-    <base href='/' />
-  
-  <title>Working with routes – Ema</title>
-  
-    <meta property='og:description' content='Build jamstack-style static sites in Haskell, with a live server supporting fast hot-reload in the browser on code or data change.
-' />
-    <meta property='og:site_name' content='Ema' />
-  
+  <title>
+    Working with routes – Ema
+  </title>
+  <with var='page'>
+    <meta property='og:description' content='${value:description}' />
+    <meta property='og:site_name' content='${value:siteName}' />
+  </with>
   <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>twind.setup({})
 twindObserve.observe(document.documentElement)</script>
   
-    <link href='/favicon.svg' rel='icon' />
+    
+      <base href='/' />
+      <link href='/favicon.svg' rel='icon' />
+    
   
-  <link rel='manifest' href='/static/manifest.json' />
-<meta name='theme-color' content='#DB2777' />
-<!-- Syntax highlighting -->
-<link href='https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-tomorrow.css' rel='stylesheet' />
-<script src='https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/prism.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js'></script>
+  <snippet var='page.headHtml'></snippet>
+  <head-extra></head-extra>
 </head>
 
-<body>
-  <!-- 
-    Just defining a convenient alias, to avoid <with>'ing
-    NOTE: There must not be any whitespace inside this tag! 
-  -->
+<body class='overflow-y-scroll'>
+  <!-- DoNotFormat -->
   
+  <!-- DoNotFormat -->
 
-  <div class='container mx-auto xl:max-w-screen-lg'>
-    <!-- Header row-->
-    <div class='grid grid-cols-12 px-2'>
-      <!-- Logo column -->
-      <div class='hidden md:mr-4 md:block md:col-span-3'>
-        <div class='flex items-end h-full pl-2 mt-2 space-x-2'>
-          <a href=''>
-            
-              <img class='z-50 h-20 transition transform hover:scale-125 hover:opacity-80' src='/favicon.svg' />
-            
-          </a>
+  
+    <div class='container mx-auto xl:max-w-screen-lg'>
+      <!-- Header row-->
+      <div class='grid grid-cols-12 px-2'>
+        <!-- Logo column -->
+        <div class='hidden md:mr-4 md:block md:col-span-3'>
+          <div class='flex items-end h-full pl-2 mt-2 space-x-2'>
+            <a href=''>
+              
+                
+                  <img class='z-50 h-20 transition transform hover:scale-125 hover:opacity-80' src='/favicon.svg' />
+                
+              
+            </a>
+          </div>
+        </div>
+        <!-- Title column -->
+        <div class='col-span-12 md:col-span-9'>
+
+          <div class='flex items-center justify-center'>
+            <h1 class='pb-2 mt-2 mb-2 text-6xl text-center'>
+              Working with routes
+            </h1>
+          </div>
         </div>
       </div>
-      <!-- Title column -->
-      <div class='col-span-12 md:col-span-9'>
 
-        <div class='flex items-center justify-center'>
-          <h1 class='pb-2 mt-2 mb-2 text-6xl text-center'>
-            Working with routes
-          </h1>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main row-->
-    <div class='grid grid-cols-12 px-2'>
-      <!-- Sidebar column -->
-      <div class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
-        <div class='pt-1 pb-2 rounded bg-pink-50'>
-          
-            <!-- Variable bindings for this tree-->
+      <!-- Main row-->
+      <div class='grid grid-cols-12 px-2'>
+        <!-- Sidebar column -->
+        <div class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
+          <div class='float-right p-2 text-gray-500 hover:text-pink-700'>
+            <a href='/@index' title='Expand full tree'>
+              <svg class='w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
+                </path>
+              </svg>
+            </a>
+          </div>
+          <div class='pt-1 pb-2 rounded bg-pink-50'>
+            
+              <!-- Variable bindings for this tree-->
 
   
 
@@ -127,8 +134,8 @@ twindObserve.observe(document.documentElement)</script>
     
   
 </div>
-          
-            <!-- Variable bindings for this tree-->
+            
+              <!-- Variable bindings for this tree-->
 
   
 
@@ -421,8 +428,8 @@ twindObserve.observe(document.documentElement)</script>
     
   
 </div>
-          
-            <!-- Variable bindings for this tree-->
+            
+              <!-- Variable bindings for this tree-->
 
   
 
@@ -616,12 +623,12 @@ twindObserve.observe(document.documentElement)</script>
     
   
 </div>
-          
+            
+          </div>
         </div>
-      </div>
-      <!-- Main body column -->
-      <div class='col-span-12 md:col-span-9'>
-        <p class='my-3'>Ema gives you the freedom to use any Haskell type for representing your site routes. You don’t need complicated rewrite rules. Routes are best represented using what are known as <em>sum types</em> (or ADT, short for <em>Abstract Data Type</em>). Here’s an example of a route type:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Route 
+        <!-- Main body column -->
+        <div class='col-span-12 md:col-span-9'>
+          <p class='my-3'>Ema gives you the freedom to use any Haskell type for representing your site routes. You don’t need complicated rewrite rules. Routes are best represented using what are known as <em>sum types</em> (or ADT, short for <em>Abstract Data Type</em>). Here’s an example of a route type:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Route 
   = Index
   | About</code></pre></div><p class='my-3'>This type represents two routes pointing to – the index page (<code class='py-0.5 bg-gray-100 text-sm'>/</code>) and the about page (<code class='py-0.5 bg-gray-100 text-sm'>/about</code>). Designing the route type is only half the job; you will also need to tell Ema how to convert it to / from the browser URL. We will explain this in the next section.</p><h2 id='advanced-example' class='mt-4 mb-4 text-5xl text-gray-700'>Advanced example</h2><p class='my-3'>Here’s one possible way to design the route type for a weblog site,</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Route
   = Home 
@@ -637,7 +644,7 @@ data TagRoute
   | Tag Tag
 
 newtype Tag = Tag Text</code></pre></div><p class='my-3'>Defining <em>hierarchical routes</em> like this is useful if you want to render <em>parts</em> of your HTML as being common to only a subset of your site, such as adding a blog header to all blog pages, but not to tag pages.</p><div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'><p class='my-3'><span class='py-2 text-xl italic font-bold'>Next</span>, with our model and routes in place, <a href='guide/class' title class='text-pink-600 font-bold hover:bg-pink-50'>we will make them work with Ema</a> by defining their static site behaviour.</p></div>
-        
+          
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
@@ -648,7 +655,7 @@ newtype Tag = Tag Text</code></pre></div><p class='my-3'>Defining <em>hierarchic
           <div class='mb-4 text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><a href='guide/routes.md' title class='text-black-600 font-bold hover:bg-gray-50'>Working with routes</a> – <span class='item-intro'>Unless you site has a single page (<code>index.html</code>), you will need to manage a set of routes</span></div>
+            <div><a href='guide/routes' title class='text-black-600 font-bold hover:bg-gray-50'>Working with routes</a> – <span class='item-intro'>Unless you site has a single page (<code>index.html</code>), you will need to manage a set of routes</span></div>
           </div>
         </li>
       
@@ -658,7 +665,7 @@ newtype Tag = Tag Text</code></pre></div><p class='my-3'>Defining <em>hierarchic
           <div class='mb-4 text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><p>Using some <code>MyModel</code> and the route <code>Route</code> shown in the <a href='guide/routes.md' title class='text-black-600 font-bold hover:bg-gray-50'>previous</a> section, we can create an instance as follows:</p></div><div><p>Once you have <a href='guide/model.md' title class='text-black-600 font-bold hover:bg-gray-50'>model</a> and <a href='guide/routes.md' title class='text-black-600 font-bold hover:bg-gray-50'>route</a> types in place, we must tell the Haskell compiler that they are suitable for generating static sites. We do this by creating an instance of the <code>Ema</code> typeclass.</p></div>
+            <div><p>Once you have <a href='guide/model' title class='text-black-600 font-bold hover:bg-gray-50'>model</a> and <a href='guide/routes' title class='text-black-600 font-bold hover:bg-gray-50'>route</a> types in place, we must tell the Haskell compiler that they are suitable for generating static sites. We do this by creating an instance of the <code>Ema</code> typeclass.</p></div>
           </div>
         </li>
       
@@ -668,7 +675,7 @@ newtype Tag = Tag Text</code></pre></div><p class='my-3'>Defining <em>hierarchic
           <div class='mb-4 text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><p><span class='next'>Next</span>, we will <a href='guide/routes.md' title class='text-black-600 font-bold hover:bg-gray-50'>talk about routes</a>.</p></div>
+            <div><p><span class='next'>Next</span>, we will <a href='guide/routes' title class='text-black-600 font-bold hover:bg-gray-50'>talk about routes</a>.</p></div>
           </div>
         </li>
       
@@ -678,7 +685,7 @@ newtype Tag = Tag Text</code></pre></div><p class='my-3'>Defining <em>hierarchic
           <div class='mb-4 text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><p>Once you have <a href='guide/model.md' title class='text-black-600 font-bold hover:bg-gray-50'>model</a> and <a href='guide/routes.md' title class='text-black-600 font-bold hover:bg-gray-50'>routes</a> in place and <a href='guide/class.md' title class='text-black-600 font-bold hover:bg-gray-50'>constrained</a>, the last piece of the puzzle is to write a function that takes both as arguments and returns file content (lazy bytestring, to be exact) to generate. This function can be as simple as the following:</p></div>
+            <div><p>Once you have <a href='guide/model' title class='text-black-600 font-bold hover:bg-gray-50'>model</a> and <a href='guide/routes' title class='text-black-600 font-bold hover:bg-gray-50'>routes</a> in place and <a href='guide/class' title class='text-black-600 font-bold hover:bg-gray-50'>constrained</a>, the last piece of the puzzle is to write a function that takes both as arguments and returns file content (lazy bytestring, to be exact) to generate. This function can be as simple as the following:</p></div>
           </div>
         </li>
       
@@ -688,7 +695,7 @@ newtype Tag = Tag Text</code></pre></div><p class='my-3'>Defining <em>hierarchic
           <div class='mb-4 text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><p>Okay, but that’s just <em>one</em> page. But we want to add a second page. And might as well add more content than “Hello, Ema”. Let’s do that next. The first step is define the <a href='guide/routes.md' title class='text-black-600 font-bold hover:bg-gray-50'>route</a> type that corresponds to our site’s pages. Add the following:</p></div>
+            <div><p>Okay, but that’s just <em>one</em> page. But we want to add a second page. And might as well add more content than “Hello, Ema”. Let’s do that next. The first step is define the <a href='guide/routes' title class='text-black-600 font-bold hover:bg-gray-50'>route</a> type that corresponds to our site’s pages. Add the following:</p></div>
           </div>
         </li>
       
@@ -696,15 +703,14 @@ newtype Tag = Tag Text</code></pre></div><p class='my-3'>Defining <em>hierarchic
   </div>
 
 
-        
-  <div class='w-full p-4 mt-4 text-gray-600 bg-gray-100'>
-    <header class='mb-2 text-xl font-semibold text-gray-500'>You are here</header>
+          
+  <div class='w-full p-4 mt-4 text-gray-700 bg-pink-500 rounded'>
     <div class='flex justify-center'>
       <div class='w-full py-2 rounded'>
-        <ul class='flex text-sm text-gray-500 lg:text-base'>
+        <ul class='flex text-sm lg:text-base'>
           
             <li class='inline-flex items-center'>
-              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href=''>
+              <a class='px-1 font-bold bg-gray-100 rounded' href=''>
                 Ema
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
@@ -713,7 +719,7 @@ newtype Tag = Tag Text</code></pre></div><p class='my-3'>Defining <em>hierarchic
             </li>
           
             <li class='inline-flex items-center'>
-              <a class='px-1 font-bold bg-pink-500 rounded text-gray-50' href='guide'>
+              <a class='px-1 font-bold bg-gray-100 rounded' href='guide'>
                 Guide
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
@@ -721,7 +727,7 @@ newtype Tag = Tag Text</code></pre></div><p class='my-3'>Defining <em>hierarchic
               </svg>
             </li>
           
-          <li class='inline-flex items-center text-gray-600'>
+          <li class='inline-flex items-center text-gray-200 font-bold'>
             <a>
               Working with routes
             </a>
@@ -732,19 +738,25 @@ newtype Tag = Tag Text</code></pre></div><p class='my-3'>Defining <em>hierarchic
   </div>
 
 
-        <note-meta>
-          <div class='flex items-center justify-center mt-8 space-x-2 font-mono text-sm'>
-            
-          </div>
-        </note-meta>
+          <note-meta>
+            <div class='flex items-center justify-center mt-8 space-x-2 font-mono text-sm'>
+              <with var='tags'>
+                <a title='Tag' class='px-1 bg-gray-100 rounded'>
+                  <value></value>
+                </a>
+              </with>
+            </div>
+          </note-meta>
 
-        <footer class='flex items-center justify-center my-8 space-x-4 text-center text-gray-500'>
-          <div>
-            Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
-          </div>
-        </footer>
+          <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-500'>
+  <div>
+    Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
+  </div>
+</footer>
+        </div>
       </div>
     </div>
-  </div>
+  
 </body>
 
+</html>
