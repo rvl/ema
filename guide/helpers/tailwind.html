@@ -6,19 +6,24 @@
   <title>
     Using Tailwind CSS – Ema
   </title>
-  <with var='page'>
-    <meta property='og:description' content='${value:description}' />
-    <meta property='og:site_name' content='${value:siteName}' />
-  </with>
   <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>twind.setup({})
 twindObserve.observe(document.documentElement)</script>
   
     
+      <meta property='og:description' content='Build jamstack-style static sites in Haskell, with a live server supporting fast hot-reload in the browser on code or data change.
+' />
+      <meta property='og:site_name' content='Ema' />
+    
+    
       <base href='/' />
       <link href='/favicon.svg' rel='icon' />
     
+    <link rel='manifest' href='/static/manifest.json' />
+<meta name='theme-color' content='#DB2777' />
+<!-- Syntax highlighting -->
+<link href='https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-tomorrow.css' rel='stylesheet' />
+<script src='https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/prism.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js'></script>
   
-  <snippet var='page.headHtml'></snippet>
   <head-extra></head-extra>
 </head>
 
@@ -30,7 +35,7 @@ twindObserve.observe(document.documentElement)</script>
   
     <div class='container mx-auto xl:max-w-screen-lg'>
       <!-- Header row-->
-      <div class='grid grid-cols-12 px-2'>
+      <div class='grid grid-cols-12 md:px-2'>
         <!-- Logo column -->
         <div class='hidden md:mr-4 md:block md:col-span-3'>
           <div class='flex items-end h-full pl-2 mt-2 space-x-2'>
@@ -45,12 +50,50 @@ twindObserve.observe(document.documentElement)</script>
         </div>
         <!-- Title column -->
         <div class='col-span-12 md:col-span-9'>
+          
+  <div class='w-full text-gray-700'>
+    <div class='flex justify-left'>
+      <div class='bg-pink-100 md:rounded-b-lg w-full py-2 px-2 md:w-auto md:py-0 md:px-0'>
+        <ul class='flex flex-wrap text-lg md:text-sm'>
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href=''>
+                Ema
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href='guide'>
+                Guide
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href='guide/helpers'>
+                Helpers
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
 
-          <div class='flex items-center justify-center'>
-            <h1 class='pb-2 mt-2 mb-2 text-6xl text-center'>
-              Using Tailwind CSS
-            </h1>
-          </div>
+
+<h1 class='flex items-center justify-center mt-2 text-4xl font-extrabold text-black bg-white'>
+  <a>
+    Using Tailwind CSS
+  </a>
+</h1>
         </div>
       </div>
 
@@ -66,11 +109,16 @@ twindObserve.observe(document.documentElement)</script>
               </svg>
             </a>
           </div>
-          <div class='pt-1 pb-2 rounded bg-pink-50'>
+          <div class='pt-1 pb-2 rounded bg-pink-50 border-2 shadow-lg'>
             
               <!-- Variable bindings for this tree-->
 
   
+    
+      
+      
+    
+
 
 
   
@@ -88,7 +136,7 @@ twindObserve.observe(document.documentElement)</script>
       </svg>
       
   
-    <a class='hover:underline' href='start'>
+    <a class='font-bold hover:underline' href='start'>
       Getting Started
     </a>
     
@@ -103,6 +151,11 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Variable bindings for this tree-->
 
   
+    
+      
+    
+    
+
 
 
   
@@ -114,7 +167,10 @@ twindObserve.observe(document.documentElement)</script>
   <div class='flex items-center my-2 space-x-2 justify-left'>
     
     
-      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
+      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
     
   
     <a class='hover:underline' href='start/tutorial'>
@@ -138,6 +194,11 @@ twindObserve.observe(document.documentElement)</script>
               <!-- Variable bindings for this tree-->
 
   
+    
+      
+      
+    
+
 
 
   
@@ -155,7 +216,7 @@ twindObserve.observe(document.documentElement)</script>
       </svg>
       
   
-    <a class='hover:underline' href='guide'>
+    <a class='font-bold hover:underline' href='guide'>
       Guide
     </a>
     
@@ -170,6 +231,11 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Variable bindings for this tree-->
 
   
+    
+      
+    
+    
+
 
 
   
@@ -181,7 +247,10 @@ twindObserve.observe(document.documentElement)</script>
   <div class='flex items-center my-2 space-x-2 justify-left'>
     
     
-      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
+      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
     
   
     <a class='hover:underline' href='guide/model'>
@@ -202,6 +271,11 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Variable bindings for this tree-->
 
   
+    
+      
+    
+    
+
 
 
   
@@ -213,7 +287,10 @@ twindObserve.observe(document.documentElement)</script>
   <div class='flex items-center my-2 space-x-2 justify-left'>
     
     
-      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
+      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
     
   
     <a class='hover:underline' href='guide/routes'>
@@ -234,6 +311,11 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Variable bindings for this tree-->
 
   
+    
+      
+    
+    
+
 
 
   
@@ -245,7 +327,10 @@ twindObserve.observe(document.documentElement)</script>
   <div class='flex items-center my-2 space-x-2 justify-left'>
     
     
-      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
+      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
     
   
     <a class='hover:underline' href='guide/class'>
@@ -266,6 +351,11 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Variable bindings for this tree-->
 
   
+    
+      
+    
+    
+
 
 
   
@@ -277,7 +367,10 @@ twindObserve.observe(document.documentElement)</script>
   <div class='flex items-center my-2 space-x-2 justify-left'>
     
     
-      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
+      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
     
   
     <a class='hover:underline' href='guide/render'>
@@ -298,6 +391,11 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Variable bindings for this tree-->
 
   
+    
+      
+      
+    
+
 
 
   
@@ -315,7 +413,7 @@ twindObserve.observe(document.documentElement)</script>
       </svg>
       
   
-    <a class='hover:underline' href='guide/helpers'>
+    <a class='font-bold hover:underline' href='guide/helpers'>
       Helpers
     </a>
     
@@ -332,6 +430,7 @@ twindObserve.observe(document.documentElement)</script>
   
   
 
+
   
 
 
@@ -341,10 +440,13 @@ twindObserve.observe(document.documentElement)</script>
   <div class='flex items-center my-2 space-x-2 justify-left'>
     
     
-      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'></path></svg> 
+      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
+        </path>
+      </svg>
       
   
-    <a class='font-bold text-pink-600 hover:text-black' href='guide/helpers/tailwind'>
+    <a class='font-bold text-pink-600 hover:underline' href='guide/helpers/tailwind'>
       Using Tailwind CSS
     </a>
     
@@ -362,6 +464,11 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Variable bindings for this tree-->
 
   
+    
+      
+    
+    
+
 
 
   
@@ -373,7 +480,10 @@ twindObserve.observe(document.documentElement)</script>
   <div class='flex items-center my-2 space-x-2 justify-left'>
     
     
-      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
+      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
     
   
     <a class='hover:underline' href='guide/helpers/filesystem'>
@@ -394,6 +504,11 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Variable bindings for this tree-->
 
   
+    
+      
+    
+    
+
 
 
   
@@ -405,7 +520,10 @@ twindObserve.observe(document.documentElement)</script>
   <div class='flex items-center my-2 space-x-2 justify-left'>
     
     
-      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
+      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
     
   
     <a class='hover:underline' href='guide/helpers/markdown'>
@@ -432,6 +550,11 @@ twindObserve.observe(document.documentElement)</script>
               <!-- Variable bindings for this tree-->
 
   
+    
+      
+      
+    
+
 
 
   
@@ -449,7 +572,7 @@ twindObserve.observe(document.documentElement)</script>
       </svg>
       
   
-    <a class='hover:underline' href='concepts'>
+    <a class='font-bold hover:underline' href='concepts'>
       Concepts
     </a>
     
@@ -464,6 +587,11 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Variable bindings for this tree-->
 
   
+    
+      
+    
+    
+
 
 
   
@@ -475,7 +603,10 @@ twindObserve.observe(document.documentElement)</script>
   <div class='flex items-center my-2 space-x-2 justify-left'>
     
     
-      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
+      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
     
   
     <a class='hover:underline' href='concepts/hot-reload'>
@@ -496,6 +627,11 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Variable bindings for this tree-->
 
   
+    
+      
+    
+    
+
 
 
   
@@ -507,7 +643,10 @@ twindObserve.observe(document.documentElement)</script>
   <div class='flex items-center my-2 space-x-2 justify-left'>
     
     
-      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
+      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
     
   
     <a class='hover:underline' href='concepts/lvar'>
@@ -528,6 +667,11 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Variable bindings for this tree-->
 
   
+    
+      
+    
+    
+
 
 
   
@@ -539,7 +683,10 @@ twindObserve.observe(document.documentElement)</script>
   <div class='flex items-center my-2 space-x-2 justify-left'>
     
     
-      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
+      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
     
   
     <a class='hover:underline' href='concepts/slug'>
@@ -560,6 +707,11 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Variable bindings for this tree-->
 
   
+    
+      
+    
+    
+
 
 
   
@@ -571,7 +723,10 @@ twindObserve.observe(document.documentElement)</script>
   <div class='flex items-center my-2 space-x-2 justify-left'>
     
     
-      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
+      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
     
   
     <a class='hover:underline' href='concepts/cli'>
@@ -592,6 +747,11 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Variable bindings for this tree-->
 
   
+    
+      
+    
+    
+
 
 
   
@@ -603,7 +763,10 @@ twindObserve.observe(document.documentElement)</script>
   <div class='flex items-center my-2 space-x-2 justify-left'>
     
     
-      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'></path></svg>
+      <svg class='w-4 h-4 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
     
   
     <a class='hover:underline' href='concepts/logging'>
@@ -628,40 +791,45 @@ twindObserve.observe(document.documentElement)</script>
         </div>
         <!-- Main body column -->
         <div class='col-span-12 md:col-span-9'>
-          <p class='my-3'>The <code class='py-0.5 bg-gray-100 text-sm'>Ema.Helper.Tailwind</code> module provides a <code class='py-0.5 bg-gray-100 text-sm'>layout</code> function that uses <a href='https://twind.dev/' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>twind</a> shim that is used in the statically generated site, and otherwise uses Tailwind CSS from CDN in the dev server mode. This helper is for those that <strong>use <a href='https://tailwindcss.com/' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Tailwind CSS</a> in conjunction with <a href='https://hackage.haskell.org/package/blaze-html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>blaze-html</a> DSL</strong>.</p><p class='my-3'>To use the layout helper in your <a href='guide/render' title class='text-pink-600 font-bold hover:bg-pink-50'>render</a> function:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>render :: Ema.CLI.Action -&gt; MyModel -&gt; MyRoute -&gt; Asset LByteString
+          <div class='overflow-auto'>
+            <p class='my-3'>The <code class='py-0.5 bg-gray-100 text-sm'>Ema.Helper.Tailwind</code> module provides a <code class='py-0.5 bg-gray-100 text-sm'>layout</code> function that uses <a href='https://twind.dev/' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>twind</a> shim that is used in the statically generated site, and otherwise uses Tailwind CSS from CDN in the dev server mode. This helper is for those that <strong>use <a href='https://tailwindcss.com/' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Tailwind CSS</a> in conjunction with <a href='https://hackage.haskell.org/package/blaze-html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>blaze-html</a> DSL</strong>.</p><p class='my-3'>To use the layout helper in your <a href='guide/render' title class='text-pink-600 font-bold hover:underline'>render</a> function:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>render :: Ema.CLI.Action -&gt; MyModel -&gt; MyRoute -&gt; Asset LByteString
 render emaAction model route = do
   AssetGenerated Html $ 
     Tailwind.layout emaAction (H.title "My site" &gt;&gt; H.base ! A.href "/") $ do 
       H.p "Hello world"</code></pre></div><p class='my-3'>The very site you are viewing (ema.srid.ca) is a live demonstration of this helper.</p><p class='my-3'><strong>Note</strong> that because the <a href='https://twind.dev/handbook/the-shim.html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>twind JS shim</a> is used to support Tailwind styles your site will not render properly on web browsers with JavaScript disabled if you use this helper; it might also have trouble interoperating with other JS initializers on the site. See <a href='https://github.com/srid/ema/issues/20' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>this issue</a> for upcoming alternatives.</p>
+          </div>
           
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts/hot-reload'>
+        <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts/hot-reload'>
             Hot Reload
           </a>
-          <div class='mb-4 text-sm text-gray-500'>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
             <div><p>Finally, hot reload on <em>code</em> changes are supported via <a href='https://github.com/ndmitchell/ghcid' title class='text-black-600 hover:underline' target='_blank' rel='noopener'>ghcid</a>. The <a href='https://github.com/srid/ema-template' title class='text-black-600 hover:underline' target='_blank' rel='noopener'>template repo</a>'s `bin/run` script uses ghcid underneath. Any HTML DSL (like blaze-html – as used by the <a href='guide/helpers/tailwind' title class='text-black-600 font-bold hover:bg-gray-50'>Tailwind helper</a>) or CSS DSL automatically gets supported for hot-reload. If you choose to use a file-based HTML template language, you can enable hot-reload on template change using the <a href='guide/helpers/filesystem' title class='text-black-600 font-bold hover:bg-gray-50'>FileSystem helper</a>.</p></div>
           </div>
         </li>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/helpers'>
+        <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/helpers'>
             Helpers
           </a>
-          <div class='mb-4 text-sm text-gray-500'>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
             <div><a href='guide/helpers/tailwind' title class='text-black-600 font-bold hover:bg-gray-50'>Tailwind + Blaze</a> – <span class='item-intro'>We recommend–but not mandate–Tailwind for CSS and blaze-html as HTML DSL</span></div>
           </div>
         </li>
       
-        <li><a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/render'>
+        <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/render'>
             Rendering HTML
           </a>
-          <div class='mb-4 text-sm text-gray-500'>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
             <div><p>Of course we want it to be real, by using our model value, as well as generate the HTML based on the route. We will also use the <a href='https://hackage.haskell.org/package/blaze-html' title class='text-black-600 hover:underline' target='_blank' rel='noopener'>blaze-html</a> library to make writing HTML in Haskell palatable (see also <a href='guide/helpers/tailwind' title class='text-black-600 font-bold hover:bg-gray-50'>the layout helper</a>). A more realistic starting point (if not the finishing product) would be:</p></div>
@@ -669,50 +837,6 @@ render emaAction model route = do
         </li>
       
     </ul>
-  </div>
-
-
-          
-  <div class='w-full p-4 mt-4 text-gray-700 bg-pink-500 rounded'>
-    <div class='flex justify-center'>
-      <div class='w-full py-2 rounded'>
-        <ul class='flex text-sm lg:text-base'>
-          
-            <li class='inline-flex items-center'>
-              <a class='px-1 font-bold bg-gray-100 rounded' href=''>
-                Ema
-              </a>
-              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
-                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
-              </svg>
-            </li>
-          
-            <li class='inline-flex items-center'>
-              <a class='px-1 font-bold bg-gray-100 rounded' href='guide'>
-                Guide
-              </a>
-              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
-                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
-              </svg>
-            </li>
-          
-            <li class='inline-flex items-center'>
-              <a class='px-1 font-bold bg-gray-100 rounded' href='guide/helpers'>
-                Helpers
-              </a>
-              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
-                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
-              </svg>
-            </li>
-          
-          <li class='inline-flex items-center text-gray-200 font-bold'>
-            <a>
-              Using Tailwind CSS
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
   </div>
 
 
@@ -727,8 +851,10 @@ render emaAction model route = do
           </note-meta>
 
           <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-500'>
-  <div>
-    Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
+  <div class='flex space-x-2'>
+    <div><a class='font-bold' href='@index'>@Index</a></div>
+    <div>|</div>
+    <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a></div>
   </div>
 </footer>
         </div>
