@@ -100,8 +100,8 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Main row-->
       <div class='grid grid-cols-12 px-2'>
         <!-- Sidebar column -->
-        <div class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
-          <div class='float-right flex flex-row space-x-2 p-2 text-gray-500'>
+        <nav class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
+          <div class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
             <a href='@tags' title='View tags'>
               <svg class='w-4 h-4 hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
                 <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
@@ -794,11 +794,12 @@ twindObserve.observe(document.documentElement)</script>
 </div>
             
           </div>
-        </div>
+        </nav>
         <!-- Main body column -->
         <div class='col-span-12 md:col-span-9'>
-          <div class='overflow-auto'>
-            <p class='my-3'>There are quite a few packages to convert Markdown to HTML,</p><ul class='ml-4 space-y-1 list-disc list-inside'><li><a href='https://hackage.haskell.org/package/pandoc' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Pandoc</a> – <span class='text-gray-500'>Supports formats other than Markdown</span></li><li><a href='https://github.com/jgm/commonmark-hs' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>commonmark-hs</a> – <span class='text-gray-500'>Lightweight parser by the same author of Pandoc</span></li><li><a href='https://github.com/mmark-md/mmark' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>mmark</a> – <span class='text-gray-500'><em>Strict</em> Markdown parser</span></li></ul><h2 id='helper' class='mt-4 mb-4 text-4xl font-bold text-gray-700'>Helper</h2><p class='my-3'>Ema provides a helper to parse Markdown files with YAML frontmatter, using commonmark-hs. If you are parsing front matter, you can use any type that has a <a href='https://hackage.haskell.org/package/HsYAML-0.2.1.0/docs/Data-YAML.html#t:FromYAML' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 bg-gray-100 text-sm'>FromYAML</code></a> instance.</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import qualified Ema.Helper.Markdown as Markdown
+          <main>
+            <article class='overflow-auto'>
+              <p class='my-3'>There are quite a few packages to convert Markdown to HTML,</p><ul class='ml-4 space-y-1 list-disc list-inside'><li><a href='https://hackage.haskell.org/package/pandoc' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Pandoc</a> – <span class='text-gray-500'>Supports formats other than Markdown</span></li><li><a href='https://github.com/jgm/commonmark-hs' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>commonmark-hs</a> – <span class='text-gray-500'>Lightweight parser by the same author of Pandoc</span></li><li><a href='https://github.com/mmark-md/mmark' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>mmark</a> – <span class='text-gray-500'><em>Strict</em> Markdown parser</span></li></ul><h2 id='helper' class='mt-4 mb-4 text-4xl font-bold text-gray-700'>Helper</h2><p class='my-3'>Ema provides a helper to parse Markdown files with YAML frontmatter, using commonmark-hs. If you are parsing front matter, you can use any type that has a <a href='https://hackage.haskell.org/package/HsYAML-0.2.1.0/docs/Data-YAML.html#t:FromYAML' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 bg-gray-100 text-sm'>FromYAML</code></a> instance.</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import qualified Ema.Helper.Markdown as Markdown
 
 -- Front matter metadata can be any type with a `FromYAML` instance
 -- 
@@ -809,8 +810,8 @@ type Metadata = Map Text Text
 -- Returns `Either Text (Metadata, Pandoc)`
 Markdown.parseMarkdownWithFrontMatter @Metadata 
     "test.md" "Hello *world*"</code></pre></div><p class='my-3'>The template repo, as well as <a href='https://github.com/srid/emanote' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Emanote</a> (used to generate this site), uses this helper to parse Markdown files into Pandoc AST. Consult <a href='https://github.com/srid/ema-template/blob/master/src/Main.hs' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>the template repo’s source code</a> for details.</p><p class='my-3'>Note that with Ema you can get <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>hot reload</a> support for your Markdown files using <a href='guide/helpers/filesystem' title class='text-pink-600 font-bold hover:underline'>filesystem notifications</a>.</p>
-          </div>
-          
+            </article>
+            
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
@@ -829,13 +830,12 @@ Markdown.parseMarkdownWithFrontMatter @Metadata
     </ul>
   </div>
 
+            
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
 
-          
-            <div class='flex items-center justify-center mt-8 space-x-2 font-mono text-sm'>
-              
-            </div>
-          
-
+          </main>
           <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-500'>
   <div class='flex space-x-2'>
     <div><a class='font-bold' href='@index'>@Index</a></div>

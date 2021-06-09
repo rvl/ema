@@ -91,8 +91,8 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Main row-->
       <div class='grid grid-cols-12 px-2'>
         <!-- Sidebar column -->
-        <div class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
-          <div class='float-right flex flex-row space-x-2 p-2 text-gray-500'>
+        <nav class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
+          <div class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
             <a href='@tags' title='View tags'>
               <svg class='w-4 h-4 hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
                 <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
@@ -785,16 +785,17 @@ twindObserve.observe(document.documentElement)</script>
 </div>
             
           </div>
-        </div>
+        </nav>
         <!-- Main body column -->
         <div class='col-span-12 md:col-span-9'>
-          <div class='overflow-auto'>
-            <p class='my-3'>A “<em>model</em>” in Ema represents the state to use to generate your site. It could be as simple as a variable, or it could be a list of parsed Markdown files (as in the case of a weblog). Ema’s model is also conceptually similar to <a href='https://guide.elm-lang.org/architecture/' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Elm</a>'s model, in that - changing the model <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>automatically</a> changes the <a href='guide/render' title class='text-pink-600 font-bold hover:underline'>view</a>.</p><p class='my-3'>Here’s an example model:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>newtype BlogPosts = BlogPosts (Map Slug Text}</code></pre></div><p class='my-3'>Here <code class='py-0.5 bg-gray-100 text-sm'>BlogPosts</code> is the model type. If we are generating a weblog site, then all the “data” we need is loaded into memory as a value of <code class='py-0.5 bg-gray-100 text-sm'>BlogPosts</code>.</p><h2 id='modifying-the-model' class='mt-4 mb-4 text-4xl font-bold text-gray-700'>Modifying the model</h2><p class='my-3'>Ema’s dev server supports <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>hot reload</a>; it will observe changes to your model, in addition to code. To facilitate this you will manage your model as a <a href='concepts/lvar' title class='text-pink-600 font-bold hover:underline'>LVar</a>. The <code class='py-0.5 bg-gray-100 text-sm'>runEma</code> function (<a href='guide/class' title class='text-pink-600 font-bold hover:underline'>described here</a>) takes an IO action that gets <code class='py-0.5 bg-gray-100 text-sm'>LVar model</code> as an argument.</p><p class='my-3'>For example,</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>runEma render $ \model -&gt;
+          <main>
+            <article class='overflow-auto'>
+              <p class='my-3'>A “<em>model</em>” in Ema represents the state to use to generate your site. It could be as simple as a variable, or it could be a list of parsed Markdown files (as in the case of a weblog). Ema’s model is also conceptually similar to <a href='https://guide.elm-lang.org/architecture/' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Elm</a>'s model, in that - changing the model <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>automatically</a> changes the <a href='guide/render' title class='text-pink-600 font-bold hover:underline'>view</a>.</p><p class='my-3'>Here’s an example model:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>newtype BlogPosts = BlogPosts (Map Slug Text}</code></pre></div><p class='my-3'>Here <code class='py-0.5 bg-gray-100 text-sm'>BlogPosts</code> is the model type. If we are generating a weblog site, then all the “data” we need is loaded into memory as a value of <code class='py-0.5 bg-gray-100 text-sm'>BlogPosts</code>.</p><h2 id='modifying-the-model' class='mt-4 mb-4 text-4xl font-bold text-gray-700'>Modifying the model</h2><p class='my-3'>Ema’s dev server supports <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>hot reload</a>; it will observe changes to your model, in addition to code. To facilitate this you will manage your model as a <a href='concepts/lvar' title class='text-pink-600 font-bold hover:underline'>LVar</a>. The <code class='py-0.5 bg-gray-100 text-sm'>runEma</code> function (<a href='guide/class' title class='text-pink-600 font-bold hover:underline'>described here</a>) takes an IO action that gets <code class='py-0.5 bg-gray-100 text-sm'>LVar model</code> as an argument.</p><p class='my-3'>For example,</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>runEma render $ \model -&gt;
   forever $ do
     LVar.set model =&lt;&lt; liftIO getCurrentTime
     liftIO $ threadDelay $ 1 * 1000000</code></pre></div><p class='my-3'>In this contrived example (<a href='https://github.com/srid/ema/blob/master/src/Ema/Example/Ex02_Clock.hs' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>full code here</a>), we are using <code class='py-0.5 bg-gray-100 text-sm'>UTCTime</code> as the model. We set the initial value using <code class='py-0.5 bg-gray-100 text-sm'>LVar.set</code>, and then continually update the current time every second. Every time the model gets updated, the web browser will <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>hot reload</a> to display the up to date value. For the <code class='py-0.5 bg-gray-100 text-sm'>BlogPosts</code> model, you would typically use <a href='https://hackage.haskell.org/package/fsnotify' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>fsnotify</a> to monitor changes to the underlying Markdown files, but note that Ema provides <a href='guide/helpers/filesystem' title class='text-pink-600 font-bold hover:underline'>a helper</a> for that.</p><div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'><p class='my-3'><span class='py-2 text-xl italic font-bold'>Next</span>, we will <a href='guide/routes' title class='text-pink-600 font-bold hover:underline'>talk about routes</a>.</p></div>
-          </div>
-          
+            </article>
+            
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
@@ -828,6 +829,17 @@ twindObserve.observe(document.documentElement)</script>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
+            <div>an IO action that takes <a href='guide/model' title class='text-black-600 font-bold hover:bg-gray-50'><code>LVar model</code></a> as an argument.</div>
+          </div>
+        </li>
+      
+        <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/class'>
+            Defining Ema instance
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+                    -->
             <div><p>Once you have <a href='guide/model' title class='text-black-600 font-bold hover:bg-gray-50'>model</a> and <a href='guide/routes' title class='text-black-600 font-bold hover:bg-gray-50'>route</a> types in place, we must tell the Haskell compiler that they are suitable for generating static sites. We do this by creating an instance of the <code>Ema</code> typeclass.</p></div>
           </div>
         </li>
@@ -840,6 +852,17 @@ twindObserve.observe(document.documentElement)</script>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
             <div><p>For monitoring local files on disk you would typically use something like <a href='https://hackage.haskell.org/package/fsnotify' title class='text-black-600 hover:underline' target='_blank' rel='noopener'>fsnotify</a> in place of <code>observeFileSystem</code>. What is the point of doing this? To support <a href='concepts/hot-reload' title class='text-black-600 font-bold hover:bg-gray-50'>hot reload</a> on <em>data</em> change. Imagine that your static site is generated based on Markdown files as well as HTML templates on disk. If either the Markdown file, or a HTML template file is modified, we want the web browser to hot reload the updated HTML <em>instantly</em>. This is enabled by storing both these kinds of files in the application <a href='guide/model' title class='text-black-600 font-bold hover:bg-gray-50'>model</a> and using <a href='concepts/lvar' title class='text-black-600 font-bold hover:bg-gray-50'>LVar</a> to update it <em>over time</em>.</p></div>
+          </div>
+        </li>
+      
+        <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/helpers/filesystem'>
+            Working with files
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+                    -->
+            <div><p>In most cases, however, you probably want to use the higher level function <code>mountOnLVar</code>. It “mounts” the files you specify onto the <a href='concepts/lvar' title class='text-black-600 font-bold hover:bg-gray-50'>model LVar</a> such that any changes to them are <em>automatically</em> reflected in your <a href='guide/model' title class='text-black-600 font-bold hover:bg-gray-50'>model</a> value.</p></div>
           </div>
         </li>
       
@@ -868,13 +891,12 @@ twindObserve.observe(document.documentElement)</script>
     </ul>
   </div>
 
+            
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
 
-          
-            <div class='flex items-center justify-center mt-8 space-x-2 font-mono text-sm'>
-              
-            </div>
-          
-
+          </main>
           <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-500'>
   <div class='flex space-x-2'>
     <div><a class='font-bold' href='@index'>@Index</a></div>

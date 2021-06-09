@@ -91,8 +91,8 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Main row-->
       <div class='grid grid-cols-12 px-2'>
         <!-- Sidebar column -->
-        <div class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
-          <div class='float-right flex flex-row space-x-2 p-2 text-gray-500'>
+        <nav class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
+          <div class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
             <a href='@tags' title='View tags'>
               <svg class='w-4 h-4 hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
                 <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
@@ -785,13 +785,14 @@ twindObserve.observe(document.documentElement)</script>
 </div>
             
           </div>
-        </div>
+        </nav>
         <!-- Main body column -->
         <div class='col-span-12 md:col-span-9'>
-          <div class='overflow-auto'>
-            <p class='my-3'>If you are familiar with Haskell’s <code class='py-0.5 bg-gray-100 text-sm'>stm</code> package, a <code class='py-0.5 bg-gray-100 text-sm'>LVar</code> is essentially a <a href='https://hackage.haskell.org/package/stm-2.5.0.0/docs/Control-Concurrent-STM-TMVar.html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 bg-gray-100 text-sm'>TMVar</code></a> but with an extra ability for other threads to observe changes. Ema uses it for <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>hot reload</a>, and your application code is expected to set and update its <a href='guide/model' title class='text-pink-600 font-bold hover:underline'>model</a> through the LVar.</p><p class='my-3'>Documentation on <code class='py-0.5 bg-gray-100 text-sm'>LVar</code> is available <a href='https://hackage.haskell.org/package/lvar' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>on Hackage</a>.</p>
-          </div>
-          
+          <main>
+            <article class='overflow-auto'>
+              <p class='my-3'>If you are familiar with Haskell’s <code class='py-0.5 bg-gray-100 text-sm'>stm</code> package, a <code class='py-0.5 bg-gray-100 text-sm'>LVar</code> is essentially a <a href='https://hackage.haskell.org/package/stm-2.5.0.0/docs/Control-Concurrent-STM-TMVar.html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 bg-gray-100 text-sm'>TMVar</code></a> but with an extra ability for other threads to observe changes. Ema uses it for <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>hot reload</a>, and your application code is expected to set and update its <a href='guide/model' title class='text-pink-600 font-bold hover:underline'>model</a> through the LVar.</p><p class='my-3'>Documentation on <code class='py-0.5 bg-gray-100 text-sm'>LVar</code> is available <a href='https://hackage.haskell.org/package/lvar' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>on Hackage</a>.</p>
+            </article>
+            
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
@@ -830,6 +831,17 @@ twindObserve.observe(document.documentElement)</script>
         </li>
       
         <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/helpers/filesystem'>
+            Working with files
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+                    -->
+            <div><p>In most cases, however, you probably want to use the higher level function <code>mountOnLVar</code>. It “mounts” the files you specify onto the <a href='concepts/lvar' title class='text-black-600 font-bold hover:bg-gray-50'>model LVar</a> such that any changes to them are <em>automatically</em> reflected in your <a href='guide/model' title class='text-black-600 font-bold hover:bg-gray-50'>model</a> value.</p></div>
+          </div>
+        </li>
+      
+        <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model'>
             Defining your model
           </a>
@@ -854,13 +866,12 @@ twindObserve.observe(document.documentElement)</script>
     </ul>
   </div>
 
+            
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
 
-          
-            <div class='flex items-center justify-center mt-8 space-x-2 font-mono text-sm'>
-              
-            </div>
-          
-
+          </main>
           <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-500'>
   <div class='flex space-x-2'>
     <div><a class='font-bold' href='@index'>@Index</a></div>

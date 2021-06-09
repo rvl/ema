@@ -82,8 +82,8 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Main row-->
       <div class='grid grid-cols-12 px-2'>
         <!-- Sidebar column -->
-        <div class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
-          <div class='float-right flex flex-row space-x-2 p-2 text-gray-500'>
+        <nav class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
+          <div class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
             <a href='@tags' title='View tags'>
               <svg class='w-4 h-4 hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
                 <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
@@ -776,13 +776,14 @@ twindObserve.observe(document.documentElement)</script>
 </div>
             
           </div>
-        </div>
+        </nav>
         <!-- Main body column -->
         <div class='col-span-12 md:col-span-9'>
-          <div class='overflow-auto'>
-            <p class='my-3'>As first steps, perform the following before proceeding to the tutorial section below:</p><ol class='ml-4 space-y-1 list-decimal list-inside'><li><a href='https://nixos.org/download.html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Install Nix</a> (see <a href='https://neuron.zettel.page/install' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>platform-specific notes here</a>)</li><li><a href='https://nixos.wiki/wiki/Flakes#Installing_flakes' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Enable Flakes</a></li><li>Clone <a href='https://github.com/srid/ema-template' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>the template repository</a> locally</li><li>Run <code class='py-0.5 bg-gray-100 text-sm'>bin/run</code> and access the site at <a href='http://localhost:9001' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>http://localhost:9001</a></li></ol><p class='my-3'>That should start the Ema dev server displaying a simple website. Go ahead and try modifying either the Markdown content in <code class='py-0.5 bg-gray-100 text-sm'>./content</code> or the Haskell source in <code class='py-0.5 bg-gray-100 text-sm'>./src/Main.hs</code>, and observe how the web view updates <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>instantly</a>.</p><div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'><p class='my-3'><span class='py-2 text-xl italic font-bold'>Next</span>, <a href='start/tutorial' title class='text-pink-600 font-bold hover:underline'>in the tutorial</a> let’s try using this template repo to create a basic website.</p></div>
-          </div>
-          
+          <main>
+            <article class='overflow-auto'>
+              <p class='my-3'>As first steps, perform the following before proceeding to the tutorial section below:</p><ol class='ml-4 space-y-1 list-decimal list-inside'><li><a href='https://nixos.org/download.html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Install Nix</a> (see <a href='https://neuron.zettel.page/install' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>platform-specific notes here</a>)</li><li><a href='https://nixos.wiki/wiki/Flakes#Installing_flakes' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Enable Flakes</a></li><li>Clone <a href='https://github.com/srid/ema-template' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>the template repository</a> locally</li><li>Run <code class='py-0.5 bg-gray-100 text-sm'>bin/run</code> and access the site at <a href='http://localhost:9001' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>http://localhost:9001</a></li></ol><p class='my-3'>That should start the Ema dev server displaying a simple website. Go ahead and try modifying either the Markdown content in <code class='py-0.5 bg-gray-100 text-sm'>./content</code> or the Haskell source in <code class='py-0.5 bg-gray-100 text-sm'>./src/Main.hs</code>, and observe how the web view updates <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>instantly</a>.</p><div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'><p class='my-3'><span class='py-2 text-xl italic font-bold'>Next</span>, <a href='start/tutorial' title class='text-pink-600 font-bold hover:underline'>in the tutorial</a> let’s try using this template repo to create a basic website.</p></div>
+            </article>
+            
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
@@ -812,13 +813,12 @@ twindObserve.observe(document.documentElement)</script>
     </ul>
   </div>
 
+            
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
 
-          
-            <div class='flex items-center justify-center mt-8 space-x-2 font-mono text-sm'>
-              
-            </div>
-          
-
+          </main>
           <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-500'>
   <div class='flex space-x-2'>
     <div><a class='font-bold' href='@index'>@Index</a></div>

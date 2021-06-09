@@ -91,8 +91,8 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Main row-->
       <div class='grid grid-cols-12 px-2'>
         <!-- Sidebar column -->
-        <div class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
-          <div class='float-right flex flex-row space-x-2 p-2 text-gray-500'>
+        <nav class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
+          <div class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
             <a href='@tags' title='View tags'>
               <svg class='w-4 h-4 hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
                 <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
@@ -785,11 +785,12 @@ twindObserve.observe(document.documentElement)</script>
 </div>
             
           </div>
-        </div>
+        </nav>
         <!-- Main body column -->
         <div class='col-span-12 md:col-span-9'>
-          <div class='overflow-auto'>
-            <p class='my-3'>Once you have <a href='guide/model' title class='text-pink-600 font-bold hover:underline'>model</a> and <a href='guide/routes' title class='text-pink-600 font-bold hover:underline'>route</a> types in place, we must tell the Haskell compiler that they are suitable for generating static sites. We do this by creating an instance of the <code class='py-0.5 bg-gray-100 text-sm'>Ema</code> typeclass.</p><p class='my-3'>Using some <code class='py-0.5 bg-gray-100 text-sm'>MyModel</code> and the route <code class='py-0.5 bg-gray-100 text-sm'>Route</code> shown in the <a href='guide/routes' title class='text-pink-600 font-bold hover:underline'>previous</a> section, we can create an instance as follows:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>class Ema MyModel Route where 
+          <main>
+            <article class='overflow-auto'>
+              <p class='my-3'>Once you have <a href='guide/model' title class='text-pink-600 font-bold hover:underline'>model</a> and <a href='guide/routes' title class='text-pink-600 font-bold hover:underline'>route</a> types in place, we must tell the Haskell compiler that they are suitable for generating static sites. We do this by creating an instance of the <code class='py-0.5 bg-gray-100 text-sm'>Ema</code> typeclass.</p><p class='my-3'>Using some <code class='py-0.5 bg-gray-100 text-sm'>MyModel</code> and the route <code class='py-0.5 bg-gray-100 text-sm'>Route</code> shown in the <a href='guide/routes' title class='text-pink-600 font-bold hover:underline'>previous</a> section, we can create an instance as follows:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>class Ema MyModel Route where 
   -- Where to generate this route?
   encodeRoute = \case
     Index -&gt; "index.html"
@@ -805,8 +806,8 @@ twindObserve.observe(document.documentElement)</script>
   -- By default, Enum & Bounded will be used to determine this list.
   allRoutes model =
     [Index, About]</code></pre></div><p class='my-3'>The <code class='py-0.5 bg-gray-100 text-sm'>Ema</code> typeclass has three methods, one of them being optional:</p><ol class='ml-4 space-y-1 list-decimal list-inside'><li>Define <code class='py-0.5 bg-gray-100 text-sm'>encodeRoute</code> that converts our route type to a filepath</li><li>Define <code class='py-0.5 bg-gray-100 text-sm'>decodeRoute</code> that does the <em>reverse</em> converstion (the conversion must be isomorphic)</li><li><em>Optionally</em>, define <code class='py-0.5 bg-gray-100 text-sm'>allRoutes</code> indicating the routes to statically generate</li></ol><h2 id='runema' class='mt-4 mb-4 text-4xl font-bold text-gray-700'><code class='py-0.5 bg-gray-100 text-sm'>runEma</code></h2><p class='my-3'>The <code class='py-0.5 bg-gray-100 text-sm'>Ema</code> constraint is used by the <code class='py-0.5 bg-gray-100 text-sm'>runEma</code> function that acts as the main entry point to your static site generator. It takes two arguments:</p><ol class='ml-4 space-y-1 list-decimal list-inside'><li><code class='py-0.5 bg-gray-100 text-sm'>render</code> function that renders your route (usually to HTML); we’ll go over this in <a href='guide/render' title class='text-pink-600 font-bold hover:underline'>the next</a> section.</li><li>an IO action that takes <a href='guide/model' title class='text-pink-600 font-bold hover:underline'><code class='py-0.5 bg-gray-100 text-sm'>LVar model</code></a> as an argument.</li></ol><p class='my-3'>This IO action is expected to be a long-running one, wherein you have full control over setting the value of the model over time.</p><div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'><p class='my-3'><span class='py-2 text-xl italic font-bold'>Next</span>, with our model and routes in place constrained by <code class='py-0.5 bg-gray-100 text-sm'>Ema</code> type class, <a href='guide/render' title class='text-pink-600 font-bold hover:underline'>we will define the HTML for our site</a> using Ema.</p></div>
-          </div>
-          
+            </article>
+            
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
@@ -862,6 +863,28 @@ twindObserve.observe(document.documentElement)</script>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
+            <div>It uses <code>Ema.routeUrl</code> function to create a URL out of our <code>Route</code> type. This function uses the <a href='guide/class' title class='text-black-600 font-bold hover:bg-gray-50'><code>Ema</code> typeclass</a>, so it uses the <code>encodeRoute</code> function defined further above.</div>
+          </div>
+        </li>
+      
+        <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='start/tutorial'>
+            Tutorial
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+                    -->
+            <div><p>The <code>runEma</code> function is explained <a href='guide/class' title class='text-black-600 font-bold hover:bg-gray-50'>here</a>, but in brief: it takes a render function (see below) as well as an IO action that allows us to create and update the model <a href='concepts/lvar' title class='text-black-600 font-bold hover:bg-gray-50'>lvar</a>. Note that <code>threadDelay maxBound</code> here? That is because our IO action must not exit; in the dev server mode of real-world websites, you would continue to monitor the external world (such as Markdown files) and update the model, to facilitate <a href='concepts/hot-reload' title class='text-black-600 font-bold hover:bg-gray-50'>hot reload</a> of data used by your site.</p></div>
+          </div>
+        </li>
+      
+        <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='start/tutorial'>
+            Tutorial
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+                    -->
             <div><p>We should now tell Ema how to convert our <code>Route</code> to actual file paths (which is used to determine the URL too). Let’s do that by making an instance of the <code>Ema</code> <a href='guide/class' title class='text-black-600 font-bold hover:bg-gray-50'>class</a>:</p></div>
           </div>
         </li>
@@ -869,13 +892,12 @@ twindObserve.observe(document.documentElement)</script>
     </ul>
   </div>
 
+            
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
 
-          
-            <div class='flex items-center justify-center mt-8 space-x-2 font-mono text-sm'>
-              
-            </div>
-          
-
+          </main>
           <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-500'>
   <div class='flex space-x-2'>
     <div><a class='font-bold' href='@index'>@Index</a></div>

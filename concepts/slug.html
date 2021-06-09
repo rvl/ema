@@ -91,8 +91,8 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Main row-->
       <div class='grid grid-cols-12 px-2'>
         <!-- Sidebar column -->
-        <div class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
-          <div class='float-right flex flex-row space-x-2 p-2 text-gray-500'>
+        <nav class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
+          <div class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
             <a href='@tags' title='View tags'>
               <svg class='w-4 h-4 hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
                 <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
@@ -785,15 +785,16 @@ twindObserve.observe(document.documentElement)</script>
 </div>
             
           </div>
-        </div>
+        </nav>
         <!-- Main body column -->
         <div class='col-span-12 md:col-span-9'>
-          <div class='overflow-auto'>
-            <div class='bg-gray-100 px-4 py-1 rounded italic'><p class='my-3'>Note that the initial version of Ema used Slug in its routing system, but not anymore in the latest version. The Slug type is still left in the library for using as a <a href='guide/helpers' title='WikiLinkNormal' class='text-pink-600 font-bold hover:underline'>helper</a>.</p></div><p class='my-3'>A slug is a component of a URL or file path. In an <em>URL</em> like <code class='py-0.5 bg-gray-100 text-sm'>/foo/bar</code>, there are two <em>slugs</em>: “foo” and “bar”. URLs (as well as filepaths) can therefore be represented as lists of slugs (<code class='py-0.5 bg-gray-100 text-sm'>[Slug]</code>).</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import Ema (Slug)
+          <main>
+            <article class='overflow-auto'>
+              <div class='bg-gray-100 px-4 py-1 rounded italic'><p class='my-3'>Note that the initial version of Ema used Slug in its routing system, but not anymore in the latest version. The Slug type is still left in the library for using as a <a href='guide/helpers' title='WikiLinkNormal' class='text-pink-600 font-bold hover:underline'>helper</a>.</p></div><p class='my-3'>A slug is a component of a URL or file path. In an <em>URL</em> like <code class='py-0.5 bg-gray-100 text-sm'>/foo/bar</code>, there are two <em>slugs</em>: “foo” and “bar”. URLs (as well as filepaths) can therefore be represented as lists of slugs (<code class='py-0.5 bg-gray-100 text-sm'>[Slug]</code>).</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import Ema (Slug)
 
 type URL = [Slug]</code></pre></div><p class='my-3'>Slugs are automatically <a href='https://www.unicode.org/faq/normalization.html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>unicode normalized</a> to NFC to ensure that route links work reliably regardless of the underlying representation of any non-ascii link text.</p><p class='my-3'>The functions <code class='py-0.5 bg-gray-100 text-sm'>decodeSlug</code> and <code class='py-0.5 bg-gray-100 text-sm'>encodeSlug</code> allow you to convert between URLs and slugs.</p>
-          </div>
-          
+            </article>
+            
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
@@ -812,13 +813,12 @@ type URL = [Slug]</code></pre></div><p class='my-3'>Slugs are automatically <a h
     </ul>
   </div>
 
+            
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
 
-          
-            <div class='flex items-center justify-center mt-8 space-x-2 font-mono text-sm'>
-              
-            </div>
-          
-
+          </main>
           <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-500'>
   <div class='flex space-x-2'>
     <div><a class='font-bold' href='@index'>@Index</a></div>

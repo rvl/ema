@@ -91,8 +91,8 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Main row-->
       <div class='grid grid-cols-12 px-2'>
         <!-- Sidebar column -->
-        <div class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
-          <div class='float-right flex flex-row space-x-2 p-2 text-gray-500'>
+        <nav class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
+          <div class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
             <a href='@tags' title='View tags'>
               <svg class='w-4 h-4 hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
                 <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
@@ -785,11 +785,12 @@ twindObserve.observe(document.documentElement)</script>
 </div>
             
           </div>
-        </div>
+        </nav>
         <!-- Main body column -->
         <div class='col-span-12 md:col-span-9'>
-          <div class='overflow-auto'>
-            <p class='my-3'>Make sure that you have have followed <a href='start' title class='text-pink-600 font-bold hover:underline'>the previous section</a> in order to have the <a href='https://github.com/srid/ema-template' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>template repo</a> checked out and running locally. Here, <strong>our goal</strong> is to replace the source code of the template repo and write a basic site from scratch.</p><ol class='ml-4 space-y-1 list-decimal list-inside'><li>Follow the template repo’s <a href='https://github.com/srid/ema-template#getting-started' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>README</a> and have it open in Visual Studio Code while running the dev server. Your website should be viewable at <a href='http://localhost:9001/' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>http://localhost:9001/</a></li><li>Open <code class='py-0.5 bg-gray-100 text-sm'>src/Main.hs</code></li><li>Delete everything in it, and replace it with the following</li></ol><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>module Main where
+          <main>
+            <article class='overflow-auto'>
+              <p class='my-3'>Make sure that you have have followed <a href='start' title class='text-pink-600 font-bold hover:underline'>the previous section</a> in order to have the <a href='https://github.com/srid/ema-template' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>template repo</a> checked out and running locally. Here, <strong>our goal</strong> is to replace the source code of the template repo and write a basic site from scratch.</p><ol class='ml-4 space-y-1 list-decimal list-inside'><li>Follow the template repo’s <a href='https://github.com/srid/ema-template#getting-started' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>README</a> and have it open in Visual Studio Code while running the dev server. Your website should be viewable at <a href='http://localhost:9001/' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>http://localhost:9001/</a></li><li>Open <code class='py-0.5 bg-gray-100 text-sm'>src/Main.hs</code></li><li>Delete everything in it, and replace it with the following</li></ol><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>module Main where
 
 import qualified Ema
 
@@ -846,8 +847,8 @@ render _emaAction model r = Ema.AssetGenerated Ema.Html . RU.renderHtml $
         ! A.style "text-decoration: underline" 
         ! A.href (H.toValue $ Ema.routeUrl targetRoute) $ w</code></pre></div><p class='my-3'>If everything compiles, you should see the site update in the web browser. A couple of quick points about the <code class='py-0.5 bg-gray-100 text-sm'>render</code> function:</p><ol class='ml-4 space-y-1 list-decimal list-inside'><li>It should return the raw HTML as a <code class='py-0.5 bg-gray-100 text-sm'>ByteString</code>. Here, we use <a href='https://hackage.haskell.org/package/blaze-html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>blaze-html</a> as HTML DSL. You can also use your own HTML templates of course.</li><li>It uses <code class='py-0.5 bg-gray-100 text-sm'>Ema.routeUrl</code> function to create a URL out of our <code class='py-0.5 bg-gray-100 text-sm'>Route</code> type. This function uses the <a href='guide/class' title class='text-pink-600 font-bold hover:underline'><code class='py-0.5 bg-gray-100 text-sm'>Ema</code> typeclass</a>, so it uses the <code class='py-0.5 bg-gray-100 text-sm'>encodeRoute</code> function defined further above.</li></ol><p class='my-3'>On final note, you will note that nothing is actually <em>generated</em> so far. This is because Ema has been running in the dev server mode, which is quite useful during development. To actually generate the files, you can use the <code class='py-0.5 bg-gray-100 text-sm'>gen</code> command when running the <a href='concepts/cli' title class='text-pink-600 font-bold hover:underline'>CLI</a>:</p><div class='py-0.5 text-sm'><pre class='sh language-sh'><code class='sh language-sh'>mkdir ./output
 nix run . -- -C ./content gen $(pwd)/output</code></pre></div><h2 id='exercises' class='mt-4 mb-4 text-4xl font-bold text-gray-700'>Exercises</h2><ol class='ml-4 space-y-1 list-decimal list-inside'><li>Figure out how to use static assets (images, files) in your static sites (hint: the typeclass)</li><li>What happens if you <code class='py-0.5 bg-gray-100 text-sm'>throw</code> an exception or use <code class='py-0.5 bg-gray-100 text-sm'>error</code> in the <code class='py-0.5 bg-gray-100 text-sm'>render</code> function?</li></ol><div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'><p class='my-3'><span class='py-2 text-xl italic font-bold'>Next</span>, checkout the <a href='guide' title class='text-pink-600 font-bold hover:underline'>Guide</a> series for information on specific topics.</p></div>
-          </div>
-          
+            </article>
+            
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
@@ -877,13 +878,12 @@ nix run . -- -C ./content gen $(pwd)/output</code></pre></div><h2 id='exercises'
     </ul>
   </div>
 
+            
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
 
-          
-            <div class='flex items-center justify-center mt-8 space-x-2 font-mono text-sm'>
-              
-            </div>
-          
-
+          </main>
           <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-500'>
   <div class='flex space-x-2'>
     <div><a class='font-bold' href='@index'>@Index</a></div>

@@ -91,8 +91,8 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Main row-->
       <div class='grid grid-cols-12 px-2'>
         <!-- Sidebar column -->
-        <div class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
-          <div class='float-right flex flex-row space-x-2 p-2 text-gray-500'>
+        <nav class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
+          <div class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
             <a href='@tags' title='View tags'>
               <svg class='w-4 h-4 hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
                 <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
@@ -785,13 +785,14 @@ twindObserve.observe(document.documentElement)</script>
 </div>
             
           </div>
-        </div>
+        </nav>
         <!-- Main body column -->
         <div class='col-span-12 md:col-span-9'>
-          <div class='overflow-auto'>
-            <p class='my-3'><strong>Hot Reloading</strong> is a feature of Ema’s dev server wherein any changes to your Haskell source or data files (such as Markdown files or HTML templates) <em>propagate instantly</em> to the web browser without requiring any manual intervention like a full browser refresh. In practice, this is a such a delightful feature to work with. Imagine changing CSS style of an element, and see it reflect on your site in a split second.</p><h2 id='how-ema-implements-hot-reload' class='mt-4 mb-4 text-4xl font-bold text-gray-700'>How Ema implements hot reload</h2><h3 id='websocket' class='mb-2 text-3xl font-bold text-gray-700 jmt-4'>Websocket</h3><p class='my-3'>The Ema dev server uses websockets to keep a bi-directional connection open between the web browser and the backend server. When you click on a link or when something changes in the backend, they are communicated via this connection. In a statically generated site, however, no such activity happens - and a link click behaves like a normal link, in that the browser makes a full HTTP request to the linked page.</p><h3 id='dom-patching' class='mb-2 text-3xl font-bold text-gray-700 jmt-4'>DOM patching</h3><p class='my-3'>When switching to a new route or when receiving the new HTML, Ema uses <a href='https://github.com/patrick-steele-idem/morphdom' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>morphdom</a> to <em>patch</em> the existing DOM tree rather than replace it in its entirety. This, in addition to use of websockets, makes it possible to support <strong>instant</strong> hot reload with nary a delay.</p><h3 id='haskell-reload' class='mb-2 text-3xl font-bold text-gray-700 jmt-4'>Haskell reload</h3><p class='my-3'>Finally, hot reload on <em>code</em> changes are supported via <a href='https://github.com/ndmitchell/ghcid' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>ghcid</a>. The <a href='https://github.com/srid/ema-template' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>template repo</a>'s `bin/run` script uses ghcid underneath. Any HTML DSL (like blaze-html – as used by the <a href='guide/helpers/tailwind' title class='text-pink-600 font-bold hover:underline'>Tailwind helper</a>) or CSS DSL automatically gets supported for hot-reload. If you choose to use a file-based HTML template language, you can enable hot-reload on template change using the <a href='guide/helpers/filesystem' title class='text-pink-600 font-bold hover:underline'>FileSystem helper</a>.</p><p class='my-3'>Note that if your application makes use of threads, it is important to setup cleanup handlers so that <code class='py-0.5 bg-gray-100 text-sm'>ghcid</code> doesn’t leave <a href='https://stackoverflow.com/q/24999636/55246' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>ghost</a> processes behind. Helpers like <a href='https://hackage.haskell.org/package/async-2.2.3/docs/Control-Concurrent-Async.html#v:race_' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 bg-gray-100 text-sm'>race_</code></a> will do this automatically (incidentally it is used by <code class='py-0.5 bg-gray-100 text-sm'>runEma</code> for running the user IO action).</p><h3 id='data-reload' class='mb-2 text-3xl font-bold text-gray-700 jmt-4'>Data reload</h3><p class='my-3'>For anything outside of the Haskell code, your code becomes responsible for monitoring and updating the model <a href='concepts/lvar' title class='text-pink-600 font-bold hover:underline'>LVar</a>. The <a href='guide/helpers/filesystem' title class='text-pink-600 font-bold hover:underline'>filesystem helper</a> already provides utilities to facilitate this for monitoring changes to files and directories.</p><h2 id='handling-errors' class='mt-4 mb-4 text-4xl font-bold text-gray-700'>Handling errors</h2><p class='my-3'>If your code throws a Haskell exception, they will be gracefully handled and displayed in the browser, allowing you to recover without breaking hot-reload flow.</p>
-          </div>
-          
+          <main>
+            <article class='overflow-auto'>
+              <p class='my-3'><strong>Hot Reloading</strong> is a feature of Ema’s dev server wherein any changes to your Haskell source or data files (such as Markdown files or HTML templates) <em>propagate instantly</em> to the web browser without requiring any manual intervention like a full browser refresh. In practice, this is a such a delightful feature to work with. Imagine changing CSS style of an element, and see it reflect on your site in a split second.</p><h2 id='how-ema-implements-hot-reload' class='mt-4 mb-4 text-4xl font-bold text-gray-700'>How Ema implements hot reload</h2><h3 id='websocket' class='mb-2 text-3xl font-bold text-gray-700 jmt-4'>Websocket</h3><p class='my-3'>The Ema dev server uses websockets to keep a bi-directional connection open between the web browser and the backend server. When you click on a link or when something changes in the backend, they are communicated via this connection. In a statically generated site, however, no such activity happens - and a link click behaves like a normal link, in that the browser makes a full HTTP request to the linked page.</p><h3 id='dom-patching' class='mb-2 text-3xl font-bold text-gray-700 jmt-4'>DOM patching</h3><p class='my-3'>When switching to a new route or when receiving the new HTML, Ema uses <a href='https://github.com/patrick-steele-idem/morphdom' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>morphdom</a> to <em>patch</em> the existing DOM tree rather than replace it in its entirety. This, in addition to use of websockets, makes it possible to support <strong>instant</strong> hot reload with nary a delay.</p><h3 id='haskell-reload' class='mb-2 text-3xl font-bold text-gray-700 jmt-4'>Haskell reload</h3><p class='my-3'>Finally, hot reload on <em>code</em> changes are supported via <a href='https://github.com/ndmitchell/ghcid' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>ghcid</a>. The <a href='https://github.com/srid/ema-template' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>template repo</a>'s `bin/run` script uses ghcid underneath. Any HTML DSL (like blaze-html – as used by the <a href='guide/helpers/tailwind' title class='text-pink-600 font-bold hover:underline'>Tailwind helper</a>) or CSS DSL automatically gets supported for hot-reload. If you choose to use a file-based HTML template language, you can enable hot-reload on template change using the <a href='guide/helpers/filesystem' title class='text-pink-600 font-bold hover:underline'>FileSystem helper</a>.</p><p class='my-3'>Note that if your application makes use of threads, it is important to setup cleanup handlers so that <code class='py-0.5 bg-gray-100 text-sm'>ghcid</code> doesn’t leave <a href='https://stackoverflow.com/q/24999636/55246' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>ghost</a> processes behind. Helpers like <a href='https://hackage.haskell.org/package/async-2.2.3/docs/Control-Concurrent-Async.html#v:race_' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 bg-gray-100 text-sm'>race_</code></a> will do this automatically (incidentally it is used by <code class='py-0.5 bg-gray-100 text-sm'>runEma</code> for running the user IO action).</p><h3 id='data-reload' class='mb-2 text-3xl font-bold text-gray-700 jmt-4'>Data reload</h3><p class='my-3'>For anything outside of the Haskell code, your code becomes responsible for monitoring and updating the model <a href='concepts/lvar' title class='text-pink-600 font-bold hover:underline'>LVar</a>. The <a href='guide/helpers/filesystem' title class='text-pink-600 font-bold hover:underline'>filesystem helper</a> already provides utilities to facilitate this for monitoring changes to files and directories.</p><h2 id='handling-errors' class='mt-4 mb-4 text-4xl font-bold text-gray-700'>Handling errors</h2><p class='my-3'>If your code throws a Haskell exception, they will be gracefully handled and displayed in the browser, allowing you to recover without breaking hot-reload flow.</p>
+            </article>
+            
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
@@ -852,6 +853,28 @@ twindObserve.observe(document.documentElement)</script>
         </li>
       
         <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model'>
+            Defining your model
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+                    -->
+            <div><p>Ema’s dev server supports <a href='concepts/hot-reload' title class='text-black-600 font-bold hover:bg-gray-50'>hot reload</a>; it will observe changes to your model, in addition to code. To facilitate this you will manage your model as a <a href='concepts/lvar' title class='text-black-600 font-bold hover:bg-gray-50'>LVar</a>. The <code>runEma</code> function (<a href='guide/class' title class='text-black-600 font-bold hover:bg-gray-50'>described here</a>) takes an IO action that gets <code>LVar model</code> as an argument.</p></div>
+          </div>
+        </li>
+      
+        <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model'>
+            Defining your model
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+                    -->
+            <div><p>In this contrived example (<a href='https://github.com/srid/ema/blob/master/src/Ema/Example/Ex02_Clock.hs' title class='text-black-600 hover:underline' target='_blank' rel='noopener'>full code here</a>), we are using <code>UTCTime</code> as the model. We set the initial value using <code>LVar.set</code>, and then continually update the current time every second. Every time the model gets updated, the web browser will <a href='concepts/hot-reload' title class='text-black-600 font-bold hover:bg-gray-50'>hot reload</a> to display the up to date value. For the <code>BlogPosts</code> model, you would typically use <a href='https://hackage.haskell.org/package/fsnotify' title class='text-black-600 hover:underline' target='_blank' rel='noopener'>fsnotify</a> to monitor changes to the underlying Markdown files, but note that Ema provides <a href='guide/helpers/filesystem' title class='text-black-600 font-bold hover:bg-gray-50'>a helper</a> for that.</p></div>
+          </div>
+        </li>
+      
+        <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/render'>
             Rendering HTML
           </a>
@@ -859,6 +882,17 @@ twindObserve.observe(document.documentElement)</script>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
             <div><p>The <code>AssetGenerated Html</code> tells Ema that you are generating HTML content, which will be appropriately handled by the <a href='concepts/hot-reload' title='WikiLinkNormal' class='text-black-600 font-bold hover:bg-gray-50'>Hot Reload</a> of the live server.</p></div>
+          </div>
+        </li>
+      
+        <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/render'>
+            Rendering HTML
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+                    -->
+            <div><p>Of course when using Ema nothing prevents you from choosing to use traditional HTML templates, and you can get <a href='concepts/hot-reload' title class='text-black-600 font-bold hover:bg-gray-50'>hot reload</a> on them too with <a href='guide/helpers/filesystem' title class='text-black-600 font-bold hover:bg-gray-50'>a little bit of plumbing</a>.</p></div>
           </div>
         </li>
       
@@ -891,6 +925,17 @@ twindObserve.observe(document.documentElement)</script>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
+            <div><p>The <code>runEma</code> function is explained <a href='guide/class' title class='text-black-600 font-bold hover:bg-gray-50'>here</a>, but in brief: it takes a render function (see below) as well as an IO action that allows us to create and update the model <a href='concepts/lvar' title class='text-black-600 font-bold hover:bg-gray-50'>lvar</a>. Note that <code>threadDelay maxBound</code> here? That is because our IO action must not exit; in the dev server mode of real-world websites, you would continue to monitor the external world (such as Markdown files) and update the model, to facilitate <a href='concepts/hot-reload' title class='text-black-600 font-bold hover:bg-gray-50'>hot reload</a> of data used by your site.</p></div>
+          </div>
+        </li>
+      
+        <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='start/tutorial'>
+            Tutorial
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+                    -->
             <div><p>This is the <em>minimum</em> amount of code necessary to run an Ema site. Notice that as you replace and save this file, your browser (which is at <a href='http://locahost:9001' title class='text-black-600 hover:underline' target='_blank' rel='noopener'>http://locahost:9001</a>) will <a href='concepts/hot-reload' title class='text-black-600 font-bold hover:bg-gray-50'>hot reload</a> to display “Hello, Ema”. Congratulations, you just created your first website!</p></div>
           </div>
         </li>
@@ -898,13 +943,12 @@ twindObserve.observe(document.documentElement)</script>
     </ul>
   </div>
 
+            
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
 
-          
-            <div class='flex items-center justify-center mt-8 space-x-2 font-mono text-sm'>
-              
-            </div>
-          
-
+          </main>
           <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-500'>
   <div class='flex space-x-2'>
     <div><a class='font-bold' href='@index'>@Index</a></div>

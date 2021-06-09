@@ -91,8 +91,8 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Main row-->
       <div class='grid grid-cols-12 px-2'>
         <!-- Sidebar column -->
-        <div class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
-          <div class='float-right flex flex-row space-x-2 p-2 text-gray-500'>
+        <nav class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
+          <div class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
             <a href='@tags' title='View tags'>
               <svg class='w-4 h-4 hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
                 <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
@@ -785,11 +785,12 @@ twindObserve.observe(document.documentElement)</script>
 </div>
             
           </div>
-        </div>
+        </nav>
         <!-- Main body column -->
         <div class='col-span-12 md:col-span-9'>
-          <div class='overflow-auto'>
-            <p class='my-3'>Ema gives you the freedom to use any Haskell type for representing your site routes. You don’t need complicated rewrite rules. Routes are best represented using what are known as <em>sum types</em> (or ADT, short for <em>Abstract Data Type</em>). Here’s an example of a route type:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Route 
+          <main>
+            <article class='overflow-auto'>
+              <p class='my-3'>Ema gives you the freedom to use any Haskell type for representing your site routes. You don’t need complicated rewrite rules. Routes are best represented using what are known as <em>sum types</em> (or ADT, short for <em>Abstract Data Type</em>). Here’s an example of a route type:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Route 
   = Index
   | About</code></pre></div><p class='my-3'>This type represents two routes pointing to – the index page (<code class='py-0.5 bg-gray-100 text-sm'>/</code>) and the about page (<code class='py-0.5 bg-gray-100 text-sm'>/about</code>). Designing the route type is only half the job; you will also need to tell Ema how to convert it to / from the browser URL. We will explain this in the next section.</p><h2 id='advanced-example' class='mt-4 mb-4 text-4xl font-bold text-gray-700'>Advanced example</h2><p class='my-3'>Here’s one possible way to design the route type for a weblog site,</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Route
   = Home 
@@ -805,8 +806,8 @@ data TagRoute
   | Tag Tag
 
 newtype Tag = Tag Text</code></pre></div><p class='my-3'>Defining <em>hierarchical routes</em> like this is useful if you want to render <em>parts</em> of your HTML as being common to only a subset of your site, such as adding a blog header to all blog pages, but not to tag pages.</p><div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'><p class='my-3'><span class='py-2 text-xl italic font-bold'>Next</span>, with our model and routes in place, <a href='guide/class' title class='text-pink-600 font-bold hover:underline'>we will make them work with Ema</a> by defining their static site behaviour.</p></div>
-          </div>
-          
+            </article>
+            
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
@@ -830,6 +831,17 @@ newtype Tag = Tag Text</code></pre></div><p class='my-3'>Defining <em>hierarchic
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
             <div><p>Once you have <a href='guide/model' title class='text-black-600 font-bold hover:bg-gray-50'>model</a> and <a href='guide/routes' title class='text-black-600 font-bold hover:bg-gray-50'>route</a> types in place, we must tell the Haskell compiler that they are suitable for generating static sites. We do this by creating an instance of the <code>Ema</code> typeclass.</p></div>
+          </div>
+        </li>
+      
+        <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/class'>
+            Defining Ema instance
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+                    -->
+            <div><p>Using some <code>MyModel</code> and the route <code>Route</code> shown in the <a href='guide/routes' title class='text-black-600 font-bold hover:bg-gray-50'>previous</a> section, we can create an instance as follows:</p></div>
           </div>
         </li>
       
@@ -869,13 +881,12 @@ newtype Tag = Tag Text</code></pre></div><p class='my-3'>Defining <em>hierarchic
     </ul>
   </div>
 
+            
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
 
-          
-            <div class='flex items-center justify-center mt-8 space-x-2 font-mono text-sm'>
-              
-            </div>
-          
-
+          </main>
           <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-500'>
   <div class='flex space-x-2'>
     <div><a class='font-bold' href='@index'>@Index</a></div>

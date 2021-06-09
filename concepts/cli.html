@@ -91,8 +91,8 @@ twindObserve.observe(document.documentElement)</script>
       <!-- Main row-->
       <div class='grid grid-cols-12 px-2'>
         <!-- Sidebar column -->
-        <div class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
-          <div class='float-right flex flex-row space-x-2 p-2 text-gray-500'>
+        <nav class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
+          <div class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
             <a href='@tags' title='View tags'>
               <svg class='w-4 h-4 hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
                 <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
@@ -785,13 +785,14 @@ twindObserve.observe(document.documentElement)</script>
 </div>
             
           </div>
-        </div>
+        </nav>
         <!-- Main body column -->
         <div class='col-span-12 md:col-span-9'>
-          <div class='overflow-auto'>
-            <p class='my-3'>Ema apps have a basic CLI argument structure that takes two kinds of input:</p><ol class='ml-4 space-y-1 list-decimal list-inside'><li><code class='py-0.5 bg-gray-100 text-sm'>-C &lt;dir&gt;</code>: specifies the “input directory” (current working directory by default)</li><li><code class='py-0.5 bg-gray-100 text-sm'>gen</code> subcommand: generates the static site, instead of starting up the dev server</li></ol><p class='my-3'>Ema (<code class='py-0.5 bg-gray-100 text-sm'>runEma</code>) will change the <a href='https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html#v:getCurrentDirectory' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>current working directory</a> to the “input directory” before running your application code. It, along with the “gen” subcommand (if used), is passed as the <code class='py-0.5 bg-gray-100 text-sm'>Ema.CLI.Action</code> type to your <code class='py-0.5 bg-gray-100 text-sm'>render</code> function. You can also use <code class='py-0.5 bg-gray-100 text-sm'>runEmaWith</code> if you are manually handling the CLI arguments yourself.</p>
-          </div>
-          
+          <main>
+            <article class='overflow-auto'>
+              <p class='my-3'>Ema apps have a basic CLI argument structure that takes two kinds of input:</p><ol class='ml-4 space-y-1 list-decimal list-inside'><li><code class='py-0.5 bg-gray-100 text-sm'>-C &lt;dir&gt;</code>: specifies the “input directory” (current working directory by default)</li><li><code class='py-0.5 bg-gray-100 text-sm'>gen</code> subcommand: generates the static site, instead of starting up the dev server</li></ol><p class='my-3'>Ema (<code class='py-0.5 bg-gray-100 text-sm'>runEma</code>) will change the <a href='https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html#v:getCurrentDirectory' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>current working directory</a> to the “input directory” before running your application code. It, along with the “gen” subcommand (if used), is passed as the <code class='py-0.5 bg-gray-100 text-sm'>Ema.CLI.Action</code> type to your <code class='py-0.5 bg-gray-100 text-sm'>render</code> function. You can also use <code class='py-0.5 bg-gray-100 text-sm'>runEmaWith</code> if you are manually handling the CLI arguments yourself.</p>
+            </article>
+            
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
@@ -821,13 +822,12 @@ twindObserve.observe(document.documentElement)</script>
     </ul>
   </div>
 
+            
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
 
-          
-            <div class='flex items-center justify-center mt-8 space-x-2 font-mono text-sm'>
-              
-            </div>
-          
-
+          </main>
           <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-500'>
   <div class='flex space-x-2'>
     <div><a class='font-bold' href='@index'>@Index</a></div>
