@@ -106,7 +106,7 @@ twindObserve.observe(document.documentElement)</script>
               </svg>
             </a>
           </div>
-          <div class='pt-1 pb-2 rounded bg-pink-50 border-2 shadow-lg'>
+          <div class='pt-1 pb-2 rounded bg-pink-50 border-2 border-pink-200 shadow-inner'>
             
               <!-- Variable bindings for this tree-->
 
@@ -790,9 +790,21 @@ twindObserve.observe(document.documentElement)</script>
         <div class='col-span-12 md:col-span-9'>
           <main>
             <article class='overflow-auto'>
-              <p class='my-3'>Once you have <a href='guide/model' title class='text-pink-600 font-bold hover:underline'>model</a> and <a href='guide/routes' title class='text-pink-600 font-bold hover:underline'>routes</a> in place and <a href='guide/class' title class='text-pink-600 font-bold hover:underline'>constrained</a>, the last piece of the puzzle is to write a function that takes both as arguments and returns file content (lazy bytestring, to be exact) to generate. This function can be as simple as the following:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>render :: MyModel -&gt; Route -&gt; Asset ByteString
+              
+    <p class='my-3'>
+      Once you have <a href='guide/model' title class='text-pink-600 font-bold hover:underline'>model</a> and <a href='guide/routes' title class='text-pink-600 font-bold hover:underline'>routes</a> in place and <a href='guide/class' title class='text-pink-600 font-bold hover:underline'>constrained</a>, the last piece of the puzzle is to write a function that takes both as arguments and returns file content (lazy bytestring, to be exact) to generate. This function can be as simple as the following:
+    </p>
+  <div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>render :: MyModel -&gt; Route -&gt; Asset ByteString
 render model route =
-  AssetGenerated Html "&lt;b&gt;Hello&lt;/b&gt;, world!"</code></pre></div><p class='my-3'>The <code class='py-0.5 bg-gray-100 text-sm'>AssetGenerated Html</code> tells Ema that you are generating HTML content, which will be appropriately handled by the <a href='concepts/hot-reload' title='WikiLinkNormal' class='text-pink-600 font-bold hover:underline'>Hot Reload</a> of the live server.</p><p class='my-3'>Of course we want it to be real, by using our model value, as well as generate the HTML based on the route. We will also use the <a href='https://hackage.haskell.org/package/blaze-html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>blaze-html</a> library to make writing HTML in Haskell palatable (see also <a href='guide/helpers/tailwind' title class='text-pink-600 font-bold hover:underline'>the layout helper</a>). A more realistic starting point (if not the finishing product) would be:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>render :: MyModel -&gt; Route -&gt; Asset ByteString 
+  AssetGenerated Html "&lt;b&gt;Hello&lt;/b&gt;, world!"</code></pre></div>
+    <p class='my-3'>
+      The <code class='py-0.5 bg-gray-100 text-sm'>AssetGenerated Html</code> tells Ema that you are generating HTML content, which will be appropriately handled by the <a href='concepts/hot-reload' title='WikiLinkNormal' class='text-pink-600 font-bold hover:underline'>Hot Reload</a> of the live server.
+    </p>
+  
+    <p class='my-3'>
+      Of course we want it to be real, by using our model value, as well as generate the HTML based on the route. We will also use the <a href='https://hackage.haskell.org/package/blaze-html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>blaze-html</a> library to make writing HTML in Haskell palatable (see also <a href='guide/helpers/tailwind' title class='text-pink-600 font-bold hover:underline'>the layout helper</a>). A more realistic starting point (if not the finishing product) would be:
+    </p>
+  <div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>render :: MyModel -&gt; Route -&gt; Asset ByteString 
 render model route = AssetGenerated Html . Blaze.renderHtml $ 
   H.html $ do 
     H.head $ do 
@@ -810,7 +822,23 @@ render model route = AssetGenerated Html . Blaze.renderHtml $
         About -&gt;
           H.div $ H.p "This website is managed by yours truly"
       H.footer $ do 
-        A.a ! A.href "https://github.com/user/repo" $ "Source on GitHub"</code></pre></div><p class='my-3'>Note that Ema provides a <code class='py-0.5 bg-gray-100 text-sm'>routeUrl</code> helper function that serializes your route to the final URL (here, <code class='py-0.5 bg-gray-100 text-sm'>/about</code>) for linking to.</p><p class='my-3'>Spend a few moments trying to appreciate how this is <em>much simpler</em> to write than dealing with HTML template files spread across the disk as is the case with traditional static site generators. If you <a href='https://vrom911.github.io/blog/html-libraries' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>choose</a> to go the DSL route, Haskell’s type-safety now applies to your HTML as well. On top of it, Ema’s <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>hot reload</a> will instantly update the dev server’s browser view whenever you change your HTML (or any of the Haskell source code).</p><p class='my-3'>Of course when using Ema nothing prevents you from choosing to use traditional HTML templates, and you can get <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>hot reload</a> on them too with <a href='guide/helpers/filesystem' title class='text-pink-600 font-bold hover:underline'>a little bit of plumbing</a>.</p><div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'><p class='my-3'><span class='py-2 text-xl italic font-bold'>Next</span>, you might want to peruse <a href='guide/helpers' title class='text-pink-600 font-bold hover:underline'>the helper topics</a> if you need some extra functionality provided.</p></div>
+        A.a ! A.href "https://github.com/user/repo" $ "Source on GitHub"</code></pre></div>
+    <p class='my-3'>
+      Note that Ema provides a <code class='py-0.5 bg-gray-100 text-sm'>routeUrl</code> helper function that serializes your route to the final URL (here, <code class='py-0.5 bg-gray-100 text-sm'>/about</code>) for linking to.
+    </p>
+  
+    <p class='my-3'>
+      Spend a few moments trying to appreciate how this is <em>much simpler</em> to write than dealing with HTML template files spread across the disk as is the case with traditional static site generators. If you <a href='https://vrom911.github.io/blog/html-libraries' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>choose</a> to go the DSL route, Haskell’s type-safety now applies to your HTML as well. On top of it, Ema’s <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>hot reload</a> will instantly update the dev server’s browser view whenever you change your HTML (or any of the Haskell source code).
+    </p>
+  
+    <p class='my-3'>
+      Of course when using Ema nothing prevents you from choosing to use traditional HTML templates, and you can get <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>hot reload</a> on them too with <a href='guide/helpers/filesystem' title class='text-pink-600 font-bold hover:underline'>a little bit of plumbing</a>.
+    </p>
+  <div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'>
+    <p class='my-3'>
+      <span class='py-2 text-xl italic font-bold'>Next</span>, you might want to peruse <a href='guide/helpers' title class='text-pink-600 font-bold hover:underline'>the helper topics</a> if you need some extra functionality provided.
+    </p>
+  </div>
             </article>
             
   <div class='p-4 mt-8 bg-gray-100 rounded'>
@@ -885,7 +913,9 @@ render model route = AssetGenerated Html . Blaze.renderHtml $
   <div class='flex space-x-2'>
     <div><a class='font-bold' href='@index'>@Index</a></div>
     <div>|</div>
-    <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a></div>
+    <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
+      0.1.0.1
+    </div>
     <div>|</div>
     <div><a class='font-bold' href='@tags'>@Tags</a></div>
   </div>

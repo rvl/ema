@@ -97,7 +97,7 @@ twindObserve.observe(document.documentElement)</script>
               </svg>
             </a>
           </div>
-          <div class='pt-1 pb-2 rounded bg-pink-50 border-2 shadow-lg'>
+          <div class='pt-1 pb-2 rounded bg-pink-50 border-2 border-pink-200 shadow-inner'>
             
               <!-- Variable bindings for this tree-->
 
@@ -781,7 +781,11 @@ twindObserve.observe(document.documentElement)</script>
         <div class='col-span-12 md:col-span-9'>
           <main>
             <article class='overflow-auto'>
-              <p class='my-3'>After having familiarized yourself with Ema by following the <a href='start/tutorial' title class='text-pink-600 font-bold hover:underline'>earlier section</a>, you are now ready to dive deep into learning how to achieve specific things.</p><ul class='ml-4 space-y-1 list-disc list-inside'><li><a href='guide/model' title class='text-pink-600 font-bold hover:underline'>Defining your model</a> – <span class='text-gray-500'>Define your site model such that it supports hot reload</span></li><li><a href='guide/routes' title class='text-pink-600 font-bold hover:underline'>Working with routes</a> – <span class='text-gray-500'>Unless you site has a single page (<code class='py-0.5 bg-gray-100 text-sm'>index.html</code>), you will need to manage a set of routes</span></li><li><a href='guide/class' title class='text-pink-600 font-bold hover:underline'>Defining Ema instance</a> – <span class='text-gray-500'>Constrain your <code class='py-0.5 bg-gray-100 text-sm'>model</code> and <code class='py-0.5 bg-gray-100 text-sm'>route</code> to work with static sites</span></li><li><a href='guide/render' title class='text-pink-600 font-bold hover:underline'>Rendering HTML</a> – <span class='text-gray-500'>You could use plain strings to build HTML, or use templates, or use one of the delightful Haskell DSLs</span></li><li><a href='guide/helpers' title class='text-pink-600 font-bold hover:underline'>Helpers</a> – <span class='text-gray-500'>Bring Your Own Libraries, or choose from existing helpers</span></li></ul>
+              
+    <p class='my-3'>
+      After having familiarized yourself with Ema by following the <a href='start/tutorial' title class='text-pink-600 font-bold hover:underline'>earlier section</a>, you are now ready to dive deep into learning how to achieve specific things.
+    </p>
+  <ul class='ml-4 space-y-1 list-disc list-inside'><li><a href='guide/model' title class='text-pink-600 font-bold hover:underline'>Defining your model</a> – <span class='text-gray-500'>Define your site model such that it supports hot reload</span></li><li><a href='guide/routes' title class='text-pink-600 font-bold hover:underline'>Working with routes</a> – <span class='text-gray-500'>Unless you site has a single page (<code class='py-0.5 bg-gray-100 text-sm'>index.html</code>), you will need to manage a set of routes</span></li><li><a href='guide/class' title class='text-pink-600 font-bold hover:underline'>Defining Ema instance</a> – <span class='text-gray-500'>Constrain your <code class='py-0.5 bg-gray-100 text-sm'>model</code> and <code class='py-0.5 bg-gray-100 text-sm'>route</code> to work with static sites</span></li><li><a href='guide/render' title class='text-pink-600 font-bold hover:underline'>Rendering HTML</a> – <span class='text-gray-500'>You could use plain strings to build HTML, or use templates, or use one of the delightful Haskell DSLs</span></li><li><a href='guide/helpers' title class='text-pink-600 font-bold hover:underline'>Helpers</a> – <span class='text-gray-500'>Bring Your Own Libraries, or choose from existing helpers</span></li></ul>
             </article>
             
   <div class='p-4 mt-8 bg-gray-100 rounded'>
@@ -823,7 +827,9 @@ twindObserve.observe(document.documentElement)</script>
   <div class='flex space-x-2'>
     <div><a class='font-bold' href='@index'>@Index</a></div>
     <div>|</div>
-    <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a></div>
+    <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
+      0.1.0.1
+    </div>
     <div>|</div>
     <div><a class='font-bold' href='@tags'>@Tags</a></div>
   </div>

@@ -115,7 +115,7 @@ twindObserve.observe(document.documentElement)</script>
               </svg>
             </a>
           </div>
-          <div class='pt-1 pb-2 rounded bg-pink-50 border-2 shadow-lg'>
+          <div class='pt-1 pb-2 rounded bg-pink-50 border-2 border-pink-200 shadow-inner'>
             
               <!-- Variable bindings for this tree-->
 
@@ -799,13 +799,25 @@ twindObserve.observe(document.documentElement)</script>
         <div class='col-span-12 md:col-span-9'>
           <main>
             <article class='overflow-auto'>
-              <p class='my-3'>If your static site is generated depending on local files on disk, the general flow of things is as follows:</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>runEma render $ \model -&gt; do
+              
+    <p class='my-3'>
+      If your static site is generated depending on local files on disk, the general flow of things is as follows:
+    </p>
+  <div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>runEma render $ \model -&gt; do
   -- Load everything on launch
   initialModel &lt;- loadFilesAndBuildModel
   LVar.set model initialModel
   -- Continue to monitor and update the model
   observeFileSystem $ \action -&gt; 
-    LVar.modify model $ applyAction action</code></pre></div><p class='my-3'>For monitoring local files on disk you would typically use something like <a href='https://hackage.haskell.org/package/fsnotify' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>fsnotify</a> in place of <code class='py-0.5 bg-gray-100 text-sm'>observeFileSystem</code>. What is the point of doing this? To support <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>hot reload</a> on <em>data</em> change. Imagine that your static site is generated based on Markdown files as well as HTML templates on disk. If either the Markdown file, or a HTML template file is modified, we want the web browser to hot reload the updated HTML <em>instantly</em>. This is enabled by storing both these kinds of files in the application <a href='guide/model' title class='text-pink-600 font-bold hover:underline'>model</a> and using <a href='concepts/lvar' title class='text-pink-600 font-bold hover:underline'>LVar</a> to update it <em>over time</em>.</p><p class='my-3'>For filesystem changes, Ema provides a helper based on <code class='py-0.5 bg-gray-100 text-sm'>fsnotify</code> in the <code class='py-0.5 bg-gray-100 text-sm'>Ema.Helper.FileSystem</code> module. You can use it as follows</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import qualified Ema.Helper.FileSystem as FileSystem
+    LVar.modify model $ applyAction action</code></pre></div>
+    <p class='my-3'>
+      For monitoring local files on disk you would typically use something like <a href='https://hackage.haskell.org/package/fsnotify' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>fsnotify</a> in place of <code class='py-0.5 bg-gray-100 text-sm'>observeFileSystem</code>. What is the point of doing this? To support <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>hot reload</a> on <em>data</em> change. Imagine that your static site is generated based on Markdown files as well as HTML templates on disk. If either the Markdown file, or a HTML template file is modified, we want the web browser to hot reload the updated HTML <em>instantly</em>. This is enabled by storing both these kinds of files in the application <a href='guide/model' title class='text-pink-600 font-bold hover:underline'>model</a> and using <a href='concepts/lvar' title class='text-pink-600 font-bold hover:underline'>LVar</a> to update it <em>over time</em>.
+    </p>
+  
+    <p class='my-3'>
+      For filesystem changes, Ema provides a helper based on <code class='py-0.5 bg-gray-100 text-sm'>fsnotify</code> in the <code class='py-0.5 bg-gray-100 text-sm'>Ema.Helper.FileSystem</code> module. You can use it as follows
+    </p>
+  <div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import qualified Ema.Helper.FileSystem as FileSystem
 
 type Model = Map FilePath Text
 
@@ -823,13 +835,21 @@ Ema.runEma render $ \model -&gt; do
     FileSystem.Delete -&gt;
       whenJust (takeExtension fp == ".md") $ do
         log $ "Delete: " &lt;&gt; fp
-        LVar.modify model $ Map.delete fp</code></pre></div><p class='my-3'>In most cases, however, you probably want to use the higher level function <code class='py-0.5 bg-gray-100 text-sm'>mountOnLVar</code>. It “mounts” the files you specify onto the <a href='concepts/lvar' title class='text-pink-600 font-bold hover:underline'>model LVar</a> such that any changes to them are <em>automatically</em> reflected in your <a href='guide/model' title class='text-pink-600 font-bold hover:underline'>model</a> value.</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>Ema.runEma render $ \model -&gt; do
+        LVar.modify model $ Map.delete fp</code></pre></div>
+    <p class='my-3'>
+      In most cases, however, you probably want to use the higher level function <code class='py-0.5 bg-gray-100 text-sm'>mountOnLVar</code>. It “mounts” the files you specify onto the <a href='concepts/lvar' title class='text-pink-600 font-bold hover:underline'>model LVar</a> such that any changes to them are <em>automatically</em> reflected in your <a href='guide/model' title class='text-pink-600 font-bold hover:underline'>model</a> value.
+    </p>
+  <div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>Ema.runEma render $ \model -&gt; do
   FileSystem.mountOnLVar "." ["**/*.md"] model $ \fp -&gt; \case
     FileSystem.Update -&gt; do
       s &lt;- readFileText fp
       pure $ Map.insert fp s
     FileSystem.Delete -&gt;
-      pure $ Map.delete fp</code></pre></div><p class='my-3'><a href='https://github.com/srid/ema-template/blob/master/src/Main.hs' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Full example here</a>.</p>
+      pure $ Map.delete fp</code></pre></div>
+    <p class='my-3'>
+      <a href='https://github.com/srid/ema-template/blob/master/src/Main.hs' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Full example here</a>.
+    </p>
+  
             </article>
             
   <div class='p-4 mt-8 bg-gray-100 rounded'>
@@ -915,7 +935,9 @@ Ema.runEma render $ \model -&gt; do
   <div class='flex space-x-2'>
     <div><a class='font-bold' href='@index'>@Index</a></div>
     <div>|</div>
-    <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a></div>
+    <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
+      0.1.0.1
+    </div>
     <div>|</div>
     <div><a class='font-bold' href='@tags'>@Tags</a></div>
   </div>

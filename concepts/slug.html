@@ -106,7 +106,7 @@ twindObserve.observe(document.documentElement)</script>
               </svg>
             </a>
           </div>
-          <div class='pt-1 pb-2 rounded bg-pink-50 border-2 shadow-lg'>
+          <div class='pt-1 pb-2 rounded bg-pink-50 border-2 border-pink-200 shadow-inner'>
             
               <!-- Variable bindings for this tree-->
 
@@ -790,9 +790,25 @@ twindObserve.observe(document.documentElement)</script>
         <div class='col-span-12 md:col-span-9'>
           <main>
             <article class='overflow-auto'>
-              <div class='bg-gray-100 px-4 py-1 rounded italic'><p class='my-3'>Note that the initial version of Ema used Slug in its routing system, but not anymore in the latest version. The Slug type is still left in the library for using as a <a href='guide/helpers' title='WikiLinkNormal' class='text-pink-600 font-bold hover:underline'>helper</a>.</p></div><p class='my-3'>A slug is a component of a URL or file path. In an <em>URL</em> like <code class='py-0.5 bg-gray-100 text-sm'>/foo/bar</code>, there are two <em>slugs</em>: “foo” and “bar”. URLs (as well as filepaths) can therefore be represented as lists of slugs (<code class='py-0.5 bg-gray-100 text-sm'>[Slug]</code>).</p><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import Ema (Slug)
+              <div class='bg-gray-100 px-4 py-1 rounded italic'>
+    <p class='my-3'>
+      Note that the initial version of Ema used Slug in its routing system, but not anymore in the latest version. The Slug type is still left in the library for using as a <a href='guide/helpers' title='WikiLinkNormal' class='text-pink-600 font-bold hover:underline'>helper</a>.
+    </p>
+  </div>
+    <p class='my-3'>
+      A slug is a component of a URL or file path. In an <em>URL</em> like <code class='py-0.5 bg-gray-100 text-sm'>/foo/bar</code>, there are two <em>slugs</em>: “foo” and “bar”. URLs (as well as filepaths) can therefore be represented as lists of slugs (<code class='py-0.5 bg-gray-100 text-sm'>[Slug]</code>).
+    </p>
+  <div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import Ema (Slug)
 
-type URL = [Slug]</code></pre></div><p class='my-3'>Slugs are automatically <a href='https://www.unicode.org/faq/normalization.html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>unicode normalized</a> to NFC to ensure that route links work reliably regardless of the underlying representation of any non-ascii link text.</p><p class='my-3'>The functions <code class='py-0.5 bg-gray-100 text-sm'>decodeSlug</code> and <code class='py-0.5 bg-gray-100 text-sm'>encodeSlug</code> allow you to convert between URLs and slugs.</p>
+type URL = [Slug]</code></pre></div>
+    <p class='my-3'>
+      Slugs are automatically <a href='https://www.unicode.org/faq/normalization.html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>unicode normalized</a> to NFC to ensure that route links work reliably regardless of the underlying representation of any non-ascii link text.
+    </p>
+  
+    <p class='my-3'>
+      The functions <code class='py-0.5 bg-gray-100 text-sm'>decodeSlug</code> and <code class='py-0.5 bg-gray-100 text-sm'>encodeSlug</code> allow you to convert between URLs and slugs.
+    </p>
+  
             </article>
             
   <div class='p-4 mt-8 bg-gray-100 rounded'>
@@ -823,7 +839,9 @@ type URL = [Slug]</code></pre></div><p class='my-3'>Slugs are automatically <a h
   <div class='flex space-x-2'>
     <div><a class='font-bold' href='@index'>@Index</a></div>
     <div>|</div>
-    <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a></div>
+    <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
+      0.1.0.1
+    </div>
     <div>|</div>
     <div><a class='font-bold' href='@tags'>@Tags</a></div>
   </div>

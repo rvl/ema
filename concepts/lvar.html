@@ -106,7 +106,7 @@ twindObserve.observe(document.documentElement)</script>
               </svg>
             </a>
           </div>
-          <div class='pt-1 pb-2 rounded bg-pink-50 border-2 shadow-lg'>
+          <div class='pt-1 pb-2 rounded bg-pink-50 border-2 border-pink-200 shadow-inner'>
             
               <!-- Variable bindings for this tree-->
 
@@ -790,7 +790,15 @@ twindObserve.observe(document.documentElement)</script>
         <div class='col-span-12 md:col-span-9'>
           <main>
             <article class='overflow-auto'>
-              <p class='my-3'>If you are familiar with Haskell’s <code class='py-0.5 bg-gray-100 text-sm'>stm</code> package, a <code class='py-0.5 bg-gray-100 text-sm'>LVar</code> is essentially a <a href='https://hackage.haskell.org/package/stm-2.5.0.0/docs/Control-Concurrent-STM-TMVar.html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 bg-gray-100 text-sm'>TMVar</code></a> but with an extra ability for other threads to observe changes. Ema uses it for <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>hot reload</a>, and your application code is expected to set and update its <a href='guide/model' title class='text-pink-600 font-bold hover:underline'>model</a> through the LVar.</p><p class='my-3'>Documentation on <code class='py-0.5 bg-gray-100 text-sm'>LVar</code> is available <a href='https://hackage.haskell.org/package/lvar' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>on Hackage</a>.</p>
+              
+    <p class='my-3'>
+      If you are familiar with Haskell’s <code class='py-0.5 bg-gray-100 text-sm'>stm</code> package, a <code class='py-0.5 bg-gray-100 text-sm'>LVar</code> is essentially a <a href='https://hackage.haskell.org/package/stm-2.5.0.0/docs/Control-Concurrent-STM-TMVar.html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 bg-gray-100 text-sm'>TMVar</code></a> but with an extra ability for other threads to observe changes. Ema uses it for <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>hot reload</a>, and your application code is expected to set and update its <a href='guide/model' title class='text-pink-600 font-bold hover:underline'>model</a> through the LVar.
+    </p>
+  
+    <p class='my-3'>
+      Documentation on <code class='py-0.5 bg-gray-100 text-sm'>LVar</code> is available <a href='https://hackage.haskell.org/package/lvar' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>on Hackage</a>.
+    </p>
+  
             </article>
             
   <div class='p-4 mt-8 bg-gray-100 rounded'>
@@ -876,7 +884,9 @@ twindObserve.observe(document.documentElement)</script>
   <div class='flex space-x-2'>
     <div><a class='font-bold' href='@index'>@Index</a></div>
     <div>|</div>
-    <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a></div>
+    <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
+      0.1.0.1
+    </div>
     <div>|</div>
     <div><a class='font-bold' href='@tags'>@Tags</a></div>
   </div>
