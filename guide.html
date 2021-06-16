@@ -6,8 +6,6 @@
   <title>
     Guide – Ema
   </title>
-  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>twind.setup({})
-twindObserve.observe(document.documentElement)</script>
   
     
       <meta property='og:description' content='Build jamstack-style static sites in Haskell, with a live server supporting fast hot-reload in the browser on code or data change.
@@ -24,6 +22,10 @@ twindObserve.observe(document.documentElement)</script>
 <link href='https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-tomorrow.css' rel='stylesheet' />
 <script src='https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/prism.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js'></script>
   
+  <!-- CSSSTART -->
+  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>twind.setup({})
+twindObserve.observe(document.documentElement)</script>
+  <!-- CSSEND -->
   <head-extra></head-extra>
 </head>
 
@@ -71,7 +73,7 @@ twindObserve.observe(document.documentElement)</script>
   </div>
 
 
-<h1 class='flex items-center justify-center mt-2 text-4xl font-extrabold text-black bg-white'>
+<h1 class='flex items-center justify-center mt-2 text-5xl font-extrabold text-black '>
   <a>
     Guide
   </a>
@@ -783,9 +785,9 @@ twindObserve.observe(document.documentElement)</script>
             <article class='overflow-auto'>
               
     <p class='my-3'>
-      After having familiarized yourself with Ema by following the <a href='start/tutorial' title class='text-pink-600 font-bold hover:underline'>earlier section</a>, you are now ready to dive deep into learning how to achieve specific things.
+      After having familiarized yourself with Ema by following the <a href='start/tutorial' class='text-pink-600 font-bold hover:underline'>earlier section</a>, you are now ready to dive deep into learning how to achieve specific things.
     </p>
-  <ul class='ml-4 space-y-1 list-disc list-inside'><li><a href='guide/model' title class='text-pink-600 font-bold hover:underline'>Defining your model</a> – <span class='text-gray-500'>Define your site model such that it supports hot reload</span></li><li><a href='guide/routes' title class='text-pink-600 font-bold hover:underline'>Working with routes</a> – <span class='text-gray-500'>Unless you site has a single page (<code class='py-0.5 bg-gray-100 text-sm'>index.html</code>), you will need to manage a set of routes</span></li><li><a href='guide/class' title class='text-pink-600 font-bold hover:underline'>Defining Ema instance</a> – <span class='text-gray-500'>Constrain your <code class='py-0.5 bg-gray-100 text-sm'>model</code> and <code class='py-0.5 bg-gray-100 text-sm'>route</code> to work with static sites</span></li><li><a href='guide/render' title class='text-pink-600 font-bold hover:underline'>Rendering HTML</a> – <span class='text-gray-500'>You could use plain strings to build HTML, or use templates, or use one of the delightful Haskell DSLs</span></li><li><a href='guide/helpers' title class='text-pink-600 font-bold hover:underline'>Helpers</a> – <span class='text-gray-500'>Bring Your Own Libraries, or choose from existing helpers</span></li></ul>
+  <ul class='ml-4 space-y-1 list-disc list-inside'><li><a href='guide/model' class='text-pink-600 font-bold hover:underline'>Defining your model</a> – <span class='text-gray-500'>Define your site model such that it supports hot reload</span></li><li><a href='guide/routes' class='text-pink-600 font-bold hover:underline'>Working with routes</a> – <span class='text-gray-500'>Unless you site has a single page (<code class='py-0.5 bg-gray-100 text-sm'>index.html</code>), you will need to manage a set of routes</span></li><li><a href='guide/class' class='text-pink-600 font-bold hover:underline'>Defining Ema instance</a> – <span class='text-gray-500'>Constrain your <code class='py-0.5 bg-gray-100 text-sm'>model</code> and <code class='py-0.5 bg-gray-100 text-sm'>route</code> to work with static sites</span></li><li><a href='guide/render' class='text-pink-600 font-bold hover:underline'>Rendering HTML</a> – <span class='text-gray-500'>You could use plain strings to build HTML, or use templates, or use one of the delightful Haskell DSLs</span></li><li><a href='guide/helpers' class='text-pink-600 font-bold hover:underline'>Helpers</a> – <span class='text-gray-500'>Bring Your Own Libraries, or choose from existing helpers</span></li></ul>
             </article>
             
   <div class='p-4 mt-8 bg-gray-100 rounded'>
@@ -799,7 +801,7 @@ twindObserve.observe(document.documentElement)</script>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><a href='guide' title class='text-black-600 font-bold hover:bg-gray-50'>Guide</a></div>
+            <div><a href='guide' class='text-black-600 font-bold hover:bg-gray-50'>Guide</a></div>
           </div>
         </li>
       
@@ -810,7 +812,7 @@ twindObserve.observe(document.documentElement)</script>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><p><span class='py-2 text-xl italic font-bold'>Next</span>, checkout the <a href='guide' title class='text-black-600 font-bold hover:bg-gray-50'>Guide</a> series for information on specific topics.</p></div>
+            <div><p><span class='py-2 text-xl italic font-bold'>Next</span>, checkout the <a href='guide' class='text-black-600 font-bold hover:bg-gray-50'>Guide</a> series for information on specific topics.</p></div>
           </div>
         </li>
       
@@ -828,7 +830,7 @@ twindObserve.observe(document.documentElement)</script>
     <div><a class='font-bold' href='@index'>@Index</a></div>
     <div>|</div>
     <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
-      0.1.0.1
+      0.1.1.0
     </div>
     <div>|</div>
     <div><a class='font-bold' href='@tags'>@Tags</a></div>

@@ -6,8 +6,6 @@
   <title>
     Ema
   </title>
-  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>twind.setup({})
-twindObserve.observe(document.documentElement)</script>
   
     
       <meta property='og:description' content='Build jamstack-style static sites in Haskell, with a live server supporting fast hot-reload in the browser on code or data change.
@@ -24,6 +22,10 @@ twindObserve.observe(document.documentElement)</script>
 <link href='https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-tomorrow.css' rel='stylesheet' />
 <script src='https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/prism.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js'></script>
   
+  <!-- CSSSTART -->
+  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>twind.setup({})
+twindObserve.observe(document.documentElement)</script>
+  <!-- CSSEND -->
   <head-extra></head-extra>
 </head>
 
@@ -51,7 +53,7 @@ twindObserve.observe(document.documentElement)</script>
         <!-- Title column -->
         <div class='col-span-12 md:col-span-9'>
           
-<h1 class='flex items-center justify-center mt-2 text-4xl font-extrabold text-black bg-white'>
+<h1 class='flex items-center justify-center mt-2 text-5xl font-extrabold text-black '>
   <a>
     Ema
   </a>
@@ -767,23 +769,23 @@ twindObserve.observe(document.documentElement)</script>
             <article class='overflow-auto'>
               <div class='avatar'>
     <p class='my-3'>
-      <img src='/favicon.svg' title alt class='w-32 h-32 float-right' />
+      <span class='line-through italic' title='Link does not refer to any known file'><img src='/favicon.svg' alt='/favicon.svg' class='w-32 h-32 float-right' /></span>
     </p>
   </div><div class='text-xl mb-8'>
     <p class='my-3'>
-      <a href='https://github.com/srid/ema' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Ema</a> is a next-gen <strong>Haskell</strong> library toolkit for building <a href='https://jamstack.org/' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>jamstack-style</a> static sites. Ema sites are <em>change-aware</em>; in addition to good ol’ static site generation, it provides a live server supporting <strong>fast hot-reload</strong> in the browser on code <em>or</em> data change.
+      <a href='https://github.com/srid/ema' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Ema</a> is a next-gen <strong>Haskell</strong> library toolkit for building <a href='https://jamstack.org/' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>jamstack-style</a> static sites. Ema sites are <em>change-aware</em>; in addition to good ol’ static site generation, it provides a live server supporting <strong>fast hot-reload</strong> in the browser on code <em>or</em> data change.
     </p>
   </div><div class='text-gray-600'>
     <p class='my-3'>
-      The ultimate goal of ema is to facilitate creating with ease your own <a href='https://neuron.zettel.page/' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>neuron</a>, or just about any app that creates a browser view of arbitrarily changing data (on disk, database, or whatever). Ema is designed to facilitate creation of apps whose data is normally <em>edited</em> via traditional mechanisms (eg: text editor) but <em>rendered</em> as a delightful web page - so as to provide an economical read-only view of your data on desktop & mobile.
+      The ultimate goal of ema is to facilitate creating with ease your own <a href='https://neuron.zettel.page/' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>neuron</a>, or just about any app that creates a browser view of arbitrarily changing data (on disk, database, or whatever). Ema is designed to facilitate creation of apps whose data is normally <em>edited</em> via traditional mechanisms (eg: text editor) but <em>rendered</em> as a delightful web page - so as to provide an economical read-only view of your data on desktop & mobile.
     </p>
-  </div><div class='my-8'><ul class='ml-4 space-y-1 list-disc list-inside'><li><a href='start' title class='text-pink-600 font-bold hover:underline'>Getting Started</a></li><li><a href='guide' title class='text-pink-600 font-bold hover:underline'>Guide</a></li><li><a href='concepts' title class='text-pink-600 font-bold hover:underline'>Concepts</a></li><li><a href='https://notes.srid.ca/ema' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Ema News</a> (<a href='https://notes.srid.ca/ema.xml' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>RSS Feed</a>)</li></ul></div><div class='flex justify-center items-center mb-8'><div xmlhtmlRaw><video autoplay="" loop="" muted="">
+  </div><div class='my-8'><ul class='ml-4 space-y-1 list-disc list-inside'><li><a href='start' class='text-pink-600 font-bold hover:underline'>Getting Started</a></li><li><a href='guide' class='text-pink-600 font-bold hover:underline'>Guide</a></li><li><a href='concepts' class='text-pink-600 font-bold hover:underline'>Concepts</a></li><li><a href='https://notes.srid.ca/ema' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Ema News</a> (<a href='https://notes.srid.ca/ema.xml' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>RSS Feed</a>)</li></ul></div><div class='flex justify-center items-center mb-8'><div xmlhtmlRaw><video autoplay="" loop="" muted="">
   <source src="static/ema-demo.mp4" />
   <p>Your browser doesn't support HTML5 video. Here is a <a href="static/ema-demo.mp4">link to the video</a> instead.</p>
 </video>
 </div></div><div class='flex justify-center items-center'>
     <p class='my-3'>
-      <a href='https://www.fairforall.org/about/' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'><img src='https://img.shields.io/badge/FAIR-pledge-blue' title alt='FAIR' /></a>
+      <a href='https://www.fairforall.org/about/' class='text-pink-600 hover:underline' target='_blank' rel='noopener'><img src='https://img.shields.io/badge/FAIR-pledge-blue' alt='FAIR' /></a>
     </p>
   </div>
     <p class='my-3'>
@@ -803,7 +805,7 @@ twindObserve.observe(document.documentElement)</script>
     <div><a class='font-bold' href='@index'>@Index</a></div>
     <div>|</div>
     <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
-      0.1.0.1
+      0.1.1.0
     </div>
     <div>|</div>
     <div><a class='font-bold' href='@tags'>@Tags</a></div>

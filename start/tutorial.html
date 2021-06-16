@@ -6,8 +6,6 @@
   <title>
     Tutorial – Ema
   </title>
-  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>twind.setup({})
-twindObserve.observe(document.documentElement)</script>
   
     
       <meta property='og:description' content='Build jamstack-style static sites in Haskell, with a live server supporting fast hot-reload in the browser on code or data change.
@@ -24,6 +22,10 @@ twindObserve.observe(document.documentElement)</script>
 <link href='https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-tomorrow.css' rel='stylesheet' />
 <script src='https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/prism.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js'></script>
   
+  <!-- CSSSTART -->
+  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>twind.setup({})
+twindObserve.observe(document.documentElement)</script>
+  <!-- CSSEND -->
   <head-extra></head-extra>
 </head>
 
@@ -80,7 +82,7 @@ twindObserve.observe(document.documentElement)</script>
   </div>
 
 
-<h1 class='flex items-center justify-center mt-2 text-4xl font-extrabold text-black bg-white'>
+<h1 class='flex items-center justify-center mt-2 text-5xl font-extrabold text-black '>
   <a>
     Tutorial
   </a>
@@ -792,9 +794,9 @@ twindObserve.observe(document.documentElement)</script>
             <article class='overflow-auto'>
               
     <p class='my-3'>
-      Make sure that you have have followed <a href='start' title class='text-pink-600 font-bold hover:underline'>the previous section</a> in order to have the <a href='https://github.com/srid/ema-template' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>template repo</a> checked out and running locally. Here, <strong>our goal</strong> is to replace the source code of the template repo and write a basic site from scratch.
+      Make sure that you have have followed <a href='start' class='text-pink-600 font-bold hover:underline'>the previous section</a> in order to have the <a href='https://github.com/srid/ema-template' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>template repo</a> checked out and running locally. Here, <strong>our goal</strong> is to replace the source code of the template repo and write a basic site from scratch.
     </p>
-  <ol class='ml-4 space-y-1 list-decimal list-inside'><li>Follow the template repo’s <a href='https://github.com/srid/ema-template#getting-started' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>README</a> and have it open in Visual Studio Code while running the dev server. Your website should be viewable at <a href='http://localhost:9001/' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>http://localhost:9001/</a></li><li>Open <code class='py-0.5 bg-gray-100 text-sm'>src/Main.hs</code></li><li>Delete everything in it, and replace it with the following</li></ol><div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>module Main where
+  <ol class='ml-4 space-y-1 list-decimal list-inside'><li>Follow the template repo’s <a href='https://github.com/srid/ema-template#getting-started' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>README</a> and have it open in Visual Studio Code while running the dev server. Your website should be viewable at <a href='http://localhost:9001/' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>http://localhost:9001/</a></li><li>Open <code class='py-0.5 bg-gray-100 text-sm'>src/Main.hs</code></li><li>Delete everything in it, and replace it with the following</li></ol><div class='py-0.5 text-sm'><pre><code class='haskell language-haskell'>module Main where
 
 import qualified Ema
 
@@ -804,27 +806,27 @@ main = do
   Ema.runEmaPure $ \_ -&gt;
     encodeUtf8 $ "&lt;b&gt;Hello&lt;/b&gt;, from " &lt;&gt; speaker</code></pre></div>
     <p class='my-3'>
-      This is the <em>minimum</em> amount of code necessary to run an Ema site. Notice that as you replace and save this file, your browser (which is at <a href='http://locahost:9001' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>http://locahost:9001</a>) will <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>hot reload</a> to display “Hello, Ema”. Congratulations, you just created your first website!
+      This is the <em>minimum</em> amount of code necessary to run an Ema site. Notice that as you replace and save this file, your browser (which is at <a href='http://locahost:9001' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>http://locahost:9001</a>) will <a href='concepts/hot-reload' class='text-pink-600 font-bold hover:underline'>hot reload</a> to display “Hello, Ema”. Congratulations, you just created your first website!
     </p>
   <h2 id='expanding-on-hello-world' class='mt-4 mb-4 text-4xl font-bold text-gray-700'>Expanding on Hello World</h2>
     <p class='my-3'>
-      Okay, but that’s just <em>one</em> page. But we want to add a second page. And might as well add more content than “Hello, Ema”. Let’s do that next. The first step is define the <a href='guide/routes' title class='text-pink-600 font-bold hover:underline'>route</a> type that corresponds to our site’s pages. Add the following:
+      Okay, but that’s just <em>one</em> page. But we want to add a second page. And might as well add more content than “Hello, Ema”. Let’s do that next. The first step is define the <a href='guide/routes' class='text-pink-600 font-bold hover:underline'>route</a> type that corresponds to our site’s pages. Add the following:
     </p>
-  <div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Route
+  <div class='py-0.5 text-sm'><pre><code class='haskell language-haskell'>data Route
   = Index  -- Corresponds to /
   | About  -- Corresponds to /about
   deriving (Bounded, Enum, Show)</code></pre></div>
     <p class='my-3'>
-      Next, let’s define a <a href='guide/model' title class='text-pink-600 font-bold hover:underline'>model</a>. A model will hold the state of our website used to render its HTML. Let’s put the <code class='py-0.5 bg-gray-100 text-sm'>speaker</code> variable in it, as that’s all we are using:
+      Next, let’s define a <a href='guide/model' class='text-pink-600 font-bold hover:underline'>model</a>. A model will hold the state of our website used to render its HTML. Let’s put the <code class='py-0.5 bg-gray-100 text-sm'>speaker</code> variable in it, as that’s all we are using:
     </p>
-  <div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>data Model = Model { speaker :: Text }</code></pre></div>
+  <div class='py-0.5 text-sm'><pre><code class='haskell language-haskell'>data Model = Model { speaker :: Text }</code></pre></div>
     <p class='my-3'>
-      We should now tell Ema how to convert our <code class='py-0.5 bg-gray-100 text-sm'>Route</code> to actual file paths (which is used to determine the URL too). Let’s do that by making an instance of the <code class='py-0.5 bg-gray-100 text-sm'>Ema</code> <a href='guide/class' title class='text-pink-600 font-bold hover:underline'>class</a>:
+      We should now tell Ema how to convert our <code class='py-0.5 bg-gray-100 text-sm'>Route</code> to actual file paths (which is used to determine the URL too). Let’s do that by making an instance of the <code class='py-0.5 bg-gray-100 text-sm'>Ema</code> <a href='guide/class' class='text-pink-600 font-bold hover:underline'>class</a>:
     </p>
-  <div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import Ema (Ema (..))
+  <div class='py-0.5 text-sm'><pre><code class='haskell language-haskell'>import Ema (Ema (..))
 
 instance Ema Model Route where
-  encodeRoute = \case
+  encodeRoute _model = \case
     Index -&gt; "index.html"  -- To /
     About -&gt; "about.html"  -- To /about
   decodeRoute _model = \case
@@ -834,7 +836,7 @@ instance Ema Model Route where
     <p class='my-3'>
       Now, we write the <code class='py-0.5 bg-gray-100 text-sm'>main</code> entry point:
     </p>
-  <div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import Control.Concurrent (threadDelay)
+  <div class='py-0.5 text-sm'><pre><code class='haskell language-haskell'>import Control.Concurrent (threadDelay)
 import qualified Data.LVar as LVar
 
 main :: IO ()
@@ -843,13 +845,13 @@ main = do
     LVar.set model $ Model "Ema"
     liftIO $ threadDelay maxBound</code></pre></div>
     <p class='my-3'>
-      The <code class='py-0.5 bg-gray-100 text-sm'>runEma</code> function is explained <a href='guide/class' title class='text-pink-600 font-bold hover:underline'>here</a>, but in brief: it takes a render function (see below) as well as an IO action that allows us to create and update the model <a href='concepts/lvar' title class='text-pink-600 font-bold hover:underline'>lvar</a>. Note that <code class='py-0.5 bg-gray-100 text-sm'>threadDelay maxBound</code> here? That is because our IO action must not exit; in the dev server mode of real-world websites, you would continue to monitor the external world (such as Markdown files) and update the model, to facilitate <a href='concepts/hot-reload' title class='text-pink-600 font-bold hover:underline'>hot reload</a> of data used by your site.
+      The <code class='py-0.5 bg-gray-100 text-sm'>runEma</code> function is explained <a href='guide/class' class='text-pink-600 font-bold hover:underline'>here</a>, but in brief: it takes a render function (see below) as well as an IO action that allows us to create and update the model <a href='concepts/lvar' class='text-pink-600 font-bold hover:underline'>lvar</a>. Note that <code class='py-0.5 bg-gray-100 text-sm'>threadDelay maxBound</code> here? That is because our IO action must not exit; in the dev server mode of real-world websites, you would continue to monitor the external world (such as Markdown files) and update the model, to facilitate <a href='concepts/hot-reload' class='text-pink-600 font-bold hover:underline'>hot reload</a> of data used by your site.
     </p>
   
     <p class='my-3'>
       On final piece of the puzzle is to write the aforementioned <code class='py-0.5 bg-gray-100 text-sm'>render</code> function:
     </p>
-  <div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>import qualified Ema
+  <div class='py-0.5 text-sm'><pre><code class='haskell language-haskell'>import qualified Ema
 import qualified Ema.CLI
 import qualified Ema.Helper.Tailwind as Tailwind
 import Text.Blaze.Html5 ((!))
@@ -881,14 +883,14 @@ render _emaAction model r = Ema.AssetGenerated Ema.Html . RU.renderHtml $
     <p class='my-3'>
       If everything compiles, you should see the site update in the web browser. A couple of quick points about the <code class='py-0.5 bg-gray-100 text-sm'>render</code> function:
     </p>
-  <ol class='ml-4 space-y-1 list-decimal list-inside'><li>It should return the raw HTML as a <code class='py-0.5 bg-gray-100 text-sm'>ByteString</code>. Here, we use <a href='https://hackage.haskell.org/package/blaze-html' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>blaze-html</a> as HTML DSL. You can also use your own HTML templates of course.</li><li>It uses <code class='py-0.5 bg-gray-100 text-sm'>Ema.routeUrl</code> function to create a URL out of our <code class='py-0.5 bg-gray-100 text-sm'>Route</code> type. This function uses the <a href='guide/class' title class='text-pink-600 font-bold hover:underline'><code class='py-0.5 bg-gray-100 text-sm'>Ema</code> typeclass</a>, so it uses the <code class='py-0.5 bg-gray-100 text-sm'>encodeRoute</code> function defined further above.</li></ol>
+  <ol class='ml-4 space-y-1 list-decimal list-inside'><li>It should return the raw HTML as a <code class='py-0.5 bg-gray-100 text-sm'>ByteString</code>. Here, we use <a href='https://hackage.haskell.org/package/blaze-html' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>blaze-html</a> as HTML DSL. You can also use your own HTML templates of course.</li><li>It uses <code class='py-0.5 bg-gray-100 text-sm'>Ema.routeUrl</code> function to create a URL out of our <code class='py-0.5 bg-gray-100 text-sm'>Route</code> type. This function uses the <a href='guide/class' class='text-pink-600 font-bold hover:underline'><code class='py-0.5 bg-gray-100 text-sm'>Ema</code> typeclass</a>, so it uses the <code class='py-0.5 bg-gray-100 text-sm'>encodeRoute</code> function defined further above.</li></ol>
     <p class='my-3'>
-      On final note, you will note that nothing is actually <em>generated</em> so far. This is because Ema has been running in the dev server mode, which is quite useful during development. To actually generate the files, you can use the <code class='py-0.5 bg-gray-100 text-sm'>gen</code> command when running the <a href='concepts/cli' title class='text-pink-600 font-bold hover:underline'>CLI</a>:
+      On final note, you will note that nothing is actually <em>generated</em> so far. This is because Ema has been running in the dev server mode, which is quite useful during development. To actually generate the files, you can use the <code class='py-0.5 bg-gray-100 text-sm'>gen</code> command when running the <a href='concepts/cli' class='text-pink-600 font-bold hover:underline'>CLI</a>:
     </p>
-  <div class='py-0.5 text-sm'><pre class='sh language-sh'><code class='sh language-sh'>mkdir ./output
+  <div class='py-0.5 text-sm'><pre><code class='sh language-sh'>mkdir ./output
 nix run . -- -C ./content gen $(pwd)/output</code></pre></div><h2 id='exercises' class='mt-4 mb-4 text-4xl font-bold text-gray-700'>Exercises</h2><ol class='ml-4 space-y-1 list-decimal list-inside'><li>Figure out how to use static assets (images, files) in your static sites (hint: the typeclass)</li><li>What happens if you <code class='py-0.5 bg-gray-100 text-sm'>throw</code> an exception or use <code class='py-0.5 bg-gray-100 text-sm'>error</code> in the <code class='py-0.5 bg-gray-100 text-sm'>render</code> function?</li></ol><div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'>
     <p class='my-3'>
-      <span class='py-2 text-xl italic font-bold'>Next</span>, checkout the <a href='guide' title class='text-pink-600 font-bold hover:underline'>Guide</a> series for information on specific topics.
+      <span class='py-2 text-xl italic font-bold'>Next</span>, checkout the <a href='guide' class='text-pink-600 font-bold hover:underline'>Guide</a> series for information on specific topics.
     </p>
   </div>
             </article>
@@ -904,7 +906,7 @@ nix run . -- -C ./content gen $(pwd)/output</code></pre></div><h2 id='exercises'
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><p>After having familiarized yourself with Ema by following the <a href='start/tutorial' title class='text-black-600 font-bold hover:bg-gray-50'>earlier section</a>, you are now ready to dive deep into learning how to achieve specific things.</p></div>
+            <div><p>After having familiarized yourself with Ema by following the <a href='start/tutorial' class='text-black-600 font-bold hover:bg-gray-50'>earlier section</a>, you are now ready to dive deep into learning how to achieve specific things.</p></div>
           </div>
         </li>
       
@@ -915,7 +917,7 @@ nix run . -- -C ./content gen $(pwd)/output</code></pre></div><h2 id='exercises'
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><p><span class='py-2 text-xl italic font-bold'>Next</span>, <a href='start/tutorial' title class='text-black-600 font-bold hover:bg-gray-50'>in the tutorial</a> let’s try using this template repo to create a basic website.</p></div>
+            <div><p><span class='py-2 text-xl italic font-bold'>Next</span>, <a href='start/tutorial' class='text-black-600 font-bold hover:bg-gray-50'>in the tutorial</a> let’s try using this template repo to create a basic website.</p></div>
           </div>
         </li>
       
@@ -933,7 +935,7 @@ nix run . -- -C ./content gen $(pwd)/output</code></pre></div><h2 id='exercises'
     <div><a class='font-bold' href='@index'>@Index</a></div>
     <div>|</div>
     <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
-      0.1.0.1
+      0.1.1.0
     </div>
     <div>|</div>
     <div><a class='font-bold' href='@tags'>@Tags</a></div>

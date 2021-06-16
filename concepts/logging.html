@@ -6,8 +6,6 @@
   <title>
     Logging – Ema
   </title>
-  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>twind.setup({})
-twindObserve.observe(document.documentElement)</script>
   
     
       <meta property='og:description' content='Build jamstack-style static sites in Haskell, with a live server supporting fast hot-reload in the browser on code or data change.
@@ -24,6 +22,10 @@ twindObserve.observe(document.documentElement)</script>
 <link href='https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-tomorrow.css' rel='stylesheet' />
 <script src='https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/prism.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js'></script>
   
+  <!-- CSSSTART -->
+  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>twind.setup({})
+twindObserve.observe(document.documentElement)</script>
+  <!-- CSSEND -->
   <head-extra></head-extra>
 </head>
 
@@ -80,7 +82,7 @@ twindObserve.observe(document.documentElement)</script>
   </div>
 
 
-<h1 class='flex items-center justify-center mt-2 text-4xl font-extrabold text-black bg-white'>
+<h1 class='flex items-center justify-center mt-2 text-5xl font-extrabold text-black '>
   <a>
     Logging
   </a>
@@ -792,9 +794,9 @@ twindObserve.observe(document.documentElement)</script>
             <article class='overflow-auto'>
               
     <p class='my-3'>
-      <code class='py-0.5 bg-gray-100 text-sm'>runEma</code>’s action monad supports the <code class='py-0.5 bg-gray-100 text-sm'>MonadLoggerIO</code> constraint, as defined by <a href='https://hackage.haskell.org/package/monad-logger' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>monad-logger</a>. This means that you can use any of the logging functions from <code class='py-0.5 bg-gray-100 text-sm'>monad-logger</code> to add logging to your application. <a href='https://hackage.haskell.org/package/monad-logger-extras' title class='text-pink-600 hover:underline' target='_blank' rel='noopener'>monad-logger-extras</a> is used to colorize the logs.
+      <code class='py-0.5 bg-gray-100 text-sm'>runEma</code>’s action monad supports the <code class='py-0.5 bg-gray-100 text-sm'>MonadLoggerIO</code> constraint, as defined by <a href='https://hackage.haskell.org/package/monad-logger' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>monad-logger</a>. This means that you can use any of the logging functions from <code class='py-0.5 bg-gray-100 text-sm'>monad-logger</code> to add logging to your application. <a href='https://hackage.haskell.org/package/monad-logger-extras' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>monad-logger-extras</a> is used to colorize the logs.
     </p>
-  <div class='py-0.5 text-sm'><pre class='haskell language-haskell'><code class='haskell language-haskell'>logInfoNS "myapp" "This is an info message"
+  <div class='py-0.5 text-sm'><pre><code class='haskell language-haskell'>logInfoNS "myapp" "This is an info message"
 logDebugNS "myapp" "This is a debug message info"</code></pre></div>
             </article>
             
@@ -809,7 +811,7 @@ logDebugNS "myapp" "This is a debug message info"</code></pre></div>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><a href='concepts/logging' title class='text-black-600 font-bold hover:bg-gray-50'>Logging</a></div>
+            <div><a href='concepts/logging' class='text-black-600 font-bold hover:bg-gray-50'>Logging</a></div>
           </div>
         </li>
       
@@ -827,7 +829,7 @@ logDebugNS "myapp" "This is a debug message info"</code></pre></div>
     <div><a class='font-bold' href='@index'>@Index</a></div>
     <div>|</div>
     <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
-      0.1.0.1
+      0.1.1.0
     </div>
     <div>|</div>
     <div><a class='font-bold' href='@tags'>@Tags</a></div>
