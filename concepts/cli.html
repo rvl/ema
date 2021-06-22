@@ -8,8 +8,7 @@
   </title>
   
     
-      <meta property='og:description' content='Build jamstack-style static sites in Haskell, with a live server supporting fast hot-reload in the browser on code or data change.
-' />
+      <meta property='og:description' content />
       <meta property='og:site_name' content='Ema' />
     
     
@@ -21,10 +20,14 @@
 <!-- Syntax highlighting -->
 <link href='https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-tomorrow.css' rel='stylesheet' />
 <script src='https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/prism.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js'></script>
+
   
   <!-- CSSSTART -->
-  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>twind.setup({})
-twindObserve.observe(document.documentElement)</script>
+  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>// Be silent to avoid complaining about non-tailwind classes
+// https://github.com/tw-in-js/twind/discussions/180#discussioncomment-678272
+console.log("ema: Twind: setup & observe")
+twind.setup({mode: 'silent'})
+window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   <!-- CSSEND -->
   <head-extra></head-extra>
 </head>
@@ -792,7 +795,8 @@ twindObserve.observe(document.documentElement)</script>
         <div class='col-span-12 md:col-span-9'>
           <main>
             <article class='overflow-auto'>
-              
+  <!-- What goes in this file will appear on top of note body-->
+  
     <p class='my-3'>
       Ema apps have a basic CLI argument structure that takes two kinds of input:
     </p>
@@ -801,7 +805,7 @@ twindObserve.observe(document.documentElement)</script>
       Ema (<code class='py-0.5 bg-gray-100 text-sm'>runEma</code>) will change the <a href='https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html#v:getCurrentDirectory' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>current working directory</a> to the “input directory” before running your application code. It, along with the “gen” subcommand (if used), is passed as the <code class='py-0.5 bg-gray-100 text-sm'>Ema.CLI.Action</code> type to your <code class='py-0.5 bg-gray-100 text-sm'>render</code> function. You can also use <code class='py-0.5 bg-gray-100 text-sm'>runEmaWith</code> if you are manually handling the CLI arguments yourself.
     </p>
   
-            </article>
+</article>
             
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
@@ -814,7 +818,7 @@ twindObserve.observe(document.documentElement)</script>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><a href='concepts/cli' class='text-black-600 font-bold hover:bg-gray-50'>CLI</a></div>
+            <div><a href='concepts/cli' class='text-gray-600 font-bold hover:bg-gray-50'>CLI</a></div>
           </div>
         </li>
       
@@ -825,7 +829,7 @@ twindObserve.observe(document.documentElement)</script>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><p>On final note, you will note that nothing is actually <em>generated</em> so far. This is because Ema has been running in the dev server mode, which is quite useful during development. To actually generate the files, you can use the <code>gen</code> command when running the <a href='concepts/cli' class='text-black-600 font-bold hover:bg-gray-50'>CLI</a>:</p></div>
+            <div><p>On final note, you will note that nothing is actually <em>generated</em> so far. This is because Ema has been running in the dev server mode, which is quite useful during development. To actually generate the files, you can use the <code>gen</code> command when running the <a href='concepts/cli' class='text-gray-600 font-bold hover:bg-gray-50'>CLI</a>:</p></div>
           </div>
         </li>
       
@@ -843,7 +847,7 @@ twindObserve.observe(document.documentElement)</script>
     <div><a class='font-bold' href='@index'>@Index</a></div>
     <div>|</div>
     <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
-      0.1.2.0
+      0.1.9.0
     </div>
     <div>|</div>
     <div><a class='font-bold' href='@tags'>@Tags</a></div>

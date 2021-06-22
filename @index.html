@@ -8,8 +8,7 @@
   </title>
   
     
-      <meta property='og:description' content='Build jamstack-style static sites in Haskell, with a live server supporting fast hot-reload in the browser on code or data change.
-' />
+      <meta property='og:description' content />
       <meta property='og:site_name' content='Ema' />
     
     
@@ -21,10 +20,14 @@
 <!-- Syntax highlighting -->
 <link href='https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-tomorrow.css' rel='stylesheet' />
 <script src='https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/prism.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js'></script>
+
   
   <!-- CSSSTART -->
-  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>twind.setup({})
-twindObserve.observe(document.documentElement)</script>
+  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>// Be silent to avoid complaining about non-tailwind classes
+// https://github.com/tw-in-js/twind/discussions/180#discussioncomment-678272
+console.log("ema: Twind: setup & observe")
+twind.setup({mode: 'silent'})
+window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   <!-- CSSEND -->
   <head-extra></head-extra>
 </head>
@@ -743,7 +746,7 @@ twindObserve.observe(document.documentElement)</script>
     <div><a class='font-bold' href='@index'>@Index</a></div>
     <div>|</div>
     <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
-      0.1.2.0
+      0.1.9.0
     </div>
     <div>|</div>
     <div><a class='font-bold' href='@tags'>@Tags</a></div>

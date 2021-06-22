@@ -8,8 +8,7 @@
   </title>
   
     
-      <meta property='og:description' content='Build jamstack-style static sites in Haskell, with a live server supporting fast hot-reload in the browser on code or data change.
-' />
+      <meta property='og:description' content />
       <meta property='og:site_name' content='Ema' />
     
     
@@ -21,10 +20,14 @@
 <!-- Syntax highlighting -->
 <link href='https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-tomorrow.css' rel='stylesheet' />
 <script src='https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/prism.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js'></script>
+
   
   <!-- CSSSTART -->
-  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>twind.setup({})
-twindObserve.observe(document.documentElement)</script>
+  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>// Be silent to avoid complaining about non-tailwind classes
+// https://github.com/tw-in-js/twind/discussions/180#discussioncomment-678272
+console.log("ema: Twind: setup & observe")
+twind.setup({mode: 'silent'})
+window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   <!-- CSSEND -->
   <head-extra></head-extra>
 </head>
@@ -792,7 +795,8 @@ twindObserve.observe(document.documentElement)</script>
         <div class='col-span-12 md:col-span-9'>
           <main>
             <article class='overflow-auto'>
-              
+  <!-- What goes in this file will appear on top of note body-->
+  
     <p class='my-3'>
       Once you have <a href='guide/model' class='text-pink-600 font-bold hover:underline'>model</a> and <a href='guide/routes' class='text-pink-600 font-bold hover:underline'>route</a> types in place, we must tell the Haskell compiler that they are suitable for generating static sites. We do this by creating an instance of the <code class='py-0.5 bg-gray-100 text-sm'>Ema</code> typeclass.
     </p>
@@ -832,7 +836,7 @@ twindObserve.observe(document.documentElement)</script>
       <span class='py-2 text-xl italic font-bold'>Next</span>, with our model and routes in place constrained by <code class='py-0.5 bg-gray-100 text-sm'>Ema</code> type class, <a href='guide/render' class='text-pink-600 font-bold hover:underline'>we will define the HTML for our site</a> using Ema.
     </p>
   </div>
-            </article>
+</article>
             
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
@@ -845,7 +849,7 @@ twindObserve.observe(document.documentElement)</script>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><a href='guide/class' class='text-black-600 font-bold hover:bg-gray-50'>Defining Ema instance</a> – <span class='text-gray-500'>Constrain your <code>model</code> and <code>route</code> to work with static sites</span></div>
+            <div><a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'>Defining Ema instance</a> – <span class='text-gray-500'>Constrain your <code>model</code> and <code>route</code> to work with static sites</span></div>
           </div>
         </li>
       
@@ -856,7 +860,7 @@ twindObserve.observe(document.documentElement)</script>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><p>Ema’s dev server supports <a href='concepts/hot-reload' class='text-black-600 font-bold hover:bg-gray-50'>hot reload</a>; it will observe changes to your model, in addition to code. To facilitate this you will manage your model as a <a href='concepts/lvar' class='text-black-600 font-bold hover:bg-gray-50'>LVar</a>. The <code>runEma</code> function (<a href='guide/class' class='text-black-600 font-bold hover:bg-gray-50'>described here</a>) takes an IO action that gets <code>LVar model</code> as an argument.</p></div>
+            <div><p>Ema’s dev server supports <a href='concepts/hot-reload' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a>; it will observe changes to your model, in addition to code. To facilitate this you will manage your model as a <a href='concepts/lvar' class='text-gray-600 font-bold hover:bg-gray-50'>LVar</a>. The <code>runEma</code> function (<a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'>described here</a>) takes an IO action that gets <code>LVar model</code> as an argument.</p></div>
           </div>
         </li>
       
@@ -867,7 +871,7 @@ twindObserve.observe(document.documentElement)</script>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><p>Once you have <a href='guide/model' class='text-black-600 font-bold hover:bg-gray-50'>model</a> and <a href='guide/routes' class='text-black-600 font-bold hover:bg-gray-50'>routes</a> in place and <a href='guide/class' class='text-black-600 font-bold hover:bg-gray-50'>constrained</a>, the last piece of the puzzle is to write a function that takes both as arguments and returns file content (lazy bytestring, to be exact) to generate. This function can be as simple as the following:</p></div>
+            <div><p>Once you have <a href='guide/model' class='text-gray-600 font-bold hover:bg-gray-50'>model</a> and <a href='guide/routes' class='text-gray-600 font-bold hover:bg-gray-50'>routes</a> in place and <a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'>constrained</a>, the last piece of the puzzle is to write a function that takes both as arguments and returns file content (lazy bytestring, to be exact) to generate. This function can be as simple as the following:</p></div>
           </div>
         </li>
       
@@ -878,7 +882,7 @@ twindObserve.observe(document.documentElement)</script>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><p><span class='py-2 text-xl italic font-bold'>Next</span>, with our model and routes in place, <a href='guide/class' class='text-black-600 font-bold hover:bg-gray-50'>we will make them work with Ema</a> by defining their static site behaviour.</p></div>
+            <div><p><span class='py-2 text-xl italic font-bold'>Next</span>, with our model and routes in place, <a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'>we will make them work with Ema</a> by defining their static site behaviour.</p></div>
           </div>
         </li>
       
@@ -889,7 +893,7 @@ twindObserve.observe(document.documentElement)</script>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div>It uses <code>Ema.routeUrl</code> function to create a URL out of our <code>Route</code> type. This function uses the <a href='guide/class' class='text-black-600 font-bold hover:bg-gray-50'><code>Ema</code> typeclass</a>, so it uses the <code>encodeRoute</code> function defined further above.</div>
+            <div>It uses <code>Ema.routeUrl</code> function to create a URL out of our <code>Route</code> type. This function uses the <a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'><code>Ema</code> typeclass</a>, so it uses the <code>encodeRoute</code> function defined further above.</div>
           </div>
         </li>
       
@@ -900,7 +904,7 @@ twindObserve.observe(document.documentElement)</script>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><p>The <code>runEma</code> function is explained <a href='guide/class' class='text-black-600 font-bold hover:bg-gray-50'>here</a>, but in brief: it takes a render function (see below) as well as an IO action that allows us to create and update the model <a href='concepts/lvar' class='text-black-600 font-bold hover:bg-gray-50'>lvar</a>. Note that <code>threadDelay maxBound</code> here? That is because our IO action must not exit; in the dev server mode of real-world websites, you would continue to monitor the external world (such as Markdown files) and update the model, to facilitate <a href='concepts/hot-reload' class='text-black-600 font-bold hover:bg-gray-50'>hot reload</a> of data used by your site.</p></div>
+            <div><p>The <code>runEma</code> function is explained <a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'>here</a>, but in brief: it takes a render function (see below) as well as an IO action that allows us to create and update the model <a href='concepts/lvar' class='text-gray-600 font-bold hover:bg-gray-50'>lvar</a>. Note that <code>threadDelay maxBound</code> here? That is because our IO action must not exit; in the dev server mode of real-world websites, you would continue to monitor the external world (such as Markdown files) and update the model, to facilitate <a href='concepts/hot-reload' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> of data used by your site.</p></div>
           </div>
         </li>
       
@@ -911,7 +915,7 @@ twindObserve.observe(document.documentElement)</script>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><p>We should now tell Ema how to convert our <code>Route</code> to actual file paths (which is used to determine the URL too). Let’s do that by making an instance of the <code>Ema</code> <a href='guide/class' class='text-black-600 font-bold hover:bg-gray-50'>class</a>:</p></div>
+            <div><p>We should now tell Ema how to convert our <code>Route</code> to actual file paths (which is used to determine the URL too). Let’s do that by making an instance of the <code>Ema</code> <a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'>class</a>:</p></div>
           </div>
         </li>
       
@@ -929,7 +933,7 @@ twindObserve.observe(document.documentElement)</script>
     <div><a class='font-bold' href='@index'>@Index</a></div>
     <div>|</div>
     <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
-      0.1.2.0
+      0.1.9.0
     </div>
     <div>|</div>
     <div><a class='font-bold' href='@tags'>@Tags</a></div>

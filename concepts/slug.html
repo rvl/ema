@@ -8,8 +8,7 @@
   </title>
   
     
-      <meta property='og:description' content='Build jamstack-style static sites in Haskell, with a live server supporting fast hot-reload in the browser on code or data change.
-' />
+      <meta property='og:description' content />
       <meta property='og:site_name' content='Ema' />
     
     
@@ -21,10 +20,14 @@
 <!-- Syntax highlighting -->
 <link href='https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-tomorrow.css' rel='stylesheet' />
 <script src='https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/prism.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js'></script>
+
   
   <!-- CSSSTART -->
-  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>twind.setup({})
-twindObserve.observe(document.documentElement)</script>
+  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>// Be silent to avoid complaining about non-tailwind classes
+// https://github.com/tw-in-js/twind/discussions/180#discussioncomment-678272
+console.log("ema: Twind: setup & observe")
+twind.setup({mode: 'silent'})
+window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   <!-- CSSEND -->
   <head-extra></head-extra>
 </head>
@@ -792,7 +795,8 @@ twindObserve.observe(document.documentElement)</script>
         <div class='col-span-12 md:col-span-9'>
           <main>
             <article class='overflow-auto'>
-              <div class='bg-gray-100 px-4 py-1 rounded italic'>
+  <!-- What goes in this file will appear on top of note body-->
+  <div class='bg-gray-100 px-4 py-1 rounded italic'>
     <p class='my-3'>
       Note that the initial version of Ema used Slug in its routing system, but not anymore in the latest version. The Slug type is still left in the library for using as a <a href='guide/helpers' class='text-pink-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>helper</a>.
     </p>
@@ -811,7 +815,7 @@ type URL = [Slug]</code></pre></div>
       The functions <code class='py-0.5 bg-gray-100 text-sm'>decodeSlug</code> and <code class='py-0.5 bg-gray-100 text-sm'>encodeSlug</code> allow you to convert between URLs and slugs.
     </p>
   
-            </article>
+</article>
             
   <div class='p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
@@ -824,7 +828,7 @@ type URL = [Slug]</code></pre></div>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
                     -->
-            <div><a href='concepts/slug' class='text-black-600 font-bold hover:bg-gray-50'>Slug</a></div>
+            <div><a href='concepts/slug' class='text-gray-600 font-bold hover:bg-gray-50'>Slug</a></div>
           </div>
         </li>
       
@@ -842,7 +846,7 @@ type URL = [Slug]</code></pre></div>
     <div><a class='font-bold' href='@index'>@Index</a></div>
     <div>|</div>
     <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
-      0.1.2.0
+      0.1.9.0
     </div>
     <div>|</div>
     <div><a class='font-bold' href='@tags'>@Tags</a></div>
