@@ -32,60 +32,58 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   <head-extra></head-extra>
 </head>
 
-<body class='overflow-y-scroll'>
-  <!-- DoNotFormat -->
-  
-  <!-- DoNotFormat -->
+<!-- DoNotFormat -->
 
+
+<!-- DoNotFormat -->
+
+<body class='overflow-y-scroll bg-gray-400'>
   
     <div class='container mx-auto'>
-      <!-- Header row-->
-      <div class='grid grid-cols-12 md:px-2'>
-        <!-- Logo column -->
-        <div class='hidden md:mr-4 md:block md:col-span-3'>
-          <div class='flex items-end h-full pl-2 mt-2 space-x-2'>
-            <a href=''>
-              
-                
-                  <img class='z-50 h-20 transition transform hover:scale-125 hover:opacity-80' src='/favicon.svg' />
-                
-              
-            </a>
-          </div>
-        </div>
-        <!-- Title column -->
-        <div class='col-span-12 md:col-span-9'>
-          
-<h1 class='flex items-center justify-center mt-2 text-5xl font-extrabold text-black '>
-  <a>
-    Ema
-  </a>
-</h1>
-        </div>
-      </div>
 
-      <!-- Main row-->
-      <div class='grid grid-cols-12 px-2'>
+      
+
+      <div class='flex flex-nowrap bg-gray-50 md:mt-8 md:shadow-2xl md:mb-8'>
         <!-- Sidebar column -->
-        <nav class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
-          <div class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
-            <a href='@tags' title='View tags'>
-              <svg class='w-4 h-4 hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-                <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
-                </path>
-              </svg>
-            </a>
-            <a href='@index' title='Expand full tree'>
-              <svg class='w-4 h-4 hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-                <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
-                </path>
-              </svg>
-            </a>
-          </div>
-          <div class='pt-1 pb-2 rounded bg-pink-50 border-2 border-pink-200 shadow-inner'>
+        <nav id='sidebar' class='flex-auto hidden leading-relaxed md:block md:sticky md:top-0 md:h-full md:max-w-xs'>
+          <div class='px-2 py-2 text-gray-800'>
+
+            <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
+              <a href='-/tags' title='View tags'>
+                <svg style='width: 1rem;' class='hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                  <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
+                  </path>
+                </svg>
+              </a>
+              <a href='-/index' title='Expand full tree'>
+                <svg style='width: 1rem;' class='hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                  <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
+                  </path>
+                </svg>
+              </a>
+            </div>
+
+            <div id='site-logo' class='pl-2'>
+              <div class='flex items-center my-2 space-x-2 justify-left'>
+                <a href='' title='Go to Home'>
+                  
+                    
+                      <!-- The style width attribute here is to prevent huge
+                      icon from displaying at those rare occasions when Tailwind
+                      hasn't kicked in immediately on page load 
+                      -->
+                      <img style='width: 1rem;' class='transition transform hover:scale-110 hover:opacity-80' src='/favicon.svg' />
+                    
+                  
+                </a>
+                <a class='font-bold truncate' title='Go to Home' href=''>
+                  Home
+                </a>
+              </div>
+            </div>
+
             
               <!-- Variable bindings for this tree-->
-
   
     
       
@@ -122,7 +120,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -165,7 +162,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
             
               <!-- Variable bindings for this tree-->
-
   
     
       
@@ -202,7 +198,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -242,7 +237,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -282,7 +276,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -322,7 +315,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -362,7 +354,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -399,7 +390,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -439,7 +429,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -479,7 +468,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -525,7 +513,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
             
               <!-- Variable bindings for this tree-->
-
   
     
       
@@ -562,7 +549,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -602,7 +588,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -642,7 +627,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -682,7 +666,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -722,7 +705,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -764,35 +746,62 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   
 </div>
             
+
           </div>
         </nav>
+
         <!-- Main body column -->
-        <div class='col-span-12 md:col-span-9'>
-          <main>
+        <div class='flex-1 w-full overflow-x-auto bg-white'>
+          <main class='px-4 py-4'>
+            <h1 class='flex items-end justify-center mb-4 p-3 bg-pink-100 text-5xl font-extrabold text-black rounded'>
+  <a class='z-40 tracking-tighter '>
+    Ema
+  </a>
+</h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   <div class='avatar'>
-    <p class='my-3'>
+    <p class='mb-3'>
       <span class='line-through italic' title='Link does not refer to any known file'><img src='/favicon.svg' alt='/favicon.svg' class='w-32 h-32 float-right' /></span>
     </p>
   </div><div class='text-xl mb-8'>
-    <p class='my-3'>
+    <p class='mb-3'>
       <a href='https://github.com/srid/ema' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Ema</a> is a next-gen <strong>Haskell</strong> library toolkit for building <a href='https://jamstack.org/' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>jamstack-style</a> static sites. Ema sites are <em>change-aware</em>; in addition to good ol’ static site generation, it provides a live server supporting <strong>fast hot-reload</strong> in the browser on code <em>or</em> data change.
     </p>
   </div><div class='text-gray-600'>
-    <p class='my-3'>
+    <p class='mb-3'>
       The ultimate goal of ema is to facilitate creating with ease your own <a href='https://neuron.zettel.page/' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>neuron</a>, or just about any app that creates a browser view of arbitrarily changing data (on disk, database, or whatever). Ema is designed to facilitate creation of apps whose data is normally <em>edited</em> via traditional mechanisms (eg: text editor) but <em>rendered</em> as a delightful web page - so as to provide an economical read-only view of your data on desktop & mobile.
     </p>
-  </div><div class='my-8'><ul class='ml-4 space-y-1 list-disc list-inside'><li><a href='start' class='text-pink-600 font-bold hover:underline'>Getting Started</a></li><li><a href='guide' class='text-pink-600 font-bold hover:underline'>Guide</a></li><li><a href='concepts' class='text-pink-600 font-bold hover:underline'>Concepts</a></li><li><a href='https://notes.srid.ca/ema' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Ema News</a> (<a href='https://notes.srid.ca/ema.xml' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>RSS Feed</a>)</li></ul></div><div class='flex justify-center items-center mb-8'><div xmlhtmlRaw><video autoplay="" loop="" muted="">
+  </div><div class='my-8'>
+    <ul class='my-3 ml-4 space-y-1 list-disc list-inside'>
+      
+        <li>
+          <a href='start' class='text-pink-600 font-bold hover:underline'>Getting Started</a>
+        </li>
+      
+        <li>
+          <a href='guide' class='text-pink-600 font-bold hover:underline'>Guide</a>
+        </li>
+      
+        <li>
+          <a href='concepts' class='text-pink-600 font-bold hover:underline'>Concepts</a>
+        </li>
+      
+        <li>
+          <a href='https://notes.srid.ca/ema' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Ema News</a> (<a href='https://notes.srid.ca/ema.xml' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>RSS Feed</a>)
+        </li>
+      
+    </ul>
+  </div><div class='flex justify-center items-center mb-8'><div xmlhtmlRaw><video autoplay="" loop="" muted="">
   <source src="static/ema-demo.mp4" />
   <p>Your browser doesn't support HTML5 video. Here is a <a href="static/ema-demo.mp4">link to the video</a> instead.</p>
 </video>
 </div></div><div class='flex justify-center items-center'>
-    <p class='my-3'>
+    <p class='mb-3'>
       <a href='https://www.fairforall.org/about/' class='text-pink-600 hover:underline' target='_blank' rel='noopener'><img src='https://img.shields.io/badge/FAIR-pledge-blue' alt='FAIR' /></a>
     </p>
   </div>
-    <p class='my-3'>
+    <p class='mb-3'>
       
     </p>
   
@@ -804,19 +813,17 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   </section>
 
           </main>
-          <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-500'>
-  <div class='flex space-x-2'>
-    <div><a class='font-bold' href='@index'>@Index</a></div>
-    <div>|</div>
-    <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
-      0.1.9.0
-    </div>
-    <div>|</div>
-    <div><a class='font-bold' href='@tags'>@Tags</a></div>
-  </div>
-</footer>
         </div>
       </div>
+      <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-800'>
+  <div class='flex space-x-2'>
+    <div>Generated by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
+      <span class='font-mono text-sm tracking-tighter'>
+        0.1.26.1
+      </span>
+    </div>
+  </div>
+</footer>
     </div>
   
 </body>

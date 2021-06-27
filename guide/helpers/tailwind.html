@@ -32,34 +32,20 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   <head-extra></head-extra>
 </head>
 
-<body class='overflow-y-scroll'>
-  <!-- DoNotFormat -->
-  
-  <!-- DoNotFormat -->
+<!-- DoNotFormat -->
 
+
+<!-- DoNotFormat -->
+
+<body class='overflow-y-scroll bg-gray-400'>
   
     <div class='container mx-auto'>
-      <!-- Header row-->
-      <div class='grid grid-cols-12 md:px-2'>
-        <!-- Logo column -->
-        <div class='hidden md:mr-4 md:block md:col-span-3'>
-          <div class='flex items-end h-full pl-2 mt-2 space-x-2'>
-            <a href=''>
-              
-                
-                  <img class='z-50 h-20 transition transform hover:scale-125 hover:opacity-80' src='/favicon.svg' />
-                
-              
-            </a>
-          </div>
-        </div>
-        <!-- Title column -->
-        <div class='col-span-12 md:col-span-9'>
-          
-  <div class='w-full text-gray-700'>
+
+      
+  <nav id='breadcrumbs' class='w-full text-gray-700 md:hidden'>
     <div class='flex justify-left'>
-      <div class='bg-pink-100 md:rounded-b-lg w-full py-2 px-2 md:w-auto md:py-0 md:px-0'>
-        <ul class='flex flex-wrap text-lg md:text-sm'>
+      <div class='w-full px-2 py-2 bg-gray-50'>
+        <ul class='flex flex-wrap text-lg'>
           
             <li class='inline-flex items-center'>
               <a class='px-1 font-bold' href=''>
@@ -91,39 +77,50 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
         </ul>
       </div>
     </div>
-  </div>
+  </nav>
 
 
-<h1 class='flex items-center justify-center mt-2 text-5xl font-extrabold text-black '>
-  <a>
-    Using Tailwind CSS
-  </a>
-</h1>
-        </div>
-      </div>
-
-      <!-- Main row-->
-      <div class='grid grid-cols-12 px-2'>
+      <div class='flex flex-nowrap bg-gray-50 md:mt-8 md:shadow-2xl md:mb-8'>
         <!-- Sidebar column -->
-        <nav class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
-          <div class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
-            <a href='@tags' title='View tags'>
-              <svg class='w-4 h-4 hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-                <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
-                </path>
-              </svg>
-            </a>
-            <a href='@index' title='Expand full tree'>
-              <svg class='w-4 h-4 hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-                <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
-                </path>
-              </svg>
-            </a>
-          </div>
-          <div class='pt-1 pb-2 rounded bg-pink-50 border-2 border-pink-200 shadow-inner'>
+        <nav id='sidebar' class='flex-auto hidden leading-relaxed md:block md:sticky md:top-0 md:h-full md:max-w-xs'>
+          <div class='px-2 py-2 text-gray-800'>
+
+            <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
+              <a href='-/tags' title='View tags'>
+                <svg style='width: 1rem;' class='hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                  <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
+                  </path>
+                </svg>
+              </a>
+              <a href='-/index' title='Expand full tree'>
+                <svg style='width: 1rem;' class='hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                  <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
+                  </path>
+                </svg>
+              </a>
+            </div>
+
+            <div id='site-logo' class='pl-2'>
+              <div class='flex items-center my-2 space-x-2 justify-left'>
+                <a href='' title='Go to Home'>
+                  
+                    
+                      <!-- The style width attribute here is to prevent huge
+                      icon from displaying at those rare occasions when Tailwind
+                      hasn't kicked in immediately on page load 
+                      -->
+                      <img style='width: 1rem;' class='transition transform hover:scale-110 hover:opacity-80' src='/favicon.svg' />
+                    
+                  
+                </a>
+                <a class='font-bold truncate' title='Go to Home' href=''>
+                  Home
+                </a>
+              </div>
+            </div>
+
             
               <!-- Variable bindings for this tree-->
-
   
     
       
@@ -160,7 +157,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -203,7 +199,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
             
               <!-- Variable bindings for this tree-->
-
   
     
       
@@ -240,7 +235,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -280,7 +274,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -320,7 +313,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -360,7 +352,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -400,7 +391,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -437,7 +427,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   
     
       <!-- Variable bindings for this tree-->
-
   
   
 
@@ -473,7 +462,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -513,7 +501,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -559,7 +546,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
             
               <!-- Variable bindings for this tree-->
-
   
     
       
@@ -596,7 +582,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -636,7 +621,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -676,7 +660,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -716,7 +699,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -756,7 +738,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -798,31 +779,38 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   
 </div>
             
+
           </div>
         </nav>
+
         <!-- Main body column -->
-        <div class='col-span-12 md:col-span-9'>
-          <main>
+        <div class='flex-1 w-full overflow-x-auto bg-white'>
+          <main class='px-4 py-4'>
+            <h1 class='flex items-end justify-center mb-4 p-3 bg-pink-100 text-5xl font-extrabold text-black rounded'>
+  <a class='z-40 tracking-tighter '>
+    Using Tailwind CSS
+  </a>
+</h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
-    <p class='my-3'>
+    <p class='mb-3'>
       The <code class='py-0.5 bg-gray-100 text-sm'>Ema.Helper.Tailwind</code> module provides a <code class='py-0.5 bg-gray-100 text-sm'>layout</code> function that uses <a href='https://twind.dev/' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>twind</a> shim that is used in the statically generated site, and otherwise uses Tailwind CSS from CDN in the dev server mode. This helper is for those that <strong>use <a href='https://tailwindcss.com/' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Tailwind CSS</a> in conjunction with <a href='https://hackage.haskell.org/package/blaze-html' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>blaze-html</a> DSL</strong>.
     </p>
   
-    <p class='my-3'>
+    <p class='mb-3'>
       To use the layout helper in your <a href='guide/render' class='text-pink-600 font-bold hover:underline'>render</a> function:
     </p>
-  <div class='py-0.5 text-sm'><pre><code class='haskell language-haskell'>render :: Ema.CLI.Action -&gt; MyModel -&gt; MyRoute -&gt; Asset LByteString
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>render :: Ema.CLI.Action -&gt; MyModel -&gt; MyRoute -&gt; Asset LByteString
 render emaAction model route = do
   AssetGenerated Html $ 
     Tailwind.layout emaAction (H.title "My site" &gt;&gt; H.base ! A.href "/") $ do 
       H.p "Hello world"</code></pre></div>
-    <p class='my-3'>
+    <p class='mb-3'>
       The very site you are viewing (ema.srid.ca) is a live demonstration of this helper.
     </p>
   
-    <p class='my-3'>
+    <p class='mb-3'>
       <strong>Note</strong> that because the <a href='https://twind.dev/handbook/the-shim.html' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>twind JS shim</a> is used to support Tailwind styles your site will not render properly on web browsers with JavaScript disabled if you use this helper; it might also have trouble interoperating with other JS initializers on the site. See <a href='https://github.com/srid/ema/issues/20' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>this issue</a> for upcoming alternatives.
     </p>
   
@@ -838,7 +826,8 @@ render emaAction model route = do
           </a>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
-                    -->
+              Also, group contexts from same source.
+            -->
             <div><p>Finally, hot reload on <em>code</em> changes are supported via <a href='https://github.com/ndmitchell/ghcid' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>ghcid</a>. The <a href='https://github.com/srid/ema-template' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>template repo</a>'s `bin/run` script uses ghcid underneath. Any HTML DSL (like blaze-html – as used by the <a href='guide/helpers/tailwind' class='text-gray-600 font-bold hover:bg-gray-50'>Tailwind helper</a>) or CSS DSL automatically gets supported for hot-reload. If you choose to use a file-based HTML template language, you can enable hot-reload on template change using the <a href='guide/helpers/filesystem' class='text-gray-600 font-bold hover:bg-gray-50'>FileSystem helper</a>.</p></div>
           </div>
         </li>
@@ -849,7 +838,8 @@ render emaAction model route = do
           </a>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
-                    -->
+              Also, group contexts from same source.
+            -->
             <div><a href='guide/helpers/tailwind' class='text-gray-600 font-bold hover:bg-gray-50'>Tailwind + Blaze</a> – <span class='text-gray-500'>We recommend–but not mandate–Tailwind for CSS and blaze-html as HTML DSL</span></div>
           </div>
         </li>
@@ -860,7 +850,8 @@ render emaAction model route = do
           </a>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
-                    -->
+              Also, group contexts from same source.
+            -->
             <div><p>Of course we want it to be real, by using our model value, as well as generate the HTML based on the route. We will also use the <a href='https://hackage.haskell.org/package/blaze-html' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>blaze-html</a> library to make writing HTML in Haskell palatable (see also <a href='guide/helpers/tailwind' class='text-gray-600 font-bold hover:bg-gray-50'>the layout helper</a>). A more realistic starting point (if not the finishing product) would be:</p></div>
           </div>
         </li>
@@ -874,19 +865,17 @@ render emaAction model route = do
   </section>
 
           </main>
-          <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-500'>
-  <div class='flex space-x-2'>
-    <div><a class='font-bold' href='@index'>@Index</a></div>
-    <div>|</div>
-    <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
-      0.1.9.0
-    </div>
-    <div>|</div>
-    <div><a class='font-bold' href='@tags'>@Tags</a></div>
-  </div>
-</footer>
         </div>
       </div>
+      <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-800'>
+  <div class='flex space-x-2'>
+    <div>Generated by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
+      <span class='font-mono text-sm tracking-tighter'>
+        0.1.26.1
+      </span>
+    </div>
+  </div>
+</footer>
     </div>
   
 </body>

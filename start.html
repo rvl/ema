@@ -32,34 +32,20 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   <head-extra></head-extra>
 </head>
 
-<body class='overflow-y-scroll'>
-  <!-- DoNotFormat -->
-  
-  <!-- DoNotFormat -->
+<!-- DoNotFormat -->
 
+
+<!-- DoNotFormat -->
+
+<body class='overflow-y-scroll bg-gray-400'>
   
     <div class='container mx-auto'>
-      <!-- Header row-->
-      <div class='grid grid-cols-12 md:px-2'>
-        <!-- Logo column -->
-        <div class='hidden md:mr-4 md:block md:col-span-3'>
-          <div class='flex items-end h-full pl-2 mt-2 space-x-2'>
-            <a href=''>
-              
-                
-                  <img class='z-50 h-20 transition transform hover:scale-125 hover:opacity-80' src='/favicon.svg' />
-                
-              
-            </a>
-          </div>
-        </div>
-        <!-- Title column -->
-        <div class='col-span-12 md:col-span-9'>
-          
-  <div class='w-full text-gray-700'>
+
+      
+  <nav id='breadcrumbs' class='w-full text-gray-700 md:hidden'>
     <div class='flex justify-left'>
-      <div class='bg-pink-100 md:rounded-b-lg w-full py-2 px-2 md:w-auto md:py-0 md:px-0'>
-        <ul class='flex flex-wrap text-lg md:text-sm'>
+      <div class='w-full px-2 py-2 bg-gray-50'>
+        <ul class='flex flex-wrap text-lg'>
           
             <li class='inline-flex items-center'>
               <a class='px-1 font-bold' href=''>
@@ -73,39 +59,50 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
         </ul>
       </div>
     </div>
-  </div>
+  </nav>
 
 
-<h1 class='flex items-center justify-center mt-2 text-5xl font-extrabold text-black '>
-  <a>
-    Getting Started
-  </a>
-</h1>
-        </div>
-      </div>
-
-      <!-- Main row-->
-      <div class='grid grid-cols-12 px-2'>
+      <div class='flex flex-nowrap bg-gray-50 md:mt-8 md:shadow-2xl md:mb-8'>
         <!-- Sidebar column -->
-        <nav class='hidden overflow-x-auto md:mr-4 md:block md:col-span-3 md:sticky md:top-0 md:h-screen'>
-          <div class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
-            <a href='@tags' title='View tags'>
-              <svg class='w-4 h-4 hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-                <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
-                </path>
-              </svg>
-            </a>
-            <a href='@index' title='Expand full tree'>
-              <svg class='w-4 h-4 hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-                <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
-                </path>
-              </svg>
-            </a>
-          </div>
-          <div class='pt-1 pb-2 rounded bg-pink-50 border-2 border-pink-200 shadow-inner'>
+        <nav id='sidebar' class='flex-auto hidden leading-relaxed md:block md:sticky md:top-0 md:h-full md:max-w-xs'>
+          <div class='px-2 py-2 text-gray-800'>
+
+            <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
+              <a href='-/tags' title='View tags'>
+                <svg style='width: 1rem;' class='hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                  <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
+                  </path>
+                </svg>
+              </a>
+              <a href='-/index' title='Expand full tree'>
+                <svg style='width: 1rem;' class='hover:text-pink-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                  <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
+                  </path>
+                </svg>
+              </a>
+            </div>
+
+            <div id='site-logo' class='pl-2'>
+              <div class='flex items-center my-2 space-x-2 justify-left'>
+                <a href='' title='Go to Home'>
+                  
+                    
+                      <!-- The style width attribute here is to prevent huge
+                      icon from displaying at those rare occasions when Tailwind
+                      hasn't kicked in immediately on page load 
+                      -->
+                      <img style='width: 1rem;' class='transition transform hover:scale-110 hover:opacity-80' src='/favicon.svg' />
+                    
+                  
+                </a>
+                <a class='font-bold truncate' title='Go to Home' href=''>
+                  Home
+                </a>
+              </div>
+            </div>
+
             
               <!-- Variable bindings for this tree-->
-
   
   
 
@@ -138,7 +135,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -181,7 +177,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
             
               <!-- Variable bindings for this tree-->
-
   
     
       
@@ -218,7 +213,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -258,7 +252,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -298,7 +291,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -338,7 +330,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -378,7 +369,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -415,7 +405,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -455,7 +444,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -495,7 +483,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -541,7 +528,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
             
               <!-- Variable bindings for this tree-->
-
   
     
       
@@ -578,7 +564,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -618,7 +603,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -658,7 +642,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -698,7 +681,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -738,7 +720,6 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 </div>
     
       <!-- Variable bindings for this tree-->
-
   
     
       
@@ -780,23 +761,50 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   
 </div>
             
+
           </div>
         </nav>
+
         <!-- Main body column -->
-        <div class='col-span-12 md:col-span-9'>
-          <main>
+        <div class='flex-1 w-full overflow-x-auto bg-white'>
+          <main class='px-4 py-4'>
+            <h1 class='flex items-end justify-center mb-4 p-3 bg-pink-100 text-5xl font-extrabold text-black rounded'>
+  <a class='z-40 tracking-tighter '>
+    Getting Started
+  </a>
+</h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
-    <p class='my-3'>
+    <p class='mb-3'>
       As first steps, perform the following before proceeding to the tutorial section below:
     </p>
-  <ol class='ml-4 space-y-1 list-decimal list-inside'><li><a href='https://nixos.org/download.html' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Install Nix</a> (see <a href='https://neuron.zettel.page/install' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>platform-specific notes here</a>)</li><li><a href='https://nixos.wiki/wiki/Flakes#Installing_flakes' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Enable Flakes</a></li><li>Clone <a href='https://github.com/srid/ema-template' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>the template repository</a> locally</li><li>Run <code class='py-0.5 bg-gray-100 text-sm'>bin/run</code> and access the site at <a href='http://localhost:9001' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>http://localhost:9001</a></li></ol>
-    <p class='my-3'>
+  
+    <ul class='my-3 ml-4 space-y-1 list-decimal list-inside'>
+      
+        <li>
+          <a href='https://nixos.org/download.html' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Install Nix</a> (see <a href='https://neuron.zettel.page/install' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>platform-specific notes here</a>)
+        </li>
+      
+        <li>
+          <a href='https://nixos.wiki/wiki/Flakes#Installing_flakes' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>Enable Flakes</a>
+        </li>
+      
+        <li>
+          Clone <a href='https://github.com/srid/ema-template' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>the template repository</a> locally
+        </li>
+      
+        <li>
+          Run <code class='py-0.5 bg-gray-100 text-sm'>bin/run</code> and access the site at <a href='http://localhost:9001' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>http://localhost:9001</a>
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
       That should start the Ema dev server displaying a simple website. Go ahead and try modifying either the Markdown content in <code class='py-0.5 bg-gray-100 text-sm'>./content</code> or the Haskell source in <code class='py-0.5 bg-gray-100 text-sm'>./src/Main.hs</code>, and observe how the web view updates <a href='concepts/hot-reload' class='text-pink-600 font-bold hover:underline'>instantly</a>.
     </p>
   <div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'>
-    <p class='my-3'>
+    <p class='mb-3'>
       <span class='py-2 text-xl italic font-bold'>Next</span>, <a href='start/tutorial' class='text-pink-600 font-bold hover:underline'>in the tutorial</a> let’s try using this template repo to create a basic website.
     </p>
   </div>
@@ -812,7 +820,8 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
           </a>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
-                    -->
+              Also, group contexts from same source.
+            -->
             <div><a href='start' class='text-gray-600 font-bold hover:bg-gray-50'>Getting Started</a></div>
           </div>
         </li>
@@ -823,7 +832,8 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
           </a>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
-                    -->
+              Also, group contexts from same source.
+            -->
             <div><p>Make sure that you have have followed <a href='start' class='text-gray-600 font-bold hover:bg-gray-50'>the previous section</a> in order to have the <a href='https://github.com/srid/ema-template' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>template repo</a> checked out and running locally. Here, <strong>our goal</strong> is to replace the source code of the template repo and write a basic site from scratch.</p></div>
           </div>
         </li>
@@ -837,19 +847,17 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   </section>
 
           </main>
-          <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-500'>
-  <div class='flex space-x-2'>
-    <div><a class='font-bold' href='@index'>@Index</a></div>
-    <div>|</div>
-    <div>Powered by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
-      0.1.9.0
-    </div>
-    <div>|</div>
-    <div><a class='font-bold' href='@tags'>@Tags</a></div>
-  </div>
-</footer>
         </div>
       </div>
+      <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-800'>
+  <div class='flex space-x-2'>
+    <div>Generated by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
+      <span class='font-mono text-sm tracking-tighter'>
+        0.1.26.1
+      </span>
+    </div>
+  </div>
+</footer>
     </div>
   
 </body>
