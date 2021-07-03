@@ -23,11 +23,7 @@
 
   
   <!-- CSSSTART -->
-  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>// Be silent to avoid complaining about non-tailwind classes
-// https://github.com/tw-in-js/twind/discussions/180#discussioncomment-678272
-console.log("ema: Twind: setup & observe")
-twind.setup({mode: 'silent'})
-window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
+	<link rel="stylesheet" href="emanote-compiled-2d42a4d6ddd61cf91d8b0c83765f0df3.css" />
   <!-- CSSEND -->
 
   <!-- Heist error element -->
@@ -38,16 +34,20 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
       font-family: monospace;
     }
   </style>
-  <head-extra></head-extra>
-  <!-- What goes in this file will appear on near the end of <head>--><style>
+  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Nunito/Nunito-Regular.ttf' as='font' type='font/ttf' crossorigin />
+<link rel='preload' href='_emanote-static/fonts/Nunito/Nunito-ExtraBold.ttf' as='font' type='font/ttf' crossorigin />
+
+<style>
   @font-face {
     font-family: 'Nunito';
     src: url('_emanote-static/fonts/Nunito/Nunito-Regular.ttf') format("truetype");
+    font-display: swap;
   }
 
   @font-face {
     font-family: 'Nunito-Bold';
     src: url('_emanote-static/fonts/Nunito/Nunito-ExtraBold.ttf') format("truetype");
+    font-display: swap;
   }
 
   body {
@@ -839,11 +839,11 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   observeFileSystem $ \action -&gt; 
     LVar.modify model $ applyAction action</code></pre></div>
     <p class='mb-3'>
-      For monitoring local files on disk you would typically use something like <a href='https://hackage.haskell.org/package/fsnotify' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>fsnotify</a> in place of <code class='py-0.5 bg-gray-100 text-sm'>observeFileSystem</code>. What is the point of doing this? To support <a href='concepts/hot-reload.html' class='text-pink-600 font-bold hover:underline'>hot reload</a> on <em>data</em> change. Imagine that your static site is generated based on Markdown files as well as HTML templates on disk. If either the Markdown file, or a HTML template file is modified, we want the web browser to hot reload the updated HTML <em>instantly</em>. This is enabled by storing both these kinds of files in the application <a href='guide/model.html' class='text-pink-600 font-bold hover:underline'>model</a> and using <a href='concepts/lvar.html' class='text-pink-600 font-bold hover:underline'>LVar</a> to update it <em>over time</em>.
+      For monitoring local files on disk you would typically use something like <a href='https://hackage.haskell.org/package/fsnotify' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>fsnotify</a> in place of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>observeFileSystem</code>. What is the point of doing this? To support <a href='concepts/hot-reload.html' class='text-pink-600 font-bold hover:underline'>hot reload</a> on <em>data</em> change. Imagine that your static site is generated based on Markdown files as well as HTML templates on disk. If either the Markdown file, or a HTML template file is modified, we want the web browser to hot reload the updated HTML <em>instantly</em>. This is enabled by storing both these kinds of files in the application <a href='guide/model.html' class='text-pink-600 font-bold hover:underline'>model</a> and using <a href='concepts/lvar.html' class='text-pink-600 font-bold hover:underline'>LVar</a> to update it <em>over time</em>.
     </p>
   
     <p class='mb-3'>
-      For filesystem changes, Ema provides a helper based on <code class='py-0.5 bg-gray-100 text-sm'>fsnotify</code> in the <code class='py-0.5 bg-gray-100 text-sm'>Ema.Helper.FileSystem</code> module. You can use it as follows
+      For filesystem changes, Ema provides a helper based on <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>fsnotify</code> in the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Ema.Helper.FileSystem</code> module. You can use it as follows
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>import qualified Ema.Helper.FileSystem as FileSystem
 
@@ -865,7 +865,7 @@ Ema.runEma render $ \model -&gt; do
         log $ "Delete: " &lt;&gt; fp
         LVar.modify model $ Map.delete fp</code></pre></div>
     <p class='mb-3'>
-      In most cases, however, you probably want to use the higher level function <code class='py-0.5 bg-gray-100 text-sm'>mountOnLVar</code>. It “mounts” the files you specify onto the <a href='concepts/lvar.html' class='text-pink-600 font-bold hover:underline'>model LVar</a> such that any changes to them are <em>automatically</em> reflected in your <a href='guide/model.html' class='text-pink-600 font-bold hover:underline'>model</a> value.
+      In most cases, however, you probably want to use the higher level function <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>mountOnLVar</code>. It “mounts” the files you specify onto the <a href='concepts/lvar.html' class='text-pink-600 font-bold hover:underline'>model LVar</a> such that any changes to them are <em>automatically</em> reflected in your <a href='guide/model.html' class='text-pink-600 font-bold hover:underline'>model</a> value.
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>Ema.runEma render $ \model -&gt; do
   FileSystem.mountOnLVar "." ["**/*.md"] model $ \fp -&gt; \case
@@ -973,7 +973,7 @@ Ema.runEma render $ \model -&gt; do
       
         
           <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-            0.1.31.2
+            0.1.34.4
           </span>
         
       

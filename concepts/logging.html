@@ -23,11 +23,7 @@
 
   
   <!-- CSSSTART -->
-  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>// Be silent to avoid complaining about non-tailwind classes
-// https://github.com/tw-in-js/twind/discussions/180#discussioncomment-678272
-console.log("ema: Twind: setup & observe")
-twind.setup({mode: 'silent'})
-window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
+	<link rel="stylesheet" href="emanote-compiled-2d42a4d6ddd61cf91d8b0c83765f0df3.css" />
   <!-- CSSEND -->
 
   <!-- Heist error element -->
@@ -38,16 +34,20 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
       font-family: monospace;
     }
   </style>
-  <head-extra></head-extra>
-  <!-- What goes in this file will appear on near the end of <head>--><style>
+  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Nunito/Nunito-Regular.ttf' as='font' type='font/ttf' crossorigin />
+<link rel='preload' href='_emanote-static/fonts/Nunito/Nunito-ExtraBold.ttf' as='font' type='font/ttf' crossorigin />
+
+<style>
   @font-face {
     font-family: 'Nunito';
     src: url('_emanote-static/fonts/Nunito/Nunito-Regular.ttf') format("truetype");
+    font-display: swap;
   }
 
   @font-face {
     font-family: 'Nunito-Bold';
     src: url('_emanote-static/fonts/Nunito/Nunito-ExtraBold.ttf') format("truetype");
+    font-display: swap;
   }
 
   body {
@@ -820,7 +820,7 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      <code class='py-0.5 bg-gray-100 text-sm'>runEma</code>’s action monad supports the <code class='py-0.5 bg-gray-100 text-sm'>MonadLoggerIO</code> constraint, as defined by <a href='https://hackage.haskell.org/package/monad-logger' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>monad-logger</a>. This means that you can use any of the logging functions from <code class='py-0.5 bg-gray-100 text-sm'>monad-logger</code> to add logging to your application. <a href='https://hackage.haskell.org/package/monad-logger-extras' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>monad-logger-extras</a> is used to colorize the logs.
+      <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>runEma</code>’s action monad supports the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>MonadLoggerIO</code> constraint, as defined by <a href='https://hackage.haskell.org/package/monad-logger' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>monad-logger</a>. This means that you can use any of the logging functions from <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>monad-logger</code> to add logging to your application. <a href='https://hackage.haskell.org/package/monad-logger-extras' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>monad-logger-extras</a> is used to colorize the logs.
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>logInfoNS "myapp" "This is an info message"
 logDebugNS "myapp" "This is a debug message info"</code></pre></div>
@@ -859,7 +859,7 @@ logDebugNS "myapp" "This is a debug message info"</code></pre></div>
       
         
           <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-            0.1.31.2
+            0.1.34.4
           </span>
         
       

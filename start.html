@@ -23,11 +23,7 @@
 
   
   <!-- CSSSTART -->
-  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>// Be silent to avoid complaining about non-tailwind classes
-// https://github.com/tw-in-js/twind/discussions/180#discussioncomment-678272
-console.log("ema: Twind: setup & observe")
-twind.setup({mode: 'silent'})
-window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
+	<link rel="stylesheet" href="emanote-compiled-2d42a4d6ddd61cf91d8b0c83765f0df3.css" />
   <!-- CSSEND -->
 
   <!-- Heist error element -->
@@ -38,16 +34,20 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
       font-family: monospace;
     }
   </style>
-  <head-extra></head-extra>
-  <!-- What goes in this file will appear on near the end of <head>--><style>
+  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Nunito/Nunito-Regular.ttf' as='font' type='font/ttf' crossorigin />
+<link rel='preload' href='_emanote-static/fonts/Nunito/Nunito-ExtraBold.ttf' as='font' type='font/ttf' crossorigin />
+
+<style>
   @font-face {
     font-family: 'Nunito';
     src: url('_emanote-static/fonts/Nunito/Nunito-Regular.ttf') format("truetype");
+    font-display: swap;
   }
 
   @font-face {
     font-family: 'Nunito-Bold';
     src: url('_emanote-static/fonts/Nunito/Nunito-ExtraBold.ttf') format("truetype");
+    font-display: swap;
   }
 
   body {
@@ -829,13 +829,13 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
         </li>
       
         <li>
-          Run <code class='py-0.5 bg-gray-100 text-sm'>bin/run</code> and access the site at <a href='http://localhost:9001' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>http://localhost:9001</a>
+          Run <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>bin/run</code> and access the site at <a href='http://localhost:9001' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>http://localhost:9001</a>
         </li>
       
     </ul>
   
     <p class='mb-3'>
-      That should start the Ema dev server displaying a simple website. Go ahead and try modifying either the Markdown content in <code class='py-0.5 bg-gray-100 text-sm'>./content</code> or the Haskell source in <code class='py-0.5 bg-gray-100 text-sm'>./src/Main.hs</code>, and observe how the web view updates <a href='concepts/hot-reload.html' class='text-pink-600 font-bold hover:underline'>instantly</a>.
+      That should start the Ema dev server displaying a simple website. Go ahead and try modifying either the Markdown content in <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>./content</code> or the Haskell source in <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>./src/Main.hs</code>, and observe how the web view updates <a href='concepts/hot-reload.html' class='text-pink-600 font-bold hover:underline'>instantly</a>.
     </p>
   <div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'>
     <p class='mb-3'>
@@ -889,7 +889,7 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
       
         
           <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-            0.1.31.2
+            0.1.34.4
           </span>
         
       

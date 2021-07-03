@@ -23,11 +23,7 @@
 
   
   <!-- CSSSTART -->
-  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>// Be silent to avoid complaining about non-tailwind classes
-// https://github.com/tw-in-js/twind/discussions/180#discussioncomment-678272
-console.log("ema: Twind: setup & observe")
-twind.setup({mode: 'silent'})
-window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
+	<link rel="stylesheet" href="emanote-compiled-2d42a4d6ddd61cf91d8b0c83765f0df3.css" />
   <!-- CSSEND -->
 
   <!-- Heist error element -->
@@ -38,16 +34,20 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
       font-family: monospace;
     }
   </style>
-  <head-extra></head-extra>
-  <!-- What goes in this file will appear on near the end of <head>--><style>
+  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Nunito/Nunito-Regular.ttf' as='font' type='font/ttf' crossorigin />
+<link rel='preload' href='_emanote-static/fonts/Nunito/Nunito-ExtraBold.ttf' as='font' type='font/ttf' crossorigin />
+
+<style>
   @font-face {
     font-family: 'Nunito';
     src: url('_emanote-static/fonts/Nunito/Nunito-Regular.ttf') format("truetype");
+    font-display: swap;
   }
 
   @font-face {
     font-family: 'Nunito-Bold';
     src: url('_emanote-static/fonts/Nunito/Nunito-ExtraBold.ttf') format("truetype");
+    font-display: swap;
   }
 
   body {
@@ -820,11 +820,11 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      Once you have <a href='guide/model.html' class='text-pink-600 font-bold hover:underline'>model</a> and <a href='guide/routes.html' class='text-pink-600 font-bold hover:underline'>route</a> types in place, we must tell the Haskell compiler that they are suitable for generating static sites. We do this by creating an instance of the <code class='py-0.5 bg-gray-100 text-sm'>Ema</code> typeclass.
+      Once you have <a href='guide/model.html' class='text-pink-600 font-bold hover:underline'>model</a> and <a href='guide/routes.html' class='text-pink-600 font-bold hover:underline'>route</a> types in place, we must tell the Haskell compiler that they are suitable for generating static sites. We do this by creating an instance of the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Ema</code> typeclass.
     </p>
   
     <p class='mb-3'>
-      Using some <code class='py-0.5 bg-gray-100 text-sm'>MyModel</code> and the route <code class='py-0.5 bg-gray-100 text-sm'>Route</code> shown in the <a href='guide/routes.html' class='text-pink-600 font-bold hover:underline'>previous</a> section, we can create an instance as follows:
+      Using some <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>MyModel</code> and the route <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Route</code> shown in the <a href='guide/routes.html' class='text-pink-600 font-bold hover:underline'>previous</a> section, we can create an instance as follows:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>class Ema MyModel Route where 
   -- Where to generate this route?
@@ -843,37 +843,37 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   allRoutes model =
     [Index, About]</code></pre></div>
     <p class='mb-3'>
-      The <code class='py-0.5 bg-gray-100 text-sm'>Ema</code> typeclass has three methods, one of them being optional:
+      The <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Ema</code> typeclass has three methods, one of them being optional:
     </p>
   
     <ul class='my-3 ml-4 space-y-1 list-decimal list-inside'>
       
         <li>
-          Define <code class='py-0.5 bg-gray-100 text-sm'>encodeRoute</code> that converts our route type to a filepath
+          Define <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>encodeRoute</code> that converts our route type to a filepath
         </li>
       
         <li>
-          Define <code class='py-0.5 bg-gray-100 text-sm'>decodeRoute</code> that does the <em>reverse</em> converstion (the conversion must be isomorphic)
+          Define <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>decodeRoute</code> that does the <em>reverse</em> converstion (the conversion must be isomorphic)
         </li>
       
         <li>
-          <em>Optionally</em>, define <code class='py-0.5 bg-gray-100 text-sm'>allRoutes</code> indicating the routes to statically generate
+          <em>Optionally</em>, define <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>allRoutes</code> indicating the routes to statically generate
         </li>
       
     </ul>
-  <h2 id='runema' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'><code class='py-0.5 bg-gray-100 text-sm'>runEma</code></h2>
+  <h2 id='runema' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>runEma</code></h2>
     <p class='mb-3'>
-      The <code class='py-0.5 bg-gray-100 text-sm'>Ema</code> constraint is used by the <code class='py-0.5 bg-gray-100 text-sm'>runEma</code> function that acts as the main entry point to your static site generator. It takes two arguments:
+      The <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Ema</code> constraint is used by the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>runEma</code> function that acts as the main entry point to your static site generator. It takes two arguments:
     </p>
   
     <ul class='my-3 ml-4 space-y-1 list-decimal list-inside'>
       
         <li>
-          <code class='py-0.5 bg-gray-100 text-sm'>render</code> function that renders your route (usually to HTML); we’ll go over this in <a href='guide/render.html' class='text-pink-600 font-bold hover:underline'>the next</a> section.
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>render</code> function that renders your route (usually to HTML); we’ll go over this in <a href='guide/render.html' class='text-pink-600 font-bold hover:underline'>the next</a> section.
         </li>
       
         <li>
-          an IO action that takes <a href='guide/model.html' class='text-pink-600 font-bold hover:underline'><code class='py-0.5 bg-gray-100 text-sm'>LVar model</code></a> as an argument.
+          an IO action that takes <a href='guide/model.html' class='text-pink-600 font-bold hover:underline'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>LVar model</code></a> as an argument.
         </li>
       
     </ul>
@@ -883,7 +883,7 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
     </p>
   <div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'>
     <p class='mb-3'>
-      <span class='py-2 text-xl italic font-bold'>Next</span>, with our model and routes in place constrained by <code class='py-0.5 bg-gray-100 text-sm'>Ema</code> type class, <a href='guide/render.html' class='text-pink-600 font-bold hover:underline'>we will define the HTML for our site</a> using Ema.
+      <span class='py-2 text-xl italic font-bold'>Next</span>, with our model and routes in place constrained by <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Ema</code> type class, <a href='guide/render.html' class='text-pink-600 font-bold hover:underline'>we will define the HTML for our site</a> using Ema.
     </p>
   </div>
 </article>
@@ -993,7 +993,7 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
       
         
           <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-            0.1.31.2
+            0.1.34.4
           </span>
         
       

@@ -23,11 +23,7 @@
 
   
   <!-- CSSSTART -->
-  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>// Be silent to avoid complaining about non-tailwind classes
-// https://github.com/tw-in-js/twind/discussions/180#discussioncomment-678272
-console.log("ema: Twind: setup & observe")
-twind.setup({mode: 'silent'})
-window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
+	<link rel="stylesheet" href="emanote-compiled-2d42a4d6ddd61cf91d8b0c83765f0df3.css" />
   <!-- CSSEND -->
 
   <!-- Heist error element -->
@@ -38,16 +34,20 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
       font-family: monospace;
     }
   </style>
-  <head-extra></head-extra>
-  <!-- What goes in this file will appear on near the end of <head>--><style>
+  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Nunito/Nunito-Regular.ttf' as='font' type='font/ttf' crossorigin />
+<link rel='preload' href='_emanote-static/fonts/Nunito/Nunito-ExtraBold.ttf' as='font' type='font/ttf' crossorigin />
+
+<style>
   @font-face {
     font-family: 'Nunito';
     src: url('_emanote-static/fonts/Nunito/Nunito-Regular.ttf') format("truetype");
+    font-display: swap;
   }
 
   @font-face {
     font-family: 'Nunito-Bold';
     src: url('_emanote-static/fonts/Nunito/Nunito-ExtraBold.ttf') format("truetype");
+    font-display: swap;
   }
 
   body {
@@ -830,7 +830,7 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
         </li>
       
         <li>
-          Open <code class='py-0.5 bg-gray-100 text-sm'>src/Main.hs</code>
+          Open <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Main.hs</code>
         </li>
       
         <li>
@@ -859,11 +859,11 @@ main = do
   | About  -- Corresponds to /about
   deriving (Bounded, Enum, Show)</code></pre></div>
     <p class='mb-3'>
-      Next, let’s define a <a href='guide/model.html' class='text-pink-600 font-bold hover:underline'>model</a>. A model will hold the state of our website used to render its HTML. Let’s put the <code class='py-0.5 bg-gray-100 text-sm'>speaker</code> variable in it, as that’s all we are using:
+      Next, let’s define a <a href='guide/model.html' class='text-pink-600 font-bold hover:underline'>model</a>. A model will hold the state of our website used to render its HTML. Let’s put the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>speaker</code> variable in it, as that’s all we are using:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>data Model = Model { speaker :: Text }</code></pre></div>
     <p class='mb-3'>
-      We should now tell Ema how to convert our <code class='py-0.5 bg-gray-100 text-sm'>Route</code> to actual file paths (which is used to determine the URL too). Let’s do that by making an instance of the <code class='py-0.5 bg-gray-100 text-sm'>Ema</code> <a href='guide/class.html' class='text-pink-600 font-bold hover:underline'>class</a>:
+      We should now tell Ema how to convert our <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Route</code> to actual file paths (which is used to determine the URL too). Let’s do that by making an instance of the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Ema</code> <a href='guide/class.html' class='text-pink-600 font-bold hover:underline'>class</a>:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>import Ema (Ema (..))
 
@@ -876,7 +876,7 @@ instance Ema Model Route where
     "about.html" -&gt; Just About  -- From /about
     _ -&gt; Nothing                -- Everything else, are bad routes</code></pre></div>
     <p class='mb-3'>
-      Now, we write the <code class='py-0.5 bg-gray-100 text-sm'>main</code> entry point:
+      Now, we write the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>main</code> entry point:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>import Control.Concurrent (threadDelay)
 import qualified Data.LVar as LVar
@@ -887,11 +887,11 @@ main = do
     LVar.set model $ Model "Ema"
     liftIO $ threadDelay maxBound</code></pre></div>
     <p class='mb-3'>
-      The <code class='py-0.5 bg-gray-100 text-sm'>runEma</code> function is explained <a href='guide/class.html' class='text-pink-600 font-bold hover:underline'>here</a>, but in brief: it takes a render function (see below) as well as an IO action that allows us to create and update the model <a href='concepts/lvar.html' class='text-pink-600 font-bold hover:underline'>lvar</a>. Note that <code class='py-0.5 bg-gray-100 text-sm'>threadDelay maxBound</code> here? That is because our IO action must not exit; in the dev server mode of real-world websites, you would continue to monitor the external world (such as Markdown files) and update the model, to facilitate <a href='concepts/hot-reload.html' class='text-pink-600 font-bold hover:underline'>hot reload</a> of data used by your site.
+      The <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>runEma</code> function is explained <a href='guide/class.html' class='text-pink-600 font-bold hover:underline'>here</a>, but in brief: it takes a render function (see below) as well as an IO action that allows us to create and update the model <a href='concepts/lvar.html' class='text-pink-600 font-bold hover:underline'>lvar</a>. Note that <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>threadDelay maxBound</code> here? That is because our IO action must not exit; in the dev server mode of real-world websites, you would continue to monitor the external world (such as Markdown files) and update the model, to facilitate <a href='concepts/hot-reload.html' class='text-pink-600 font-bold hover:underline'>hot reload</a> of data used by your site.
     </p>
   
     <p class='mb-3'>
-      On final piece of the puzzle is to write the aforementioned <code class='py-0.5 bg-gray-100 text-sm'>render</code> function:
+      On final piece of the puzzle is to write the aforementioned <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>render</code> function:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>import qualified Ema
 import qualified Ema.CLI
@@ -923,23 +923,23 @@ render _emaAction model r = Ema.AssetGenerated Ema.Html . RU.renderHtml $
         ! A.style "text-decoration: underline" 
         ! A.href (H.toValue $ Ema.routeUrl targetRoute) $ w</code></pre></div>
     <p class='mb-3'>
-      If everything compiles, you should see the site update in the web browser. A couple of quick points about the <code class='py-0.5 bg-gray-100 text-sm'>render</code> function:
+      If everything compiles, you should see the site update in the web browser. A couple of quick points about the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>render</code> function:
     </p>
   
     <ul class='my-3 ml-4 space-y-1 list-decimal list-inside'>
       
         <li>
-          It should return the raw HTML as a <code class='py-0.5 bg-gray-100 text-sm'>ByteString</code>. Here, we use <a href='https://hackage.haskell.org/package/blaze-html' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>blaze-html</a> as HTML DSL. You can also use your own HTML templates of course.
+          It should return the raw HTML as a <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>ByteString</code>. Here, we use <a href='https://hackage.haskell.org/package/blaze-html' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>blaze-html</a> as HTML DSL. You can also use your own HTML templates of course.
         </li>
       
         <li>
-          It uses <code class='py-0.5 bg-gray-100 text-sm'>Ema.routeUrl</code> function to create a URL out of our <code class='py-0.5 bg-gray-100 text-sm'>Route</code> type. This function uses the <a href='guide/class.html' class='text-pink-600 font-bold hover:underline'><code class='py-0.5 bg-gray-100 text-sm'>Ema</code> typeclass</a>, so it uses the <code class='py-0.5 bg-gray-100 text-sm'>encodeRoute</code> function defined further above.
+          It uses <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Ema.routeUrl</code> function to create a URL out of our <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Route</code> type. This function uses the <a href='guide/class.html' class='text-pink-600 font-bold hover:underline'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Ema</code> typeclass</a>, so it uses the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>encodeRoute</code> function defined further above.
         </li>
       
     </ul>
   
     <p class='mb-3'>
-      On final note, you will note that nothing is actually <em>generated</em> so far. This is because Ema has been running in the dev server mode, which is quite useful during development. To actually generate the files, you can use the <code class='py-0.5 bg-gray-100 text-sm'>gen</code> command when running the <a href='concepts/cli.html' class='text-pink-600 font-bold hover:underline'>CLI</a>:
+      On final note, you will note that nothing is actually <em>generated</em> so far. This is because Ema has been running in the dev server mode, which is quite useful during development. To actually generate the files, you can use the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>gen</code> command when running the <a href='concepts/cli.html' class='text-pink-600 font-bold hover:underline'>CLI</a>:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>mkdir ./output
 nix run . -- -C ./content gen $(pwd)/output</code></pre></div><h2 id='exercises' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Exercises</h2>
@@ -950,7 +950,7 @@ nix run . -- -C ./content gen $(pwd)/output</code></pre></div><h2 id='exercises'
         </li>
       
         <li>
-          What happens if you <code class='py-0.5 bg-gray-100 text-sm'>throw</code> an exception or use <code class='py-0.5 bg-gray-100 text-sm'>error</code> in the <code class='py-0.5 bg-gray-100 text-sm'>render</code> function?
+          What happens if you <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>throw</code> an exception or use <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>error</code> in the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>render</code> function?
         </li>
       
     </ul>
@@ -1006,7 +1006,7 @@ nix run . -- -C ./content gen $(pwd)/output</code></pre></div><h2 id='exercises'
       
         
           <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-            0.1.31.2
+            0.1.34.4
           </span>
         
       

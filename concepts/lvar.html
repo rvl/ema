@@ -23,11 +23,7 @@
 
   
   <!-- CSSSTART -->
-  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>// Be silent to avoid complaining about non-tailwind classes
-// https://github.com/tw-in-js/twind/discussions/180#discussioncomment-678272
-console.log("ema: Twind: setup & observe")
-twind.setup({mode: 'silent'})
-window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
+	<link rel="stylesheet" href="emanote-compiled-2d42a4d6ddd61cf91d8b0c83765f0df3.css" />
   <!-- CSSEND -->
 
   <!-- Heist error element -->
@@ -38,16 +34,20 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
       font-family: monospace;
     }
   </style>
-  <head-extra></head-extra>
-  <!-- What goes in this file will appear on near the end of <head>--><style>
+  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Nunito/Nunito-Regular.ttf' as='font' type='font/ttf' crossorigin />
+<link rel='preload' href='_emanote-static/fonts/Nunito/Nunito-ExtraBold.ttf' as='font' type='font/ttf' crossorigin />
+
+<style>
   @font-face {
     font-family: 'Nunito';
     src: url('_emanote-static/fonts/Nunito/Nunito-Regular.ttf') format("truetype");
+    font-display: swap;
   }
 
   @font-face {
     font-family: 'Nunito-Bold';
     src: url('_emanote-static/fonts/Nunito/Nunito-ExtraBold.ttf') format("truetype");
+    font-display: swap;
   }
 
   body {
@@ -820,11 +820,11 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      If you are familiar with Haskell’s <code class='py-0.5 bg-gray-100 text-sm'>stm</code> package, a <code class='py-0.5 bg-gray-100 text-sm'>LVar</code> is essentially a <a href='https://hackage.haskell.org/package/stm-2.5.0.0/docs/Control-Concurrent-STM-TMVar.html' class='text-pink-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 bg-gray-100 text-sm'>TMVar</code></a> but with an extra ability for other threads to observe changes. Ema uses it for <a href='concepts/hot-reload.html' class='text-pink-600 font-bold hover:underline'>hot reload</a>, and your application code is expected to set and update its <a href='guide/model.html' class='text-pink-600 font-bold hover:underline'>model</a> through the LVar.
+      If you are familiar with Haskell’s <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>stm</code> package, a <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>LVar</code> is essentially a <a href='https://hackage.haskell.org/package/stm-2.5.0.0/docs/Control-Concurrent-STM-TMVar.html' class='text-pink-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>TMVar</code></a> but with an extra ability for other threads to observe changes. Ema uses it for <a href='concepts/hot-reload.html' class='text-pink-600 font-bold hover:underline'>hot reload</a>, and your application code is expected to set and update its <a href='guide/model.html' class='text-pink-600 font-bold hover:underline'>model</a> through the LVar.
     </p>
   
     <p class='mb-3'>
-      Documentation on <code class='py-0.5 bg-gray-100 text-sm'>LVar</code> is available <a href='https://hackage.haskell.org/package/lvar' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>on Hackage</a>.
+      Documentation on <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>LVar</code> is available <a href='https://hackage.haskell.org/package/lvar' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>on Hackage</a>.
     </p>
   
 </article>
@@ -922,7 +922,7 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
       
         
           <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-            0.1.31.2
+            0.1.34.4
           </span>
         
       

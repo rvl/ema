@@ -23,11 +23,7 @@
 
   
   <!-- CSSSTART -->
-  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>// Be silent to avoid complaining about non-tailwind classes
-// https://github.com/tw-in-js/twind/discussions/180#discussioncomment-678272
-console.log("ema: Twind: setup & observe")
-twind.setup({mode: 'silent'})
-window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
+	<link rel="stylesheet" href="emanote-compiled-2d42a4d6ddd61cf91d8b0c83765f0df3.css" />
   <!-- CSSEND -->
 
   <!-- Heist error element -->
@@ -38,16 +34,20 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
       font-family: monospace;
     }
   </style>
-  <head-extra></head-extra>
-  <!-- What goes in this file will appear on near the end of <head>--><style>
+  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Nunito/Nunito-Regular.ttf' as='font' type='font/ttf' crossorigin />
+<link rel='preload' href='_emanote-static/fonts/Nunito/Nunito-ExtraBold.ttf' as='font' type='font/ttf' crossorigin />
+
+<style>
   @font-face {
     font-family: 'Nunito';
     src: url('_emanote-static/fonts/Nunito/Nunito-Regular.ttf') format("truetype");
+    font-display: swap;
   }
 
   @font-face {
     font-family: 'Nunito-Bold';
     src: url('_emanote-static/fonts/Nunito/Nunito-ExtraBold.ttf') format("truetype");
+    font-display: swap;
   }
 
   body {
@@ -828,11 +828,11 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>newtype BlogPosts = BlogPosts (Map Slug Text}</code></pre></div>
     <p class='mb-3'>
-      Here <code class='py-0.5 bg-gray-100 text-sm'>BlogPosts</code> is the model type. If we are generating a weblog site, then all the “data” we need is loaded into memory as a value of <code class='py-0.5 bg-gray-100 text-sm'>BlogPosts</code>.
+      Here <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>BlogPosts</code> is the model type. If we are generating a weblog site, then all the “data” we need is loaded into memory as a value of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>BlogPosts</code>.
     </p>
   <h2 id='modifying-the-model' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Modifying the model</h2>
     <p class='mb-3'>
-      Ema’s dev server supports <a href='concepts/hot-reload.html' class='text-pink-600 font-bold hover:underline'>hot reload</a>; it will observe changes to your model, in addition to code. To facilitate this you will manage your model as a <a href='concepts/lvar.html' class='text-pink-600 font-bold hover:underline'>LVar</a>. The <code class='py-0.5 bg-gray-100 text-sm'>runEma</code> function (<a href='guide/class.html' class='text-pink-600 font-bold hover:underline'>described here</a>) takes an IO action that gets <code class='py-0.5 bg-gray-100 text-sm'>LVar model</code> as an argument.
+      Ema’s dev server supports <a href='concepts/hot-reload.html' class='text-pink-600 font-bold hover:underline'>hot reload</a>; it will observe changes to your model, in addition to code. To facilitate this you will manage your model as a <a href='concepts/lvar.html' class='text-pink-600 font-bold hover:underline'>LVar</a>. The <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>runEma</code> function (<a href='guide/class.html' class='text-pink-600 font-bold hover:underline'>described here</a>) takes an IO action that gets <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>LVar model</code> as an argument.
     </p>
   
     <p class='mb-3'>
@@ -843,7 +843,7 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
     LVar.set model =&lt;&lt; liftIO getCurrentTime
     liftIO $ threadDelay $ 1 * 1000000</code></pre></div>
     <p class='mb-3'>
-      In this contrived example (<a href='https://github.com/srid/ema/blob/master/src/Ema/Example/Ex02_Clock.hs' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>full code here</a>), we are using <code class='py-0.5 bg-gray-100 text-sm'>UTCTime</code> as the model. We set the initial value using <code class='py-0.5 bg-gray-100 text-sm'>LVar.set</code>, and then continually update the current time every second. Every time the model gets updated, the web browser will <a href='concepts/hot-reload.html' class='text-pink-600 font-bold hover:underline'>hot reload</a> to display the up to date value. For the <code class='py-0.5 bg-gray-100 text-sm'>BlogPosts</code> model, you would typically use <a href='https://hackage.haskell.org/package/fsnotify' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>fsnotify</a> to monitor changes to the underlying Markdown files, but note that Ema provides <a href='guide/helpers/filesystem.html' class='text-pink-600 font-bold hover:underline'>a helper</a> for that.
+      In this contrived example (<a href='https://github.com/srid/ema/blob/master/src/Ema/Example/Ex02_Clock.hs' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>full code here</a>), we are using <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>UTCTime</code> as the model. We set the initial value using <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>LVar.set</code>, and then continually update the current time every second. Every time the model gets updated, the web browser will <a href='concepts/hot-reload.html' class='text-pink-600 font-bold hover:underline'>hot reload</a> to display the up to date value. For the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>BlogPosts</code> model, you would typically use <a href='https://hackage.haskell.org/package/fsnotify' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>fsnotify</a> to monitor changes to the underlying Markdown files, but note that Ema provides <a href='guide/helpers/filesystem.html' class='text-pink-600 font-bold hover:underline'>a helper</a> for that.
     </p>
   <div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'>
     <p class='mb-3'>
@@ -969,7 +969,7 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
       
         
           <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-            0.1.31.2
+            0.1.34.4
           </span>
         
       

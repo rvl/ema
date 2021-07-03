@@ -23,11 +23,7 @@
 
   
   <!-- CSSSTART -->
-  <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.min.js,npm/twind/observe/observe.umd.min.js'></script><script type='text/javascript'>// Be silent to avoid complaining about non-tailwind classes
-// https://github.com/tw-in-js/twind/discussions/180#discussioncomment-678272
-console.log("ema: Twind: setup & observe")
-twind.setup({mode: 'silent'})
-window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
+	<link rel="stylesheet" href="emanote-compiled-2d42a4d6ddd61cf91d8b0c83765f0df3.css" />
   <!-- CSSEND -->
 
   <!-- Heist error element -->
@@ -38,16 +34,20 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
       font-family: monospace;
     }
   </style>
-  <head-extra></head-extra>
-  <!-- What goes in this file will appear on near the end of <head>--><style>
+  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Nunito/Nunito-Regular.ttf' as='font' type='font/ttf' crossorigin />
+<link rel='preload' href='_emanote-static/fonts/Nunito/Nunito-ExtraBold.ttf' as='font' type='font/ttf' crossorigin />
+
+<style>
   @font-face {
     font-family: 'Nunito';
     src: url('_emanote-static/fonts/Nunito/Nunito-Regular.ttf') format("truetype");
+    font-display: swap;
   }
 
   @font-face {
     font-family: 'Nunito-Bold';
     src: url('_emanote-static/fonts/Nunito/Nunito-ExtraBold.ttf') format("truetype");
+    font-display: swap;
   }
 
   body {
@@ -826,7 +826,7 @@ window.emaTwindObs = twindObserve.observe(document.documentElement);</script>
 render model route =
   AssetGenerated Html "&lt;b&gt;Hello&lt;/b&gt;, world!"</code></pre></div>
     <p class='mb-3'>
-      The <code class='py-0.5 bg-gray-100 text-sm'>AssetGenerated Html</code> tells Ema that you are generating HTML content, which will be appropriately handled by the <a href='concepts/hot-reload.html' class='text-pink-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Hot Reload</a> of the live server.
+      The <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>AssetGenerated Html</code> tells Ema that you are generating HTML content, which will be appropriately handled by the <a href='concepts/hot-reload.html' class='text-pink-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Hot Reload</a> of the live server.
     </p>
   
     <p class='mb-3'>
@@ -852,7 +852,7 @@ render model route = AssetGenerated Html . Blaze.renderHtml $
       H.footer $ do 
         A.a ! A.href "https://github.com/user/repo" $ "Source on GitHub"</code></pre></div>
     <p class='mb-3'>
-      Note that Ema provides a <code class='py-0.5 bg-gray-100 text-sm'>routeUrl</code> helper function that serializes your route to the final URL (here, <code class='py-0.5 bg-gray-100 text-sm'>/about</code>) for linking to. There is also a <code class='py-0.5 bg-gray-100 text-sm'>routeUrlWith</code> function which allows you to disable pretty URLs, to get back the <code class='py-0.5 bg-gray-100 text-sm'>.html</code> suffix for deployments to traditional web servers like Nginx, Gitlab, etc.
+      Note that Ema provides a <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>routeUrl</code> helper function that serializes your route to the final URL (here, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>/about</code>) for linking to. There is also a <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>routeUrlWith</code> function which allows you to disable pretty URLs, to get back the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>.html</code> suffix for deployments to traditional web servers like Nginx, Gitlab, etc.
     </p>
   
     <p class='mb-3'>
@@ -950,7 +950,7 @@ render model route = AssetGenerated Html . Blaze.renderHtml $
       
         
           <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-            0.1.31.2
+            0.1.34.4
           </span>
         
       
