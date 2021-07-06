@@ -855,6 +855,18 @@ render emaAction model route = do
     <ul class='space-y-1'>
       
         <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/render.html'>
+            Rendering HTML
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+              Also, group contexts from same source.
+            -->
+            <div><p>Of course we want it to be real, by using our model value, as well as generate the HTML based on the route. We will also use the <a href='https://hackage.haskell.org/package/blaze-html' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>blaze-html</a> library to make writing HTML in Haskell palatable (see also <a href='guide/helpers/tailwind.html' class='text-gray-600 font-bold hover:bg-gray-50'>the layout helper</a>). A more realistic starting point (if not the finishing product) would be:</p></div>
+          </div>
+        </li>
+      
+        <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts/hot-reload.html'>
             Hot Reload
           </a>
@@ -878,18 +890,6 @@ render emaAction model route = do
           </div>
         </li>
       
-        <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/render.html'>
-            Rendering HTML
-          </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>Of course we want it to be real, by using our model value, as well as generate the HTML based on the route. We will also use the <a href='https://hackage.haskell.org/package/blaze-html' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>blaze-html</a> library to make writing HTML in Haskell palatable (see also <a href='guide/helpers/tailwind.html' class='text-gray-600 font-bold hover:bg-gray-50'>the layout helper</a>). A more realistic starting point (if not the finishing product) would be:</p></div>
-          </div>
-        </li>
-      
     </ul>
   </div>
 
@@ -907,7 +907,7 @@ render emaAction model route = do
       
         
           <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-            0.1.34.4
+            0.1.37.2
           </span>
         
       

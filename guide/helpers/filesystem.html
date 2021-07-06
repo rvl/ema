@@ -885,6 +885,30 @@ Ema.runEma render $ \model -&gt; do
     <ul class='space-y-1'>
       
         <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/helpers/markdown.html'>
+            Using Markdown
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+              Also, group contexts from same source.
+            -->
+            <div><p>Note that with Ema you can get <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> support for your Markdown files using <a href='guide/helpers/filesystem.html' class='text-gray-600 font-bold hover:bg-gray-50'>filesystem notifications</a>.</p></div>
+          </div>
+        </li>
+      
+        <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/render.html'>
+            Rendering HTML
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+              Also, group contexts from same source.
+            -->
+            <div><p>Of course when using Ema nothing prevents you from choosing to use traditional HTML templates, and you can get <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> on them too with <a href='guide/helpers/filesystem.html' class='text-gray-600 font-bold hover:bg-gray-50'>a little bit of plumbing</a>.</p></div>
+          </div>
+        </li>
+      
+        <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts/hot-reload.html'>
             Hot Reload
           </a>
@@ -921,18 +945,6 @@ Ema.runEma render $ \model -&gt; do
         </li>
       
         <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/helpers/markdown.html'>
-            Using Markdown
-          </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>Note that with Ema you can get <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> support for your Markdown files using <a href='guide/helpers/filesystem.html' class='text-gray-600 font-bold hover:bg-gray-50'>filesystem notifications</a>.</p></div>
-          </div>
-        </li>
-      
-        <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model.html'>
             Defining your model
           </a>
@@ -941,18 +953,6 @@ Ema.runEma render $ \model -&gt; do
               Also, group contexts from same source.
             -->
             <div><p>In this contrived example (<a href='https://github.com/srid/ema/blob/master/src/Ema/Example/Ex02_Clock.hs' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>full code here</a>), we are using <code>UTCTime</code> as the model. We set the initial value using <code>LVar.set</code>, and then continually update the current time every second. Every time the model gets updated, the web browser will <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> to display the up to date value. For the <code>BlogPosts</code> model, you would typically use <a href='https://hackage.haskell.org/package/fsnotify' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>fsnotify</a> to monitor changes to the underlying Markdown files, but note that Ema provides <a href='guide/helpers/filesystem.html' class='text-gray-600 font-bold hover:bg-gray-50'>a helper</a> for that.</p></div>
-          </div>
-        </li>
-      
-        <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/render.html'>
-            Rendering HTML
-          </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>Of course when using Ema nothing prevents you from choosing to use traditional HTML templates, and you can get <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> on them too with <a href='guide/helpers/filesystem.html' class='text-gray-600 font-bold hover:bg-gray-50'>a little bit of plumbing</a>.</p></div>
           </div>
         </li>
       
@@ -973,7 +973,7 @@ Ema.runEma render $ \model -&gt; do
       
         
           <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-            0.1.34.4
+            0.1.37.2
           </span>
         
       

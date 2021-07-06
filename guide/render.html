@@ -874,6 +874,18 @@ render model route = AssetGenerated Html . Blaze.renderHtml $
     <ul class='space-y-1'>
       
         <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/helpers/tailwind.html'>
+            Using Tailwind CSS
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+              Also, group contexts from same source.
+            -->
+            <div><p>To use the layout helper in your <a href='guide/render.html' class='text-gray-600 font-bold hover:bg-gray-50'>render</a> function:</p></div>
+          </div>
+        </li>
+      
+        <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide.html'>
             Guide
           </a>
@@ -882,6 +894,18 @@ render model route = AssetGenerated Html . Blaze.renderHtml $
               Also, group contexts from same source.
             -->
             <div><a href='guide/render.html' class='text-gray-600 font-bold hover:bg-gray-50'>Rendering HTML</a> – <span class='text-gray-500'>You could use plain strings to build HTML, or use templates, or use one of the delightful Haskell DSLs</span></div>
+          </div>
+        </li>
+      
+        <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model.html'>
+            Defining your model
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+              Also, group contexts from same source.
+            -->
+            <div><p>A “<em>model</em>” in Ema represents the state to use to generate your site. It could be as simple as a variable, or it could be a list of parsed Markdown files (as in the case of a weblog). Ema’s model is also conceptually similar to <a href='https://guide.elm-lang.org/architecture/' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>Elm</a>'s model, in that - changing the model <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>automatically</a> changes the <a href='guide/render.html' class='text-gray-600 font-bold hover:bg-gray-50'>view</a>.</p></div>
           </div>
         </li>
       
@@ -909,30 +933,6 @@ render model route = AssetGenerated Html . Blaze.renderHtml $
           </div>
         </li>
       
-        <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/helpers/tailwind.html'>
-            Using Tailwind CSS
-          </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>To use the layout helper in your <a href='guide/render.html' class='text-gray-600 font-bold hover:bg-gray-50'>render</a> function:</p></div>
-          </div>
-        </li>
-      
-        <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model.html'>
-            Defining your model
-          </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>A “<em>model</em>” in Ema represents the state to use to generate your site. It could be as simple as a variable, or it could be a list of parsed Markdown files (as in the case of a weblog). Ema’s model is also conceptually similar to <a href='https://guide.elm-lang.org/architecture/' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>Elm</a>'s model, in that - changing the model <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>automatically</a> changes the <a href='guide/render.html' class='text-gray-600 font-bold hover:bg-gray-50'>view</a>.</p></div>
-          </div>
-        </li>
-      
     </ul>
   </div>
 
@@ -950,7 +950,7 @@ render model route = AssetGenerated Html . Blaze.renderHtml $
       
         
           <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-            0.1.34.4
+            0.1.37.2
           </span>
         
       

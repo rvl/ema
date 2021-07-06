@@ -854,30 +854,6 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts.html'>
-            Concepts
-          </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>Hot Reload</a></div>
-          </div>
-        </li>
-      
-        <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts/lvar.html'>
-            LVar
-          </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>If you are familiar with Haskell’s <code>stm</code> package, a <code>LVar</code> is essentially a <a href='https://hackage.haskell.org/package/stm-2.5.0.0/docs/Control-Concurrent-STM-TMVar.html' class='text-gray-600 hover:underline' target='_blank' rel='noopener'><code>TMVar</code></a> but with an extra ability for other threads to observe changes. Ema uses it for <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a>, and your application code is expected to set and update its <a href='guide/model.html' class='text-gray-600 font-bold hover:bg-gray-50'>model</a> through the LVar.</p></div>
-          </div>
-        </li>
-      
-        <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/helpers/filesystem.html'>
             Working with files
           </a>
@@ -902,38 +878,26 @@
         </li>
       
         <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model.html'>
-            Defining your model
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='start/tutorial.html'>
+            Tutorial
           </a>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
               Also, group contexts from same source.
             -->
-            <div><p>A “<em>model</em>” in Ema represents the state to use to generate your site. It could be as simple as a variable, or it could be a list of parsed Markdown files (as in the case of a weblog). Ema’s model is also conceptually similar to <a href='https://guide.elm-lang.org/architecture/' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>Elm</a>'s model, in that - changing the model <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>automatically</a> changes the <a href='guide/render.html' class='text-gray-600 font-bold hover:bg-gray-50'>view</a>.</p></div>
+            <div><p>The <code>runEma</code> function is explained <a href='guide/class.html' class='text-gray-600 font-bold hover:bg-gray-50'>here</a>, but in brief: it takes a render function (see below) as well as an IO action that allows us to create and update the model <a href='concepts/lvar.html' class='text-gray-600 font-bold hover:bg-gray-50'>lvar</a>. Note that <code>threadDelay maxBound</code> here? That is because our IO action must not exit; in the dev server mode of real-world websites, you would continue to monitor the external world (such as Markdown files) and update the model, to facilitate <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> of data used by your site.</p></div>
           </div>
         </li>
       
         <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model.html'>
-            Defining your model
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='start/tutorial.html'>
+            Tutorial
           </a>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
               Also, group contexts from same source.
             -->
-            <div><p>Ema’s dev server supports <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a>; it will observe changes to your model, in addition to code. To facilitate this you will manage your model as a <a href='concepts/lvar.html' class='text-gray-600 font-bold hover:bg-gray-50'>LVar</a>. The <code>runEma</code> function (<a href='guide/class.html' class='text-gray-600 font-bold hover:bg-gray-50'>described here</a>) takes an IO action that gets <code>LVar model</code> as an argument.</p></div>
-          </div>
-        </li>
-      
-        <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model.html'>
-            Defining your model
-          </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>In this contrived example (<a href='https://github.com/srid/ema/blob/master/src/Ema/Example/Ex02_Clock.hs' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>full code here</a>), we are using <code>UTCTime</code> as the model. We set the initial value using <code>LVar.set</code>, and then continually update the current time every second. Every time the model gets updated, the web browser will <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> to display the up to date value. For the <code>BlogPosts</code> model, you would typically use <a href='https://hackage.haskell.org/package/fsnotify' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>fsnotify</a> to monitor changes to the underlying Markdown files, but note that Ema provides <a href='guide/helpers/filesystem.html' class='text-gray-600 font-bold hover:bg-gray-50'>a helper</a> for that.</p></div>
+            <div><p>This is the <em>minimum</em> amount of code necessary to run an Ema site. Notice that as you replace and save this file, your browser (which is at <a href='http://locahost:9001' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>http://locahost:9001</a>) will <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> to display “Hello, Ema”. Congratulations, you just created your first website!</p></div>
           </div>
         </li>
       
@@ -974,6 +938,18 @@
         </li>
       
         <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts/lvar.html'>
+            LVar
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+              Also, group contexts from same source.
+            -->
+            <div><p>If you are familiar with Haskell’s <code>stm</code> package, a <code>LVar</code> is essentially a <a href='https://hackage.haskell.org/package/stm-2.5.0.0/docs/Control-Concurrent-STM-TMVar.html' class='text-gray-600 hover:underline' target='_blank' rel='noopener'><code>TMVar</code></a> but with an extra ability for other threads to observe changes. Ema uses it for <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a>, and your application code is expected to set and update its <a href='guide/model.html' class='text-gray-600 font-bold hover:bg-gray-50'>model</a> through the LVar.</p></div>
+          </div>
+        </li>
+      
+        <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='start.html'>
             Getting Started
           </a>
@@ -986,26 +962,50 @@
         </li>
       
         <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='start/tutorial.html'>
-            Tutorial
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model.html'>
+            Defining your model
           </a>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
               Also, group contexts from same source.
             -->
-            <div><p>The <code>runEma</code> function is explained <a href='guide/class.html' class='text-gray-600 font-bold hover:bg-gray-50'>here</a>, but in brief: it takes a render function (see below) as well as an IO action that allows us to create and update the model <a href='concepts/lvar.html' class='text-gray-600 font-bold hover:bg-gray-50'>lvar</a>. Note that <code>threadDelay maxBound</code> here? That is because our IO action must not exit; in the dev server mode of real-world websites, you would continue to monitor the external world (such as Markdown files) and update the model, to facilitate <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> of data used by your site.</p></div>
+            <div><p>A “<em>model</em>” in Ema represents the state to use to generate your site. It could be as simple as a variable, or it could be a list of parsed Markdown files (as in the case of a weblog). Ema’s model is also conceptually similar to <a href='https://guide.elm-lang.org/architecture/' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>Elm</a>'s model, in that - changing the model <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>automatically</a> changes the <a href='guide/render.html' class='text-gray-600 font-bold hover:bg-gray-50'>view</a>.</p></div>
           </div>
         </li>
       
         <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='start/tutorial.html'>
-            Tutorial
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model.html'>
+            Defining your model
           </a>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
               Also, group contexts from same source.
             -->
-            <div><p>This is the <em>minimum</em> amount of code necessary to run an Ema site. Notice that as you replace and save this file, your browser (which is at <a href='http://locahost:9001' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>http://locahost:9001</a>) will <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> to display “Hello, Ema”. Congratulations, you just created your first website!</p></div>
+            <div><p>Ema’s dev server supports <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a>; it will observe changes to your model, in addition to code. To facilitate this you will manage your model as a <a href='concepts/lvar.html' class='text-gray-600 font-bold hover:bg-gray-50'>LVar</a>. The <code>runEma</code> function (<a href='guide/class.html' class='text-gray-600 font-bold hover:bg-gray-50'>described here</a>) takes an IO action that gets <code>LVar model</code> as an argument.</p></div>
+          </div>
+        </li>
+      
+        <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model.html'>
+            Defining your model
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+              Also, group contexts from same source.
+            -->
+            <div><p>In this contrived example (<a href='https://github.com/srid/ema/blob/master/src/Ema/Example/Ex02_Clock.hs' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>full code here</a>), we are using <code>UTCTime</code> as the model. We set the initial value using <code>LVar.set</code>, and then continually update the current time every second. Every time the model gets updated, the web browser will <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> to display the up to date value. For the <code>BlogPosts</code> model, you would typically use <a href='https://hackage.haskell.org/package/fsnotify' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>fsnotify</a> to monitor changes to the underlying Markdown files, but note that Ema provides <a href='guide/helpers/filesystem.html' class='text-gray-600 font-bold hover:bg-gray-50'>a helper</a> for that.</p></div>
+          </div>
+        </li>
+      
+        <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts.html'>
+            Concepts
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+              Also, group contexts from same source.
+            -->
+            <div><a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>Hot Reload</a></div>
           </div>
         </li>
       
@@ -1026,7 +1026,7 @@
       
         
           <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-            0.1.34.4
+            0.1.37.2
           </span>
         
       

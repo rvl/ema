@@ -861,6 +861,30 @@ newtype Tag = Tag Text</code></pre></div>
     <ul class='space-y-1'>
       
         <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='start/tutorial.html'>
+            Tutorial
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+              Also, group contexts from same source.
+            -->
+            <div><p>Okay, but that’s just <em>one</em> page. But we want to add a second page. And might as well add more content than “Hello, Ema”. Let’s do that next. The first step is define the <a href='guide/routes.html' class='text-gray-600 font-bold hover:bg-gray-50'>route</a> type that corresponds to our site’s pages. Add the following:</p></div>
+          </div>
+        </li>
+      
+        <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/render.html'>
+            Rendering HTML
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+              Also, group contexts from same source.
+            -->
+            <div><p>Once you have <a href='guide/model.html' class='text-gray-600 font-bold hover:bg-gray-50'>model</a> and <a href='guide/routes.html' class='text-gray-600 font-bold hover:bg-gray-50'>routes</a> in place and <a href='guide/class.html' class='text-gray-600 font-bold hover:bg-gray-50'>constrained</a>, the last piece of the puzzle is to write a function that takes both as arguments and returns file content (lazy bytestring, to be exact) to generate. This function can be as simple as the following:</p></div>
+          </div>
+        </li>
+      
+        <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide.html'>
             Guide
           </a>
@@ -869,6 +893,18 @@ newtype Tag = Tag Text</code></pre></div>
               Also, group contexts from same source.
             -->
             <div><a href='guide/routes.html' class='text-gray-600 font-bold hover:bg-gray-50'>Working with routes</a> – <span class='text-gray-500'>Unless you site has a single page (<code>index.html</code>), you will need to manage a set of routes</span></div>
+          </div>
+        </li>
+      
+        <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model.html'>
+            Defining your model
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+              Also, group contexts from same source.
+            -->
+            <div><p><span class='py-2 text-xl italic font-bold'>Next</span>, we will <a href='guide/routes.html' class='text-gray-600 font-bold hover:bg-gray-50'>talk about routes</a>.</p></div>
           </div>
         </li>
       
@@ -896,42 +932,6 @@ newtype Tag = Tag Text</code></pre></div>
           </div>
         </li>
       
-        <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model.html'>
-            Defining your model
-          </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p><span class='py-2 text-xl italic font-bold'>Next</span>, we will <a href='guide/routes.html' class='text-gray-600 font-bold hover:bg-gray-50'>talk about routes</a>.</p></div>
-          </div>
-        </li>
-      
-        <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/render.html'>
-            Rendering HTML
-          </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>Once you have <a href='guide/model.html' class='text-gray-600 font-bold hover:bg-gray-50'>model</a> and <a href='guide/routes.html' class='text-gray-600 font-bold hover:bg-gray-50'>routes</a> in place and <a href='guide/class.html' class='text-gray-600 font-bold hover:bg-gray-50'>constrained</a>, the last piece of the puzzle is to write a function that takes both as arguments and returns file content (lazy bytestring, to be exact) to generate. This function can be as simple as the following:</p></div>
-          </div>
-        </li>
-      
-        <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='start/tutorial.html'>
-            Tutorial
-          </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>Okay, but that’s just <em>one</em> page. But we want to add a second page. And might as well add more content than “Hello, Ema”. Let’s do that next. The first step is define the <a href='guide/routes.html' class='text-gray-600 font-bold hover:bg-gray-50'>route</a> type that corresponds to our site’s pages. Add the following:</p></div>
-          </div>
-        </li>
-      
     </ul>
   </div>
 
@@ -949,7 +949,7 @@ newtype Tag = Tag Text</code></pre></div>
       
         
           <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-            0.1.34.4
+            0.1.37.2
           </span>
         
       

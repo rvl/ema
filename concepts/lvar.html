@@ -834,30 +834,6 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts.html'>
-            Concepts
-          </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><a href='concepts/lvar.html' class='text-gray-600 font-bold hover:bg-gray-50'>LVar</a></div>
-          </div>
-        </li>
-      
-        <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts/hot-reload.html'>
-            Hot Reload
-          </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>For anything outside of the Haskell code, your code becomes responsible for monitoring and updating the model <a href='concepts/lvar.html' class='text-gray-600 font-bold hover:bg-gray-50'>LVar</a>. The <a href='guide/helpers/filesystem.html' class='text-gray-600 font-bold hover:bg-gray-50'>filesystem helper</a> already provides utilities to facilitate this for monitoring changes to files and directories.</p></div>
-          </div>
-        </li>
-      
-        <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/helpers/filesystem.html'>
             Working with files
           </a>
@@ -882,6 +858,30 @@
         </li>
       
         <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='start/tutorial.html'>
+            Tutorial
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+              Also, group contexts from same source.
+            -->
+            <div><p>The <code>runEma</code> function is explained <a href='guide/class.html' class='text-gray-600 font-bold hover:bg-gray-50'>here</a>, but in brief: it takes a render function (see below) as well as an IO action that allows us to create and update the model <a href='concepts/lvar.html' class='text-gray-600 font-bold hover:bg-gray-50'>lvar</a>. Note that <code>threadDelay maxBound</code> here? That is because our IO action must not exit; in the dev server mode of real-world websites, you would continue to monitor the external world (such as Markdown files) and update the model, to facilitate <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> of data used by your site.</p></div>
+          </div>
+        </li>
+      
+        <li>
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts/hot-reload.html'>
+            Hot Reload
+          </a>
+          <div class='mb-4 overflow-auto text-sm text-gray-500'>
+            <!-- TODO: How to style the backlinks list item element? Or render each separately?
+              Also, group contexts from same source.
+            -->
+            <div><p>For anything outside of the Haskell code, your code becomes responsible for monitoring and updating the model <a href='concepts/lvar.html' class='text-gray-600 font-bold hover:bg-gray-50'>LVar</a>. The <a href='guide/helpers/filesystem.html' class='text-gray-600 font-bold hover:bg-gray-50'>filesystem helper</a> already provides utilities to facilitate this for monitoring changes to files and directories.</p></div>
+          </div>
+        </li>
+      
+        <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model.html'>
             Defining your model
           </a>
@@ -894,14 +894,14 @@
         </li>
       
         <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='start/tutorial.html'>
-            Tutorial
+          <a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts.html'>
+            Concepts
           </a>
           <div class='mb-4 overflow-auto text-sm text-gray-500'>
             <!-- TODO: How to style the backlinks list item element? Or render each separately?
               Also, group contexts from same source.
             -->
-            <div><p>The <code>runEma</code> function is explained <a href='guide/class.html' class='text-gray-600 font-bold hover:bg-gray-50'>here</a>, but in brief: it takes a render function (see below) as well as an IO action that allows us to create and update the model <a href='concepts/lvar.html' class='text-gray-600 font-bold hover:bg-gray-50'>lvar</a>. Note that <code>threadDelay maxBound</code> here? That is because our IO action must not exit; in the dev server mode of real-world websites, you would continue to monitor the external world (such as Markdown files) and update the model, to facilitate <a href='concepts/hot-reload.html' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> of data used by your site.</p></div>
+            <div><a href='concepts/lvar.html' class='text-gray-600 font-bold hover:bg-gray-50'>LVar</a></div>
           </div>
         </li>
       
@@ -922,7 +922,7 @@
       
         
           <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-            0.1.34.4
+            0.1.37.2
           </span>
         
       
