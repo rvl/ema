@@ -883,7 +883,7 @@ import qualified Data.LVar as LVar
 
 main :: IO ()
 main = do
-  Ema.runEma render $ \model -&gt; do
+  Ema.runEma render $ \_act model -&gt; do
     LVar.set model $ Model "Ema"
     liftIO $ threadDelay maxBound</code></pre></div>
     <p class='mb-3'>
