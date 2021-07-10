@@ -23,7 +23,7 @@
 
   
   <!-- CSSSTART -->
-	<link rel="stylesheet" href="emanote-compiled-2d42a4d6ddd61cf91d8b0c83765f0df3.css" />
+	<link rel="stylesheet" href="emanote-compiled-15282c83963d1a0118731f67d3ae2ecb.css" />
   <!-- CSSEND -->
 
   <!-- Heist error element -->
@@ -823,7 +823,7 @@
       Make sure that you have have followed <a href='start.html' class='text-pink-600 font-bold hover:underline'>the previous section</a> in order to have the <a href='https://github.com/srid/ema-template' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>template repo</a> checked out and running locally. Here, <strong>our goal</strong> is to replace the source code of the template repo and write a basic site from scratch.
     </p>
   
-    <ul class='my-3 ml-4 space-y-1 list-decimal list-inside'>
+    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
       
         <li>
           Follow the template repo’s <a href='https://github.com/srid/ema-template#getting-started' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>README</a> and have it open in Visual Studio Code while running the dev server. Your website should be viewable at <a href='http://localhost:9001/' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>http://localhost:9001/</a>
@@ -926,7 +926,7 @@ render _emaAction model r = Ema.AssetGenerated Ema.Html . RU.renderHtml $
       If everything compiles, you should see the site update in the web browser. A couple of quick points about the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>render</code> function:
     </p>
   
-    <ul class='my-3 ml-4 space-y-1 list-decimal list-inside'>
+    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
       
         <li>
           It should return the raw HTML as a <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>ByteString</code>. Here, we use <a href='https://hackage.haskell.org/package/blaze-html' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>blaze-html</a> as HTML DSL. You can also use your own HTML templates of course.
@@ -943,7 +943,7 @@ render _emaAction model r = Ema.AssetGenerated Ema.Html . RU.renderHtml $
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>mkdir ./output
 nix run . -- -C ./content gen $(pwd)/output</code></pre></div><h2 id='exercises' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Exercises</h2>
-    <ul class='my-3 ml-4 space-y-1 list-decimal list-inside'>
+    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
       
         <li>
           Figure out how to use static assets (images, files) in your static sites (hint: the typeclass)
@@ -1006,7 +1006,7 @@ nix run . -- -C ./content gen $(pwd)/output</code></pre></div><h2 id='exercises'
       
         
           <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-            0.1.37.2
+            0.1.37.4
           </span>
         
       
