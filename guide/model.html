@@ -886,6 +886,10 @@
     <p class='mb-3'>
       In this contrived example (<a href='https://github.com/srid/ema/blob/master/src/Ema/Example/Ex02_Clock.hs' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>full code here</a>), we are using <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>UTCTime</code> as the model. We set the initial value using <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>LVar.set</code>, and then continually update the current time every second. Every time the model gets updated, the web browser will <a href='concepts/hot-reload' class='text-pink-600 font-bold hover:underline'>hot reload</a> to display the up to date value. For the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>BlogPosts</code> model, you would typically use <a href='https://hackage.haskell.org/package/fsnotify' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>fsnotify</a> to monitor changes to the underlying Markdown files, but note that Ema provides <a href='guide/helpers/filesystem' class='text-pink-600 font-bold hover:underline'>a helper</a> for that.
     </p>
+  <h2 id='advanced-tips' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Advanced tips</h2>
+    <p class='mb-3'>
+      If your model takes on a database-like structure and query functionality, you might find <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>IxSet</code> to be an useful library. The <a href='https://hackage.haskell.org/package/ixset-typed' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>ixset-typed</a> package (rather than the “ixset” package) is the recommended starting point, and a tutorial can be found <a href='https://stackoverflow.com/a/9234807/55246' class='text-pink-600 hover:underline' target='_blank' rel='noopener'>here</a>.
+    </p>
   <div class='mt-8 border-t-2 border-pink-500 pb-1 pl-1 bg-gray-50 rounded'>
     <p class='mb-3'>
       <span class='py-2 text-xl italic font-bold'>Next</span>, we will <a href='guide/routes' class='text-pink-600 font-bold hover:underline'>talk about routes</a>.
