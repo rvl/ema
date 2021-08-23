@@ -77,6 +77,11 @@ h1 {
   font-weight: inherit;
   margin: 0;
 }
+h1, h2 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
 h1, p, h2, h3 {
   margin: 0;
 }
@@ -89,10 +94,6 @@ h1, p, pre {
 }
 h1, p, h2, pre {
   margin: 0;
-}
-h1, h2 {
-  font-size: inherit;
-  font-weight: inherit;
 }
 h1, p, pre, h2 {
   margin: 0;
@@ -124,6 +125,11 @@ svg {
 svg, img, video {
   display: block;
   vertical-align: middle;
+}
+table {
+  text-indent: 0;
+  border-color: inherit;
+  border-collapse: collapse;
 }
 ul {
   list-style: none;
@@ -218,6 +224,10 @@ ul {
   --tw-border-opacity: 1;
   border-color: rgba(236, 72, 153, var(--tw-border-opacity));
 }
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgba(209, 213, 219, var(--tw-border-opacity));
+}
 .rounded {
   border-radius: 0.25rem;
 }
@@ -226,6 +236,12 @@ ul {
 }
 .border-b-2 {
   border-bottom-width: 2px;
+}
+.border-r-2 {
+  border-right-width: 2px;
+}
+.border-l-2 {
+  border-left-width: 2px;
 }
 .inline-block {
   display: inline-block;
@@ -546,6 +562,9 @@ ul {
 }
 .tracking-tighter {
   letter-spacing: -0.05em;
+}
+.align-top {
+  vertical-align: top;
 }
 .w-full {
   width: 100%;
