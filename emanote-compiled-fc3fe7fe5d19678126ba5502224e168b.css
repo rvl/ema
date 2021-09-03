@@ -77,10 +77,8 @@ h1 {
   font-weight: inherit;
   margin: 0;
 }
-h1, h2 {
+h1, p, pre {
   margin: 0;
-  font-size: inherit;
-  font-weight: inherit;
 }
 h1, p, h2, h3 {
   margin: 0;
@@ -89,13 +87,15 @@ h1, h2, h3 {
   font-size: inherit;
   font-weight: inherit;
 }
-h1, p, pre {
+h1, h2 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+h1, p, pre, h2 {
   margin: 0;
 }
 h1, p, h2, pre {
-  margin: 0;
-}
-h1, p, pre, h2 {
   margin: 0;
 }
 img {
@@ -118,11 +118,11 @@ svg, img {
   display: block;
   vertical-align: middle;
 }
-svg {
+svg, img, video {
   display: block;
   vertical-align: middle;
 }
-svg, img, video {
+svg {
   display: block;
   vertical-align: middle;
 }
@@ -362,10 +362,6 @@ ul {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
-}
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -373,6 +369,10 @@ ul {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
 }
 .leading-relaxed {
   line-height: 1.625;
@@ -402,13 +402,13 @@ ul {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .mb-4 {
   margin-bottom: 1rem;
@@ -431,11 +431,11 @@ ul {
 .mb-8 {
   margin-bottom: 2rem;
 }
-.ml-2 {
-  margin-left: 0.5rem;
-}
 .mt-6 {
   margin-top: 1.5rem;
+}
+.ml-2 {
+  margin-left: 0.5rem;
 }
 .hover\:opacity-80:hover {
   opacity: 0.8;
