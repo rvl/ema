@@ -23,7 +23,7 @@
 
   
   <!-- CSSSTART -->
-	<link rel="stylesheet" href="emanote-compiled-fc3fe7fe5d19678126ba5502224e168b.css" />
+	<link rel="stylesheet" href="emanote-compiled-559c8b7900102e63793af67f5185daa6.css" />
   <!-- CSSEND -->
 
   <!-- Heist error element -->
@@ -60,7 +60,8 @@
   h4,
   h5,
   h6,
-  header {
+  header,
+  .header-font {
     font-family: 'Nunito-Bold', sans-serif;
   }
 </style>
@@ -1001,8 +1002,10 @@ nix run . -- -C ./content gen $(pwd)/output</code></pre></div><h2 id='exercises'
     </p>
   </div>
 </article>
-            
-  <div class='p-4 mt-8 bg-gray-100 rounded'>
+            <div class='flex flex-col lg:flex-row lg:space-x-2'>
+              
+              
+  <div class='p-4 mt-8 bg-gray-100 rounded flex-1'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
       
@@ -1033,6 +1036,7 @@ nix run . -- -C ./content gen $(pwd)/output</code></pre></div><h2 id='exercises'
     </ul>
   </div>
 
+            </div>
             
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
     
@@ -1054,7 +1058,7 @@ nix run . -- -C ./content gen $(pwd)/output</code></pre></div><h2 id='exercises'
     
       
         <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-          0.1.47.2
+          0.1.50.0
         </span>
       
     
