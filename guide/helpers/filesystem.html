@@ -927,8 +927,8 @@ Ema.runEma render $ \model -&gt; do
       In most cases, however, you probably want to use the higher level function <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>mountOnLVar</code>. It “mounts” the files you specify onto the <a href='concepts/lvar' class='text-pink-600 font-bold hover:underline'>model LVar</a> such that any changes to them are <em>automatically</em> reflected in your <a href='guide/model' class='text-pink-600 font-bold hover:underline'>model</a> value.
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>Ema.runEma render $ \model -&gt; do
-  FileSystem.mountOnLVar "." ["**/*.md"] model $ \fp -&gt; \case
-    FileSystem.Update -&gt; do
+  FileSystem.mountOnLVar "." ["**/*.md"] [] model def $ \() fp -&gt; \case
+    FileSystem.Update () -&gt; do
       s &lt;- readFileText fp
       pure $ Map.insert fp s
     FileSystem.Delete -&gt;
@@ -1042,7 +1042,7 @@ Ema.runEma render $ \model -&gt; do
     
       
         <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-          0.1.52.0
+          0.1.53.0
         </span>
       
     
