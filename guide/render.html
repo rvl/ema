@@ -23,7 +23,7 @@
 
   
   <!-- CSSSTART -->
-	<link rel="stylesheet" href="emanote-compiled-e4703c88bf4cba0e637bafcb9303e7c1.css" />
+	<link rel="stylesheet" href="emanote-compiled-022a769997ee2f4c17599e8736417b3a.css" />
   <!-- CSSEND -->
 
   <!-- Heist error element -->
@@ -72,9 +72,10 @@
 <!-- DoNotFormat -->
 
 
+
 <!-- DoNotFormat -->
 
-<body class='overflow-y-scroll bg-gray-400'>
+<body class='bg-gray-400 overflow-y-scroll'>
   
     <div class='container mx-auto'>
 
@@ -931,7 +932,7 @@ render model route = AssetGenerated Html . Blaze.renderHtml $
             <div class='flex flex-col lg:flex-row lg:space-x-2'>
               
               
-  <div class='p-4 mt-8 bg-gray-100 rounded flex-1'>
+  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
       
@@ -939,60 +940,64 @@ render model route = AssetGenerated Html . Blaze.renderHtml $
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/helpers/tailwind'>
             Using Tailwind CSS
           </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>To use the layout helper in your <a href='guide/render' class='text-gray-600 font-bold hover:bg-gray-50'>render</a> function:</p></div>
-          </div>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-pink-200 hover:border-pink-500'>
+      <div><p>To use the layout helper in your <a href='guide/render' class='text-gray-600 font-bold hover:bg-gray-50'>render</a> function:</p></div>
+    </div>
+  
+</div>
+          
         </li>
       
         <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide'>
             Guide
           </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><a href='guide/render' class='text-gray-600 font-bold hover:bg-gray-50'>Rendering HTML</a> – <span class='text-gray-500'>You could use plain strings to build HTML, or use templates, or use one of the delightful Haskell DSLs</span></div>
-          </div>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-pink-200 hover:border-pink-500'>
+      <div><a href='guide/render' class='text-gray-600 font-bold hover:bg-gray-50'>Rendering HTML</a> – <span class='text-gray-500'>You could use plain strings to build HTML, or use templates, or use one of the delightful Haskell DSLs</span></div>
+    </div>
+  
+</div>
+          
         </li>
       
         <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model'>
             Defining your model
           </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>A “<em>model</em>” in Ema represents the state to use to generate your site. It could be as simple as a variable, or it could be a list of parsed Markdown files (as in the case of a weblog). Ema’s model is also conceptually similar to <a href='https://guide.elm-lang.org/architecture/' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>Elm</a>'s model, in that - changing the model <a href='concepts/hot-reload' class='text-gray-600 font-bold hover:bg-gray-50'>automatically</a> changes the <a href='guide/render' class='text-gray-600 font-bold hover:bg-gray-50'>view</a>.</p></div>
-          </div>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-pink-200 hover:border-pink-500'>
+      <div><p>A “<em>model</em>” in Ema represents the state to use to generate your site. It could be as simple as a variable, or it could be a list of parsed Markdown files (as in the case of a weblog). Ema’s model is also conceptually similar to <a href='https://guide.elm-lang.org/architecture/' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>Elm</a>'s model, in that - changing the model <a href='concepts/hot-reload' class='text-gray-600 font-bold hover:bg-gray-50'>automatically</a> changes the <a href='guide/render' class='text-gray-600 font-bold hover:bg-gray-50'>view</a>.</p></div>
+    </div>
+  
+</div>
+          
         </li>
       
         <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/class'>
             Defining Ema instance
           </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><code>render</code> function that renders your route (usually to HTML); we’ll go over this in <a href='guide/render' class='text-gray-600 font-bold hover:bg-gray-50'>the next</a> section.</div>
-          </div>
-        </li>
-      
-        <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/class'>
-            Defining Ema instance
-          </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p><span class='py-2 text-xl italic font-bold'>Next</span>, with our model and routes in place constrained by <code>Ema</code> type class, <a href='guide/render' class='text-gray-600 font-bold hover:bg-gray-50'>we will define the HTML for our site</a> using Ema.</p></div>
-          </div>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-pink-200 hover:border-pink-500'>
+      <div><code>render</code> function that renders your route (usually to HTML); we’ll go over this in <a href='guide/render' class='text-gray-600 font-bold hover:bg-gray-50'>the next</a> section.</div>
+    </div>
+  
+    <div class='pl-2 mt-2 border-l-2 border-pink-200 hover:border-pink-500'>
+      <div><p><span class='py-2 text-xl italic font-bold'>Next</span>, with our model and routes in place constrained by <code>Ema</code> type class, <a href='guide/render' class='text-gray-600 font-bold hover:bg-gray-50'>we will define the HTML for our site</a> using Ema.</p></div>
+    </div>
+  
+</div>
+          
         </li>
       
     </ul>
@@ -1021,7 +1026,7 @@ render model route = AssetGenerated Html . Blaze.renderHtml $
     
       
         <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-          0.3.2.2
+          0.3.6.0
         </span>
       
     

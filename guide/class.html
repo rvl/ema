@@ -23,7 +23,7 @@
 
   
   <!-- CSSSTART -->
-	<link rel="stylesheet" href="emanote-compiled-e4703c88bf4cba0e637bafcb9303e7c1.css" />
+	<link rel="stylesheet" href="emanote-compiled-022a769997ee2f4c17599e8736417b3a.css" />
   <!-- CSSEND -->
 
   <!-- Heist error element -->
@@ -72,9 +72,10 @@
 <!-- DoNotFormat -->
 
 
+
 <!-- DoNotFormat -->
 
-<body class='overflow-y-scroll bg-gray-400'>
+<body class='bg-gray-400 overflow-y-scroll'>
   
     <div class='container mx-auto'>
 
@@ -950,7 +951,7 @@
             <div class='flex flex-col lg:flex-row lg:space-x-2'>
               
               
-  <div class='p-4 mt-8 bg-gray-100 rounded flex-1'>
+  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
       
@@ -958,84 +959,83 @@
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/routes'>
             Working with routes
           </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p><span class='py-2 text-xl italic font-bold'>Next</span>, with our model and routes in place, <a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'>we will make them work with Ema</a> by defining their static site behaviour.</p></div>
-          </div>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-pink-200 hover:border-pink-500'>
+      <div><p><span class='py-2 text-xl italic font-bold'>Next</span>, with our model and routes in place, <a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'>we will make them work with Ema</a> by defining their static site behaviour.</p></div>
+    </div>
+  
+</div>
+          
         </li>
       
         <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='start/tutorial'>
             Tutorial
           </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div>It uses <code>Ema.routeUrl</code> function to create a URL out of our <code>Route</code> type. This function uses the <a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'><code>Ema</code> typeclass</a>, so it uses the <code>encodeRoute</code> function defined further above.</div>
-          </div>
-        </li>
-      
-        <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='start/tutorial'>
-            Tutorial
-          </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>The <code>runEma</code> function is explained <a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'>here</a>, but in brief: it takes a render function (see below) as well as an IO action that allows us to create and update the model <a href='concepts/lvar' class='text-gray-600 font-bold hover:bg-gray-50'>lvar</a>. Note that <code>threadDelay maxBound</code> here? That is because our IO action must not exit; in the dev server mode of real-world websites, you would continue to monitor the external world (such as Markdown files) and update the model, to facilitate <a href='concepts/hot-reload' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> of data used by your site.</p></div>
-          </div>
-        </li>
-      
-        <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='start/tutorial'>
-            Tutorial
-          </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>We should now tell Ema how to convert our <code>Route</code> to actual file paths (which is used to determine the URL too). Let’s do that by making an instance of the <code>Ema</code> <a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'>class</a>:</p></div>
-          </div>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-pink-200 hover:border-pink-500'>
+      <div>It uses <code>Ema.routeUrl</code> function to create a URL out of our <code>Route</code> type. This function uses the <a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'><code>Ema</code> typeclass</a>, so it uses the <code>encodeRoute</code> function defined further above.</div>
+    </div>
+  
+    <div class='pl-2 mt-2 border-l-2 border-pink-200 hover:border-pink-500'>
+      <div><p>The <code>runEma</code> function is explained <a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'>here</a>, but in brief: it takes a render function (see below) as well as an IO action that allows us to create and update the model <a href='concepts/lvar' class='text-gray-600 font-bold hover:bg-gray-50'>lvar</a>. Note that <code>threadDelay maxBound</code> here? That is because our IO action must not exit; in the dev server mode of real-world websites, you would continue to monitor the external world (such as Markdown files) and update the model, to facilitate <a href='concepts/hot-reload' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> of data used by your site.</p></div>
+    </div>
+  
+    <div class='pl-2 mt-2 border-l-2 border-pink-200 hover:border-pink-500'>
+      <div><p>We should now tell Ema how to convert our <code>Route</code> to actual file paths (which is used to determine the URL too). Let’s do that by making an instance of the <code>Ema</code> <a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'>class</a>:</p></div>
+    </div>
+  
+</div>
+          
         </li>
       
         <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/render'>
             Rendering HTML
           </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>Once you have <a href='guide/model' class='text-gray-600 font-bold hover:bg-gray-50'>model</a> and <a href='guide/routes' class='text-gray-600 font-bold hover:bg-gray-50'>routes</a> in place and <a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'>constrained</a>, the last piece of the puzzle is to write a function that takes both as arguments and returns file content (lazy bytestring, to be exact) to generate. This function can be as simple as the following:</p></div>
-          </div>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-pink-200 hover:border-pink-500'>
+      <div><p>Once you have <a href='guide/model' class='text-gray-600 font-bold hover:bg-gray-50'>model</a> and <a href='guide/routes' class='text-gray-600 font-bold hover:bg-gray-50'>routes</a> in place and <a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'>constrained</a>, the last piece of the puzzle is to write a function that takes both as arguments and returns file content (lazy bytestring, to be exact) to generate. This function can be as simple as the following:</p></div>
+    </div>
+  
+</div>
+          
         </li>
       
         <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide'>
             Guide
           </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'>Defining Ema instance</a> – <span class='text-gray-500'>Constrain your <code>model</code> and <code>route</code> to work with static sites</span></div>
-          </div>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-pink-200 hover:border-pink-500'>
+      <div><a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'>Defining Ema instance</a> – <span class='text-gray-500'>Constrain your <code>model</code> and <code>route</code> to work with static sites</span></div>
+    </div>
+  
+</div>
+          
         </li>
       
         <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model'>
             Defining your model
           </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>Ema’s dev server supports <a href='concepts/hot-reload' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a>; it will observe changes to your model, in addition to code. To facilitate this you will manage your model as a <a href='concepts/lvar' class='text-gray-600 font-bold hover:bg-gray-50'>LVar</a>. The <code>runEma</code> function (<a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'>described here</a>) takes an IO action that gets <code>LVar model</code> as an argument.</p></div>
-          </div>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-pink-200 hover:border-pink-500'>
+      <div><p>Ema’s dev server supports <a href='concepts/hot-reload' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a>; it will observe changes to your model, in addition to code. To facilitate this you will manage your model as a <a href='concepts/lvar' class='text-gray-600 font-bold hover:bg-gray-50'>LVar</a>. The <code>runEma</code> function (<a href='guide/class' class='text-gray-600 font-bold hover:bg-gray-50'>described here</a>) takes an IO action that gets <code>LVar model</code> as an argument.</p></div>
+    </div>
+  
+</div>
+          
         </li>
       
     </ul>
@@ -1064,7 +1064,7 @@
     
       
         <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-          0.3.2.2
+          0.3.6.0
         </span>
       
     

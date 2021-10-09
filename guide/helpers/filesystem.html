@@ -23,7 +23,7 @@
 
   
   <!-- CSSSTART -->
-	<link rel="stylesheet" href="emanote-compiled-e4703c88bf4cba0e637bafcb9303e7c1.css" />
+	<link rel="stylesheet" href="emanote-compiled-022a769997ee2f4c17599e8736417b3a.css" />
   <!-- CSSEND -->
 
   <!-- Heist error element -->
@@ -72,9 +72,10 @@
 <!-- DoNotFormat -->
 
 
+
 <!-- DoNotFormat -->
 
-<body class='overflow-y-scroll bg-gray-400'>
+<body class='bg-gray-400 overflow-y-scroll'>
   
     <div class='container mx-auto'>
 
@@ -942,7 +943,7 @@ Ema.runEma render $ \model -&gt; do
             <div class='flex flex-col lg:flex-row lg:space-x-2'>
               
               
-  <div class='p-4 mt-8 bg-gray-100 rounded flex-1'>
+  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
     <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
     <ul class='space-y-1'>
       
@@ -950,72 +951,79 @@ Ema.runEma render $ \model -&gt; do
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/helpers/markdown'>
             Using Markdown
           </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>Note that with Ema you can get <a href='concepts/hot-reload' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> support for your Markdown files using <a href='guide/helpers/filesystem' class='text-gray-600 font-bold hover:bg-gray-50'>filesystem notifications</a>.</p></div>
-          </div>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-pink-200 hover:border-pink-500'>
+      <div><p>Note that with Ema you can get <a href='concepts/hot-reload' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> support for your Markdown files using <a href='guide/helpers/filesystem' class='text-gray-600 font-bold hover:bg-gray-50'>filesystem notifications</a>.</p></div>
+    </div>
+  
+</div>
+          
         </li>
       
         <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/render'>
             Rendering HTML
           </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>Of course when using Ema nothing prevents you from choosing to use traditional HTML templates, and you can get <a href='concepts/hot-reload' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> on them too with <a href='guide/helpers/filesystem' class='text-gray-600 font-bold hover:bg-gray-50'>a little bit of plumbing</a>.</p></div>
-          </div>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-pink-200 hover:border-pink-500'>
+      <div><p>Of course when using Ema nothing prevents you from choosing to use traditional HTML templates, and you can get <a href='concepts/hot-reload' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> on them too with <a href='guide/helpers/filesystem' class='text-gray-600 font-bold hover:bg-gray-50'>a little bit of plumbing</a>.</p></div>
+    </div>
+  
+</div>
+          
         </li>
       
         <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts/hot-reload'>
             Hot Reload
           </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>Finally, hot reload on <em>code</em> changes are supported via <a href='https://github.com/ndmitchell/ghcid' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>ghcid</a>. The <a href='https://github.com/srid/ema-template' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>template repo</a>'s `bin/run` script uses ghcid underneath. Any HTML DSL (like blaze-html – as used by the <a href='guide/helpers/tailwind' class='text-gray-600 font-bold hover:bg-gray-50'>Tailwind helper</a>) or CSS DSL automatically gets supported for hot-reload. If you choose to use a file-based HTML template language, you can enable hot-reload on template change using the <a href='guide/helpers/filesystem' class='text-gray-600 font-bold hover:bg-gray-50'>FileSystem helper</a>.</p></div>
-          </div>
-        </li>
-      
-        <li>
-          <a class='text-pink-600 font-bold hover:bg-pink-50' href='concepts/hot-reload'>
-            Hot Reload
-          </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>For anything outside of the Haskell code, your code becomes responsible for monitoring and updating the model <a href='concepts/lvar' class='text-gray-600 font-bold hover:bg-gray-50'>LVar</a>. The <a href='guide/helpers/filesystem' class='text-gray-600 font-bold hover:bg-gray-50'>filesystem helper</a> already provides utilities to facilitate this for monitoring changes to files and directories.</p></div>
-          </div>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-pink-200 hover:border-pink-500'>
+      <div><p>Finally, hot reload on <em>code</em> changes are supported via <a href='https://github.com/ndmitchell/ghcid' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>ghcid</a>. The <a href='https://github.com/srid/ema-template' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>template repo</a>'s `bin/run` script uses ghcid underneath. Any HTML DSL (like blaze-html – as used by the <a href='guide/helpers/tailwind' class='text-gray-600 font-bold hover:bg-gray-50'>Tailwind helper</a>) or CSS DSL automatically gets supported for hot-reload. If you choose to use a file-based HTML template language, you can enable hot-reload on template change using the <a href='guide/helpers/filesystem' class='text-gray-600 font-bold hover:bg-gray-50'>FileSystem helper</a>.</p></div>
+    </div>
+  
+    <div class='pl-2 mt-2 border-l-2 border-pink-200 hover:border-pink-500'>
+      <div><p>For anything outside of the Haskell code, your code becomes responsible for monitoring and updating the model <a href='concepts/lvar' class='text-gray-600 font-bold hover:bg-gray-50'>LVar</a>. The <a href='guide/helpers/filesystem' class='text-gray-600 font-bold hover:bg-gray-50'>filesystem helper</a> already provides utilities to facilitate this for monitoring changes to files and directories.</p></div>
+    </div>
+  
+</div>
+          
         </li>
       
         <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/helpers'>
             Helpers
           </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><a href='guide/helpers/filesystem' class='text-gray-600 font-bold hover:bg-gray-50'>Working with files</a> – <span class='text-gray-500'>Ema provides a helper to support hot-reload on files</span></div>
-          </div>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-pink-200 hover:border-pink-500'>
+      <div><a href='guide/helpers/filesystem' class='text-gray-600 font-bold hover:bg-gray-50'>Working with files</a> – <span class='text-gray-500'>Ema provides a helper to support hot-reload on files</span></div>
+    </div>
+  
+</div>
+          
         </li>
       
         <li>
           <a class='text-pink-600 font-bold hover:bg-pink-50' href='guide/model'>
             Defining your model
           </a>
-          <div class='mb-4 overflow-auto text-sm text-gray-500'>
-            <!-- TODO: How to style the backlinks list item element? Or render each separately?
-              Also, group contexts from same source.
-            -->
-            <div><p>In this contrived example (<a href='https://github.com/srid/ema/blob/master/src/Ema/Example/Ex02_Clock.hs' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>full code here</a>), we are using <code>UTCTime</code> as the model. We set the initial value using <code>LVar.set</code>, and then continually update the current time every second. Every time the model gets updated, the web browser will <a href='concepts/hot-reload' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> to display the up to date value. For the <code>BlogPosts</code> model, you would typically use <a href='https://hackage.haskell.org/package/fsnotify' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>fsnotify</a> to monitor changes to the underlying Markdown files, but note that Ema provides <a href='guide/helpers/filesystem' class='text-gray-600 font-bold hover:bg-gray-50'>a helper</a> for that.</p></div>
-          </div>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-pink-200 hover:border-pink-500'>
+      <div><p>In this contrived example (<a href='https://github.com/srid/ema/blob/master/src/Ema/Example/Ex02_Clock.hs' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>full code here</a>), we are using <code>UTCTime</code> as the model. We set the initial value using <code>LVar.set</code>, and then continually update the current time every second. Every time the model gets updated, the web browser will <a href='concepts/hot-reload' class='text-gray-600 font-bold hover:bg-gray-50'>hot reload</a> to display the up to date value. For the <code>BlogPosts</code> model, you would typically use <a href='https://hackage.haskell.org/package/fsnotify' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>fsnotify</a> to monitor changes to the underlying Markdown files, but note that Ema provides <a href='guide/helpers/filesystem' class='text-gray-600 font-bold hover:bg-gray-50'>a helper</a> for that.</p></div>
+    </div>
+  
+</div>
+          
         </li>
       
     </ul>
@@ -1044,7 +1052,7 @@ Ema.runEma render $ \model -&gt; do
     
       
         <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-          0.3.2.2
+          0.3.6.0
         </span>
       
     
